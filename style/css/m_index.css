@@ -779,6 +779,18 @@ background:url("img/icon_1.png") no-repeat left 80px  center;
     padding-left: 6px;
     color: #c5c5ca;
 }
+.layui-btn2{
+    line-height: 46px !important;
+    width: 195px;
+    height: 46px;
+    background: #fbcb07;
+    color: #fff;
+    border-radius: 23px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
 /*合作伙伴*/
 .m_friend{
     padding: 60px 0;
