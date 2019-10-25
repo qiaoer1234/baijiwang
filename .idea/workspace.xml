@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6eeb06b0-6738-452f-8100-9dcad9c9d0d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/style/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/css/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/page/fzzc_order - 副本.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/css/login.css" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -46,11 +47,43 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4887">
-              <caret line="307" column="14" selection-start-line="307" selection-start-column="4" selection-end-line="307" selection-end-column="14" />
+            <state relative-caret-position="280">
+              <caret line="321" column="17" selection-start-line="321" selection-start-column="12" selection-end-line="321" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/page/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="43" column="58" lean-forward="true" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/style/css/login.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="141" column="27" lean-forward="true" selection-start-line="141" selection-start-column="27" selection-end-line="141" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/footer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="77" column="10" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="77" selection-end-column="10" />
+              <folding>
+                <element signature="n#style#0;n#font#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -80,13 +113,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.ov</find>
-      <find>look</find>
-      <find>help-list-item</find>
-      <find>yulan_box</find>
-      <find>yulan_con</find>
-      <find>mb_bot</find>
-      <find>tool-popper</find>
       <find>财税顾问</find>
       <find>.cs-toolbar</find>
       <find>.cs-toolbar .toolbar-center .cs-tool .tool-popper-wrap .tool-popper .popper-phone-btn</find>
@@ -106,10 +132,17 @@
       <find>ys_bg3</find>
       <find>/style/images/</find>
       <find>layui-btn</find>
-      <find>.f-nav-wrapper .copyright</find>
       <find>.search-wrapper input.btn</find>
       <find>ys_bot</find>
       <find>m-prolist-bot-head</find>
+      <find>.f-nav-wrapper .copyright</find>
+      <find>.l_box .l_form_ul li.on</find>
+      <find>.l_box .l_form_pass .l_tit</find>
+      <find>.l_box .l_form_msg</find>
+      <find>f-nav-item</find>
+      <find>radio</find>
+      <find>.l_bottom</find>
+      <find>l_form_msg</find>
     </findStrings>
     <replaceStrings>
       <replace>../style/images</replace>
@@ -141,10 +174,12 @@
         <option value="$PROJECT_DIR$/page/dbzc.html" />
         <option value="$PROJECT_DIR$/style/css/neiye.css" />
         <option value="$PROJECT_DIR$/style/css/base.css" />
+        <option value="$PROJECT_DIR$/style/css/login.css" />
+        <option value="$PROJECT_DIR$/page/login.html" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1400" />
@@ -229,15 +264,15 @@
       <workItem from="1571708017823" duration="380000" />
       <workItem from="1571886950622" duration="9627000" />
       <workItem from="1571966164531" duration="1192000" />
-      <workItem from="1571968281267" duration="8684000" />
+      <workItem from="1571968281267" duration="14068000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140192000" />
+    <option name="totallyTimeSpent" value="145576000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17913593" />
@@ -338,9 +373,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style/css/need.css" />
     <entry file="file://$PROJECT_DIR$/page/fz_register.html" />
-    <entry file="file://$PROJECT_DIR$/style/css/login.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/style/js/tool.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -418,16 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="31" column="29" lean-forward="true" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
-          <folding>
-            <element signature="n#style#0;n#font#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/style/css/m_index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
@@ -471,10 +493,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="77" column="10" lean-forward="true" selection-start-line="41" selection-start-column="3" selection-end-line="77" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#font#0;n#p#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/style/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4887">
-          <caret line="307" column="14" selection-start-line="307" selection-start-column="4" selection-end-line="307" selection-end-column="14" />
+        <state relative-caret-position="280">
+          <caret line="321" column="17" selection-start-line="321" selection-start-column="12" selection-end-line="321" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/css/login.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="141" column="27" lean-forward="true" selection-start-line="141" selection-start-column="27" selection-end-line="141" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="43" column="58" lean-forward="true" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
         </state>
       </provider>
     </entry>
