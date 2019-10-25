@@ -1,0 +1,397 @@
+.login_main{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+.l_head{
+    width: 1200px;
+    height: 120px;
+    line-height: 120px;
+    margin: 0 auto;
+}
+.l_head .logo{
+    width: 196px;
+    height: 60px;
+}
+.l_box{
+    width:100%;
+    height: 520px;
+    background: url(img/bg_login.png) no-repeat center center;
+}
+.l_box .l_form{
+    width: 1200px;
+    margin: 0 auto;
+}
+.l_box .l_form_main{
+    float: right;
+    width: 350px;
+    min-height: 400px;
+    margin-top: 50px;
+    background-color: #fff;
+}
+.l_box .l_form_ul{
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid #e5e5e5;
+    background: url(img/bg_login_line.png) no-repeat center center;
+}
+.l_box .l_form_ul li{
+    float: left;
+    line-height: 60px;
+    font-size: 18px;
+    color: #666;
+    width: 50%;
+    text-align: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.l_box .l_form_ul li.on{
+    font-weight: bold;
+    color: #0076e5;
+}
+.l_box .l_form_list{
+    padding: 0 30px;
+}
+.l_box .l_t{
+    height: 40px;
+    overflow: hidden;
+}
+.l_box .l_tips{
+    /* display: none; */
+    float: left;
+    width: 100%;
+    height: 26px;
+    line-height: 26px;
+    margin-top: 7px;
+    padding-left: 30px;
+    font-size: 12px;
+    color: #fa676a;
+    background: rgba(253, 209, 210) url(img/ico_error.png) no-repeat center left 10px;
+}
+.l_box .l_form_same{
+    position: relative;
+    width: 290px;
+    height: 50px;
+    box-sizing: border-box;
+	background-color: #fff;
+	border-radius: 4px;
+    border: solid 1px #e5e5e5;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.l_box .l_form_pass{
+    margin-bottom: 40px;
+}
+.l_box .l_form_same .l_tit{
+    width: 50px;
+    height: 100%;
+    background:#f7f7f7 url(img/ico_name.png) no-repeat center center;
+    border-right: 1px solid #e5e5e5;
+}
+.l_box .l_form_pass .l_tit{
+    background:#f7f7f7 url(img/ico_pass.png) no-repeat center center;
+}
+.l_box .l_form_same .l_inp{
+    width: 65%;
+    border: none;
+    outline: none;
+    height: 100%;
+    text-indent: 16px;
+}
+.l_box .l_close{
+    display: none;
+    width: 40px;
+    height: 100%;
+    background: url(img/ico_close.png) no-repeat center center;
+    cursor: pointer;
+}
+.l_box .l_btn{
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+	width: 100%;
+	height: 50px;
+	background-color: #0076e5;
+	border-radius: 4px;    
+}
+.l_box .l_form_msg{
+    padding-top: 15px;
+}
+.l_box .l_form_msg .l_left{
+    font-size: 12px;
+    color: #999;
+}
+.l_box .l_form_msg .l_right{
+    font-size: 12px;
+    color: #ff9c00;
+}
+.l_bottom{
+    padding-top: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #999;
+}
+.l_box .l_form_nextName .l_tit{
+    background: #f7f7f7 url(img/ico_mob.png) no-repeat center center;
+}
+
+.l_box .l_form_yzm .l_tit{
+    background: #f7f7f7 url(img/ico_yzm.png) no-repeat center center;
+}
+
+.l_box .l_form_safe .l_tit{
+    background: #f7f7f7 url(img/ico_safe.png) no-repeat center center;
+}
+.l_box .l_form_yzm .l_inp,.l_box .l_form_safe .l_inp{
+    width: 50%;
+}
+.l_box .l_form_yzm .l_close{
+    position: absolute;
+    right: 90px;
+}
+.l_box .l_form_safe .l_close{
+    position: absolute;
+    right: 68px;
+}
+.l_box .l_send{
+    border: none;
+    outline: none;
+    width: 68px;
+    height: 100%;
+    line-height: 50px;
+    text-align: center;
+    color: #ff9c00;
+    background: url(img/bg_login_line.png) no-repeat center left;
+    cursor: pointer;
+}
+.l_box .l_form_next{
+    padding-bottom: 20px;
+}
+
+.l_reg{
+    width: 100%;
+    min-height:auto;
+    background-color: #fff;
+}
+.l_reg .l_reg_main{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0 80px;
+}
+.l_reg .l_reg_con{
+    width: 600px;
+    margin:0 auto;
+}
+
+.l_reg .l_reg_ul li{
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 4px;
+    background-color: #e5e5e5;
+}
+.l_reg .l_reg_ul .num{
+    position: absolute;
+    left: 90px;
+    top: -10px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #fff;
+}
+.l_reg .l_reg_ul .txt{
+    margin-top: 30px;
+    text-align: center;
+    color: #999;
+}
+.l_reg .l_reg_ul li.on,.l_reg .l_reg_ul li.on .num{
+    background-color: #0076e5;
+}
+.l_reg .l_reg_ul li.on .txt{
+    color: #0076e5;
+}
+
+.l_wrapper .l_tit{
+    display: inline-block;
+    width: 60px;
+    height: 48px;
+    line-height: 48px;
+    color: #333;
+    margin-right: 20px;
+    text-align: right;
+}
+.l_wrapper .l_inp{
+    width: 420px;
+	height: 46px;
+	background-color: #fff;
+	border-radius: 4px;
+    border: solid 1px #e5e5e5;
+    text-indent: 20px;
+    box-sizing: border-box;
+}
+.l_wrapper .l_yzm{
+    width: 306px;
+	height: 46px;
+	background-color: #fff;
+	border-radius: 4px;
+	border: solid 1px #e5e5e5;
+}
+.l_wrapper .l_reg_first .l_btn{
+    outline: none;
+    border:none;
+    width: 100px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+	background-color: #ccc;
+    border-radius: 4px;
+    color: #fefefe;
+    margin-left: 14px;
+}
+.l_wrapper .l_reg_first .l_desc{
+    margin-left: 80px;
+}
+
+.l_wrapper .l_desc a{
+    color: #0076e5;
+}
+.l_wrapper .l_next{
+    outline: none;
+    border: none;
+    width: 306px;
+    height: 46px;
+    margin-left: 80px;
+    background-color: #0076e5;
+    color: #fff;
+	border-radius: 4px;
+}
+
+.l_wrapper .l_reg_succ{
+    margin: 0 auto;
+    text-align: center;
+}
+.l_wrapper .l_p1{
+    margin: 30px 0 20px;
+}
+.l_wrapper .l_p1 img{
+    width: 80px;
+    height: 80px;
+}
+.l_wrapper .l_p2{
+    margin-bottom: 10px;
+    font-size: 30px;
+    color: #333;
+}
+.l_wrapper .l_p3{
+    font-size: 16px;
+    color: #666;
+}
+.l_wrapper .l_p3 a{
+    color: #0076e5;
+}
+.l_wrapper .l_p4{
+    margin: 20px 0;
+    font-size: 16px;
+    color: #0076e5;
+}
+.l_wrapper .l_p5 a{
+    display: inline-block;
+    width: 154px;
+    height: 46px;
+    line-height: 46px;
+    margin: 0 10px;
+    text-align: center;
+	border-radius: 4px;
+    border: solid 1px #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #999;
+}
+
+.l_wrapper .l_p5 .l_p_enter{
+    background-color: #0076e5;
+    color: #fff;
+    border-color: #0076e5;
+}
+
+/* .password-wrapper{
+    width: 490px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.password-container{
+    width: 1470px;
+    overflow: hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+} */
+
+
+.step2-transition{
+    -webkit-transform: translate(-520px, 0);
+    -moz-transform: translate(-520px, 0);
+    -ms-transform: translate(-520px, 0);
+    -o-transform: translate(-520px, 0);
+    transform: translate(-520px, 0);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.step3-transition{
+    -webkit-transform: translate(-1040px, 0);
+    -moz-transform: translate(-1040px, 0);
+    -ms-transform: translate(-1040px, 0);
+    -o-transform: translate(-1040px, 0);
+    transform: translate(-1040px, 0);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.password-step{
+    float: left;
+    width: 490px;
+}
+
+.l_wrapper{
+    width: 520px;
+    margin: 100px auto;
+    overflow: hidden;
+}
+.l_wrapper .l_reg_first li{
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+.l_wrapper .redstar{
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    color: #e50016;
+}
+.l_wrapper_container{
+    width: 1560px;
+    overflow: hidden;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;    
+}
+
+.l_reg .l_reg_list{
+    float: left;
+    width: 520px;    
+}

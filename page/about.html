@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=7" />
+    <meta name="renderer" content="webkit">
+    <title>百集网-代理记账_工商注册_财税咨询_知识产权_企业一站式B2B服务平台</title>
+    <meta name="keywords"
+        content="工商注册,公司注册代办,营业执照代办,注册公司流程,代理记账公司,代办营业执照,资质代办,公司注册费用,财税服务,知识产权代办,商标注册,商标转让办理,工商财税,企慧网,企慧网,B2B平台,许可证办理">
+    <meta name="description" content="百集网，全国领先的企业一站式B2B服务平台，全国上千家服务商！业务范围包括代理记账、工商注册、工商变更、税务审计、资质代办、社保托管和知识产权等企业服务。">
+    <link rel="stylesheet" href="/style/layui/css/layui.css">
+    <link rel="stylesheet" href="/style/css/swiper.min.css">
+    <link rel="stylesheet" href="/style/css/animate.css">
+    <link rel="stylesheet" href="/style/css/base.css">
+    <link rel="stylesheet" href="/style/css/neiye.css">
+    <script src="/style/js/include.js"></script>
+    <style>
+        .content-prolist {
+            padding: 30px 30px 0px 30px;
+        }
+    </style>
+</head>
+
+<body id="bodyL" style="background-color: #fff;">
+<include src="../header.html"></include>
+
+<!--main start-->
+    <div class="m_main w100 clearfix">
+      <div class="banner_wrapper com-w100"></div>
+        <!-- main -->
+        <div class="content-prolist  w1200 auto0 ">
+            <div class="column ov mt30">
+                <h2 class="cl-gray3">关于我们 </h2>
+                <p>百集网 — 商标如此简单！</p>
+            </div>
+            <div class="about_con">
+                <p>企慧网，是帮助企业服务商和需求企业搭建一站式平台，帮助服务商精准获客找到终端企业，反向，帮终端企业找到可靠服务商。整合线上线下、国内优质资源和服务，汇聚拥有创新创业资源的企业、组织和个人，提供资源对接服务，建立资源采集、汇聚、组织、交易和管理为一体的资源共享企业服务平台。</p>
+                <p>一方面主要提供企业运营服务，从企业注册环节入手，解决企业在设立、变更、发展过程中的各种刚性服务需求。为中小微企业提供包括工商注册、代理记账、工商服务、税务审计、税务筹划、出口退税、建筑资质、商标注册、专利申请、著作权保护、会计代理、软件开发、品牌设计、人事代理、法律咨询等专业高效的一体化企业服务。</p>
+
+                <p>另一方面主要帮助工商财税、知识产权、人力资源、律师事务所等企业服务商，通过多渠道互联网流量，精准获客，提供线上客户资源。迅速覆盖全国的本地化服务商，并开放接入优秀企业级应用，把中小微企业、本地服务商、企业级应用进行深度融合，打造全新的企业服务（B2B）领域的生态圈。迅速覆盖全国的本地化服务商，并开放接入优秀企业级应用，把中小微企业、本地服务商、企业级应用进行深度融合，打造全新的企业服务（B2B）领域的生态圈。</p>
+
+                <p>平台服务方面，公司有一支技术过硬、吃苦耐劳的优秀软硬件技术人员、高素质的项目管理人员、项目运营人员、网络工程人员、网站设计人员和程序开发人员组成的专业服务团队，可以为平台支持提供强有力的保障。</p>
+
+                <p>企慧网始终本着“用户至上，用心服务”的原则，坚持以“服务第一”、“互利双赢”为宗旨，给用户提供专业的服务。</p>
+
+                <p>与时俱进，开拓创新！力求将最好的服务倾情奉献给客户，这一直是企慧网不断追求的梦想和前进的动力！</p>
+            </div>
+        </div>
+
+    </div>
+<!--main end-->
+
+<!--    底部-->
+    <include src="../footer.html"></include>
+    <script src="/style/js/jquery.min.js"></script>
+    <script src="/style/layui/layui.js"></script>
+    <script src="/style/js/wow.min.js"></script>
+    <script>
+
+        layui.config({
+            version: true,
+            base: '/style/js/'
+        }).extend({
+            index: 'index'
+        }).use(['index', 'jquery'], function () {
+            var $ = layui.$;
+
+                // tab切换
+                //  $(function () {
+                //       initTab($('._tab-nav-d'),$(' ._tab-cont'),'_on')
+                //   });
+
+            $('.item-payMode .list').click(function (ev) {
+                $(this).addClass('active').siblings().removeClass('active');
+            })
+            $(function () {
+
+                $('._tab-navs-d a').click(function (ev) {
+                    $(this).addClass('on').siblings().removeClass('on')
+                        if ($(this).hasClass('_a0')) {
+                        $('.ywjs')[0].scrollIntoView({
+                            behavior: 'smooth', // smooth scroll
+                            block: 'start' // the upper border of the element will be aligned at the top of the visible part of the window of the scrollable area.
+                        })
+                    } else if ($(this).hasClass('_a1')) {
+                        let top = this.getBoundingClientRect().top
+                        $('.ywbz')[0].scrollIntoView({
+                            behavior: 'smooth', // smooth scroll
+                            // top: top
+                            block: 'start'
+                        })
+                    }
+                })
+
+            })
+
+        });
+
+
+        // 搜索框切换
+        function chos_tm_x(num)
+        {
+            var msg_s = '';
+            switch(num)
+            {
+                case '1':
+                    msg_s = '请输入您想要注册的商标名称';
+                    break;
+                case '2':
+                    msg_s = '请输入商标的申请主体';
+                    break;
+                case '3':
+                    msg_s = '请输入商标的注册号';
+                    break;
+                case '4':
+                    msg_s = '请输入商标的代理机构';
+                    break;
+                default:
+                    return;
+            }
+            $("#searchvalue").attr('placeholder',msg_s);
+        }
+
+    </script>
+
+</body>
+
+</html>
