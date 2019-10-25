@@ -132,6 +132,17 @@
 .product-left{
     width:186px;
 }
+.product-left-head {
+    height: 50px;
+    line-height: 50px;
+    background-color: #0f2a3d;
+    padding-left: 15px;
+}
+.product-left-head span {
+    color: #fff;
+    -webkit-box-sizing: border-box;
+    font-size: 16px;
+}
 .service-list_d ul{
     margin-left:0px;
 }

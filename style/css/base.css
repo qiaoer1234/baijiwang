@@ -874,9 +874,11 @@ body{background-color: #fff;}
 }
 
 .f-nav-wrapper .copyright {
-    width: 450px;
+    width: 332px;
 }
-
+.f-nav-wrapper .tell {
+    color: #fbcb07;
+}
 .f-codes {
     margin-bottom: 40px;
     overflow: hidden;

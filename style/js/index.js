@@ -37,19 +37,6 @@ layui.define(['layer', 'jquery', 'element'], function (exports) {
         })
     }
 
-    //表单折叠
-    var queryBtn = $(".fold-container");
-    $(".fold-btn").on("click", function () {
-        if (!queryBtn.hasClass("fold-container-block")) {
-            $(this).find("span").text("收起");
-            $(this).find(".layui-icon").removeClass("layui-icon-down").addClass("layui-icon-up");
-            queryBtn.addClass("fold-container-block");
-        } else {
-            $(this).find("span").text("展开");
-            $(this).find(".layui-icon").removeClass("layui-icon-up").addClass("layui-icon-down");
-            queryBtn.removeClass("fold-container-block");
-        }
-    });
 
 
 
@@ -90,116 +77,6 @@ layui.define(['layer', 'jquery', 'element'], function (exports) {
         return true;
     }
 
-
-    //获取报价
-    getService = function(sheng, shi, city, bz, fwfl) {
-        //console.log(bz)
-        var province = sheng || $("#province").val();
-        var c = shi || $("#city").val();
-        var c_name = city || $("#city option:selected").text();
-        var phone = $("#phone").val();
-        var status = $(".policy-checkbox input[type='checkbox']").is(":checked");
-        var is_agree = status?1:0;
-
-        if (province == "") {
-            layer.msg("请选择省", {
-                icon: 7
-            });
-            return false;
-        } else if (c == "") {
-            layer.msg("请选择城市", {
-                icon: 7
-            });
-            return false;
-        } else if (!checkPhone(phone)) {
-            layer.msg("抱歉，请正确填写手机号！", {
-                icon: 7
-            });
-            return false;
-        } else if (!status) {
-            layer.msg("请阅读并勾选企慧网《隐私保护政策》", {
-                icon: 7
-            });
-            return false;
-        }
-        add_tuiguang(phone,province,c,bz,c_name,is_agree,fwfl);
-
-        return false;
-    }
-
-    //添加推广
-    add_tuiguang = function(dh,sheng,shi,bz,shi_name,is_agree,fwfl)
-    {
-        $.ajax({
-            url: 'http://120.55.51.34:811/pt_fuwu/add_tuiguang',
-            data: {dh:dh,sheng:sheng,shi:shi,bz:bz,shi_name:shi_name,is_agree:is_agree,fwfl:fwfl},
-            type: "POST",
-            success: function(re) {
-                layer.msg(re.msg);
-                flag = false;
-                if(re.code == 1)
-                {
-                    location.reload();
-                }
-            }
-        });
-    }
-
-    // 请求腾讯地图IP
-    var ywlx = 11;
-    var p, c, ip;
-    function getIpLocation() {
-        var data = {
-            key: "4V6BZ-VNTR6-Q7SSQ-MHN5C-577GT-MCB57"
-        }
-        var url = "https://apis.map.qq.com/ws/location/v1/ip";
-        data.output = "jsonp";
-        $.ajax({
-            type: "get",
-            dataType: 'jsonp',
-            data: data,
-            jsonp: "callback",
-            jsonpCallback: "QQmap",
-            url: url,
-            success: function (res) {
-                if (res.status == 0) {
-                    var datas = res.result;
-                    ip = datas.ip;
-                    p = datas.ad_info.province;
-                    c = datas.ad_info.city;
-                }
-            }
-        });
-    }
-    getIpLocation();
-
-    subscribe = function() {
-        t = $("#tel").val();
-        
-        if(!regex.isPhone(t)) {
-            return layer.msg('输入号码有误', {time:1600});
-        }
-
-        data = {p:p,shi:c,t:t,y:ywlx,ip:ip};
-        $.ajax({
-            type: "GET",
-            url: "http://crm.qihui.com/admin_sms/tt",
-            dataType: "jsonp",
-            jsonp: "callback",
-            jsonpCallback:"handler",
-            data: data,
-            success: function (data) {
-                if(data.statusCode == 200){
-                    $("#tel").val('');
-                    layer.msg("你已经提交成功，我们业务经理会尽快给你回电。");
-                }
-            },
-            error:function(data){  
-                $("#tel").val('');
-                layer.msg("你已经提交成功，我们业务经理会尽快给你回电。");
-            }  
-        });
-    }
 
     exports('index', {});
 });
