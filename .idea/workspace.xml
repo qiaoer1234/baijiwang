@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6eeb06b0-6738-452f-8100-9dcad9c9d0d5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/footer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/dbzc.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/dbzc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/page/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/page/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style/css/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/css/base.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/css/m_index.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/css/m_index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/css/neiye.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/css/neiye.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/images/ewm.png" beforeDir="false" afterPath="$PROJECT_DIR$/style/images/ewm.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,16 +46,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style/css/base.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="880" selection-start-line="880" selection-end-line="880" />
+            <state relative-caret-position="4887">
+              <caret line="307" column="14" selection-start-line="307" selection-start-column="4" selection-end-line="307" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/page/dbzc.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="522">
@@ -142,12 +135,12 @@
         <option value="$PROJECT_DIR$/page/sbfl_results.html" />
         <option value="$PROJECT_DIR$/page/sbfl.html" />
         <option value="$PROJECT_DIR$/page/sbfl_detail.html" />
-        <option value="$PROJECT_DIR$/style/css/base.css" />
         <option value="$PROJECT_DIR$/footer.html" />
         <option value="$PROJECT_DIR$/page/index.html" />
         <option value="$PROJECT_DIR$/style/css/m_index.css" />
         <option value="$PROJECT_DIR$/page/dbzc.html" />
         <option value="$PROJECT_DIR$/style/css/neiye.css" />
+        <option value="$PROJECT_DIR$/style/css/base.css" />
       </list>
     </option>
   </component>
@@ -236,12 +229,12 @@
       <workItem from="1571708017823" duration="380000" />
       <workItem from="1571886950622" duration="9627000" />
       <workItem from="1571966164531" duration="1192000" />
-      <workItem from="1571968281267" duration="7825000" />
+      <workItem from="1571968281267" duration="8684000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139333000" />
+    <option name="totallyTimeSpent" value="140192000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -425,13 +418,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="880" selection-start-line="880" selection-end-line="880" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="837">
@@ -482,6 +468,13 @@
           <folding>
             <element signature="n#div#0;n#div#1;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4887">
+          <caret line="307" column="14" selection-start-line="307" selection-start-column="4" selection-end-line="307" selection-end-column="14" />
         </state>
       </provider>
     </entry>

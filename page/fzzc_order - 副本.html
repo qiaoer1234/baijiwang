@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=7" />
+    <meta name="renderer" content="webkit">
+    <title>百集网-代理记账_工商注册_财税咨询_知识产权_企业一站式B2B服务平台</title>
+    <meta name="keywords"
+        content="工商注册,公司注册代办,营业执照代办,注册公司流程,代理记账公司,代办营业执照,资质代办,公司注册费用,财税服务,知识产权代办,商标注册,商标转让办理,工商财税,企慧网,企慧网,B2B平台,许可证办理">
+    <meta name="description" content="百集网，全国领先的企业一站式B2B服务平台，全国上千家服务商！业务范围包括代理记账、工商注册、工商变更、税务审计、资质代办、社保托管和知识产权等企业服务。">
+    <link rel="stylesheet" href="../style/layui/css/layui.css">
+    <link rel="stylesheet" href="../style/css/swiper.min.css">
+    <link rel="stylesheet" href="../style/css/animate.css">
+    <link rel="stylesheet" href="../style/css/base.css">
+    <link rel="stylesheet" href="../style/css/neiye.css">
+    <script src="../style/js/include.js"></script>
+</head>
+
+<body id="bodyL" style="background-color: #F2F2F2;">
+    <include src="../header.html"></include>
+
+<!--main start-->
+    <div class="m_main w100 clearfix">
+        <div class="location-box w1200 auto0">
+            <a href="">首页 &gt; </a> <a href="">顾问辅助注册 &gt; </a>确认订单
+        </div>
+        <!-- main -->
+        <div class="content-prolist  w1200 auto0 zz_order">
+            <h3 class="cont-title">确认订单信息 <small>订单时间：2019.10.15  11:08:24</small></h3>
+            <div class="cont-bodyer clearfix">
+                <table class="table-list w100">
+                    <thead>
+                    <tr>
+                        <th>订单编号</th>
+                        <th>购买服务</th>
+                        <th>价格</th>
+                        <th>数量</th>
+                        <th>状态</th>
+                        <th>总计</th>
+
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>K90918636056</td>
+                        <td>保姆快速注册</td>
+                        <td>300.00</td>
+                        <td>1</td>
+                        <td class="cl-yellow">待支付</td>
+                        <td class="cl-orange bold">500.00</td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h3 class="cont-title">请选择付款方式 <small>若付款账户为公司账户，可个人中心开具发票；如是个人账户，则只能为付款人或申请人开具发票，请选择适合的付款账户</small></h3>
+            <div class="cont-bodyer clearfix" id="payways">
+                <ul class="item-payMode clearfix w100">
+                    <li class="list " data-payway="1">
+                        <i class="icon icon-pay-weixn"></i>
+                        <span class="text">微信支付</span>
+                        <i class="icon-mianfei">限免</i>
+                    </li>
+                    <li class="list " data-payway="2">
+                        <i class="icon icon-pay-zhifubao"></i>
+                        <span class="text">支付宝支付</span>
+                        <i class="icon-mianfei">限免</i>
+                    </li>
+                    <li class="list " data-payway="5">
+                        <i class="icon icon-pay-zhuanzhang"></i>
+                        <span class="text">企业网银</span>
+                        <i class="icon-mianfei">免费</i>
+
+                    </li>
+                    <li class="list di-payform " data-payway="6">
+                        <i class="icon icon-pay-xianxia"></i>
+                        <span class="text">线下支付</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="row-step fr">
+                <h3><small>应付金额：</small>￥500.00</h3>
+                <a class="btn-next" href="javascript:;" id="alisubmit">确认支付</a>
+            </div>
+        </div>
+
+    </div>
+<!--main end-->
+
+<!--    底部-->
+    <include src="../footer.html"></include>
+    <script src="../style/js/jquery.min.js"></script>
+    <script src="../style/layui/layui.js"></script>
+    <script src="../style/js/wow.min.js"></script>
+    <script>
+
+        layui.config({
+            version: true,
+            base: '../style/js/'
+        }).extend({
+            index: 'index'
+        }).use(['index', 'jquery'], function () {
+            var $ = layui.$;
+
+                // tab切换
+                //  $(function () {
+                //       initTab($('._tab-nav-d'),$(' ._tab-cont'),'_on')
+                //   });
+
+            $('.item-payMode .list').click(function (ev) {
+                $(this).addClass('active').siblings().removeClass('active');
+            })
+            $(function () {
+
+                $('._tab-navs-d a').click(function (ev) {
+                    $(this).addClass('on').siblings().removeClass('on')
+                        if ($(this).hasClass('_a0')) {
+                        $('.ywjs')[0].scrollIntoView({
+                            behavior: 'smooth', // smooth scroll
+                            block: 'start' // the upper border of the element will be aligned at the top of the visible part of the window of the scrollable area.
+                        })
+                    } else if ($(this).hasClass('_a1')) {
+                        let top = this.getBoundingClientRect().top
+                        $('.ywbz')[0].scrollIntoView({
+                            behavior: 'smooth', // smooth scroll
+                            // top: top
+                            block: 'start'
+                        })
+                    }
+                })
+
+            })
+
+        });
+
+
+        // 搜索框切换
+        function chos_tm_x(num)
+        {
+            var msg_s = '';
+            switch(num)
+            {
+                case '1':
+                    msg_s = '请输入您想要注册的商标名称';
+                    break;
+                case '2':
+                    msg_s = '请输入商标的申请主体';
+                    break;
+                case '3':
+                    msg_s = '请输入商标的注册号';
+                    break;
+                case '4':
+                    msg_s = '请输入商标的代理机构';
+                    break;
+                default:
+                    return;
+            }
+            $("#searchvalue").attr('placeholder',msg_s);
+        }
+
+    </script>
+
+</body>
+
+</html>
