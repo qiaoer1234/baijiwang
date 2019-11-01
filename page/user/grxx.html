@@ -1,0 +1,242 @@
+<h1 class="title-wrapper">个人信息</h1>
+
+<div class="right-fluid">
+    <form action="" class="layui-form" id="setting-form">
+        <div class="layui-form-item">
+            <div class="layui-form-label layui-right">用户名</div>
+            <div class="layui-input-block">
+                <p class="default-text">dzy0827</p>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-label layui-right">姓名</div>
+            <div class="layui-input-block f-w380">
+                <input type="text" name="zh" value="张三" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-label layui-right">营业执照</div>
+            <div class="layui-input-block">
+                <div class="layui-inline">
+                    <input type="radio" name="license" value="1" title="有">
+                    <input type="radio" name="license" value="0" title="无" checked>
+                </div>
+                <a href="javascript:;" class="register-link" onclick="popUpOpen()">点击注册</a>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-label layui-right">性别</div>
+            <div class="layui-input-block">
+                <input type="radio" name="sex" value="1" title="男">
+                <input type="radio" name="sex" value="0" title="女" checked>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-label layui-right">地区</div>
+            <div class="layui-input-block">
+                <div class="layui-inline mb20">
+                    <div class="layui-input-inline f-w150">
+                        <select name="province" id="province" lay-filter="province">
+                            <option value="">请选择省</option>
+                        </select>
+                    </div>
+                    <div class="layui-input-inline f-w150">
+                        <select name="city" id="city" lay-filter="city">
+                            <option value="">请选择市</option>
+                        </select>
+                    </div>
+                    <div class="layui-input-inline f-w150">
+                        <select name="area" id="area" lay-filter="area">
+                            <option value="">请选择县/区</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="layui-inline f-w590">
+                    <input type="text" name="address" autocomplete="off" class="layui-input" placeholder="详细联系地址【选填】">
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-label layui-right">出生日期</div>
+            <div class="layui-input-block f-w380">
+                <input type="text" value="1988-01-20" class="layui-input" id="date-birth">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-form-label"></div>
+            <div class="layui-input-block mt50">
+                <button class="layui-btn f-w200" lay-submit="" lay-filter="save-amend">保存修改</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="ad-layer-box" style="visibility:hidden;">
+    <div class="ad-layer-shade"></div>
+    <div class="ad-layer-main">
+        <div class="ad-callback-box">
+            <a href="javascript:" class="ad-layer-close" onclick="popUpClose()"></a>
+
+            <div class="ad-callback-content">
+                <div class="title">
+                    <h2>公司注册</h2>
+                    <p class="statis">注册商标，什么公司比较有利，留言获取顾问专业解答公司注册</p>
+                </div>
+
+                <form action="" class="layui-form contact-form" id="ggzc-form">
+                    <div class="layui-form-item">
+                        <div class="layui-form-label layui-right">所在地区</div>
+                        <div class="layui-input-inline" style="width:145px;">
+                            <select name="sheng" id="sheng" lay-filter="sheng" lay-verify="required">
+                                <option value="">请选择省</option>
+                            </select>
+                        </div>
+                        <div class="layui-input-inline" style="width:145px;">
+                            <select name="shi" id="shi" lay-filter="shi" lay-verify="required">
+                                <option value="">请选择市</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-form-label layui-right">联系电话</div>
+                        <div class="layui-input-block f-w300">
+                            <input type="number" name="phone" autocomplete="off" placeholder="如：17454007326" class="layui-input" id="phone" lay-verify="required|phone">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-form-label layui-right">联系人</div>
+                        <div class="layui-input-block f-w300">
+                            <input type="text" name="person" autocomplete="off" placeholder="如：李先生" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-form-label layui-right"></div>
+                        <div class="layui-input-block mt30 bj-sibmit">
+                            <button class="layui-btn" lay-submit="" lay-filter="submit-btn">点击提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../style/js/city.js"></script>
+<script src="../../style/js/city_linkage.js?r=f"></script>
+<script>
+    layui.use(['layer', 'jquery', 'form','laydate'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form,
+            laydate = layui.laydate;
+
+        var _http_ = "https://b1be0a37-aa66-4dd6-b23b-a05c9af3775a.mock.pstmn.io";  
+
+        // 地区三级联动
+        treeSelect({
+            s1: 'province',
+            s2: 'city',
+            s3: 'area',
+            id: 'setting-form'
+        });
+
+        // 日期组件
+        laydate.render({
+            elem: '#date-birth',
+            theme: '#26b8d4',
+            trigger: 'click'
+        });
+
+        // 保存修改
+        form.on('submit(save-amend)', function (data) {
+            $.ajax({
+                url: _http_ + '/grxx',
+                type: 'post',
+                data: data.field,
+                beforeSend:function() {
+                    layer_id = layer.open({
+                        type: 3
+                    });
+                },
+                success:function(response) {
+                    layer.close(layer_id);
+                    if (response.code === -1) {
+                        layer.msg(response.msg, {
+                            icon: 5,
+                            anim: 6,
+                            time: 2000
+                        });
+                        return null;
+                    }
+
+                    layer.msg(response.msg, {
+                        icon: 1,
+                        time: 2000
+                    }, function () {
+                        window.location.reload();
+                    });
+                }
+            });
+            return false;
+        });
+
+        // 公司注册弹框
+        popUpOpen =  function() {
+            $(".ad-layer-box").hide();
+            $(".ad-layer-box").css("visibility", "visible");
+            $(".ad-layer-box").show();
+            $("#provform .layui-form-item").show();
+        }
+
+        popUpClose = function() {
+            $(".city-li").show();
+            $(".policy-li").show();
+            $("#city-picker-search1").attr("data-city", "");
+            $("#phone").val("");
+            $(".ad-layer-box").hide();
+        }
+
+        // 公司注册地区二级联动
+        treeSelect({
+            s1: 'sheng',
+            s2: 'shi',
+            id: 'ggzc-form'
+        });
+
+        // 公司注册点击提交
+        form.on('submit(submit-btn)', function (data) {
+            $.ajax({
+                url: _http_ + '/grxx',
+                type: 'get',
+                data: data.field,
+                success: function(res) {
+                    //var res = JSON.parse(res);
+                    if (res.code === -1) {
+                        layer.msg(res.msg, {
+                            icon: 5,
+                            anim: 6,
+                            time: 2000
+                        });
+                        return null;
+                    }
+
+                    layer.msg(res.msg, {
+                        icon: 1,
+                        time: 2000
+                    }, function () {
+                        window.location.reload();
+                    });
+                }
+            });
+            return false;
+        });
+
+    });
+</script>

@@ -48,13 +48,14 @@ function treeSelect(config) {
             form.render();
             return false;
         }
-        // form.on('select(' + config.s2 + ')', function (data) {
-        //     areaEvent(data);
-        // });
+        form.on('select(' + config.s2 + ')', function (data) {
+            areaEvent(data);
+        });
     });
 
     form.on('select(' + config.s2 + ')', function (data) {
-        areaCheckBox(data)
+        //areaCheckBox(data);
+        areaEvent(data);
     });
 
     function cityEvent(data) {
