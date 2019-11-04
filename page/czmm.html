@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>找回密码-企慧网</title>
+    <link rel="stylesheet" href="/style/layui/css/layui.css">
+    <link rel="stylesheet" href="/style/css/base.css">
+    <link rel="stylesheet" href="/style/css/login.css">
+    <script src="/style/js/include.js"></script>
+</head>
+
+<body  style="background-color: #f2f2f2;">
+    <!-- header -->
+    <div class="login_main">
+        <div class="w100 bg_white">
+            <div class="l_head">
+                <div class="logo fl"><img src="../style/images/logo_m.png" alt="logo" title="logo"></div>
+                <div class="tell fr"><img src="../style/images/bj_tell.png" alt="logo" title="logo"></div>
+            </div>
+        </div>
+    <!-- main -->
+    <div class="l_reg">
+        <div class="l_reg_main">
+            <div class="l_reg_con">
+                <p class="l_title tc">找回密码</p>
+                <ul class="l_reg_ul clear">
+                    <li class="on">
+                        <span class="num"><p>1</p></span>
+                        <p class="txt">验证手机</p>
+                    </li>
+                    <li>
+                        <span class="num"><p>2</p></span>
+                        <p class="txt">修改密码</p>
+                    </li>
+                    <li>
+                        <span class="num"><p>3</p></span>
+                        <p class="txt">修改成功</p>
+                    </li>
+                </ul>
+
+
+                <div class="l_wrapper">
+                    <div class="l_wrapper_container">
+                        <form class="layui-form" action="">
+                            <ul class="l_reg_list l_reg_first">
+                                <li class="l_form_sj">
+                                    <span class="l_tit fl"></span>
+                                    <input class="l_inp fl"  name="sjhm" id="user_czmm_sjhm" type="text" placeholder="请输入您的手机号，如：13866668888" lay-verify="required">
+                                </li>
+                                <div class="yzm_box clearfix">
+                                    <li class="l_form_yzm">
+                                        <span class="l_tit fl"></span>
+                                        <input class="l_inp2 l_yzm fl" name="smsyzm" id="user_czmm_yzm" type="text" placeholder="请输入短信验证码"
+                                               lay-verify="required">
+                                    </li>
+                                        <button class="l_btn l_send_btn fl"  id="user_czmm_sms" type="button">发送验证码</button>
+                                </div>
+
+                                <li>
+                                    <button class="l_next l_next_btn" type="button">下一步</button>
+                                </li>
+                            </ul>
+
+
+
+                            <ul class="l_reg_list l_reg_first">
+                                <li class="l_form_mm">
+                                    <span class="l_tit fl"></span>
+                                    <input class="l_inp fl" type="password"  name="mm" placeholder="请输入密码" lay-verify="required">
+                                </li>
+                                <li class="l_form_mm">
+                                    <span class="l_tit fl"></span>
+                                    <input class="l_inp fl" type="password"  name="qrmm" placeholder="请确认输入密码" lay-verify="required">
+                                </li>
+
+                                <li>
+                                    <button class="l_next l_finish_btn" lay-submit lay-filter="user_czmm_finish" id="user_czmm_finish" type="button">下一步</button>
+                                </li>
+                            </ul>
+                        </form>
+
+                        <div class="l_reg_list l_reg_succ">
+                            <p class="l_p1"><img src="../style/images/l_reg_succ.png" alt="" title=""></p>
+                            <p class="l_p2">修改成功！</p>
+                            <p class="l_p4"><span class="span_time">5</span>秒后自动跳转到个人中心</p>
+                            <p class="l_p5">
+                                <a class="l_p_enter" href="javascript:;" target="_blank;">重新登录</a>
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--底部-->
+    <div class="l_bottom">
+            <div class="f-flink-wrapper w1200 auto0">
+                <div class="flinks fr">
+                    <div class="f-nav-item">
+                        <p class="i-b">友情链接：</p>
+                        <a href="" target="_blank">聚名科技</a>
+                        <a href="" target="_blank">地瓜建站</a>
+                        <a href="" target="_blank">金米网</a>
+                        <a href="" target="_blank">玩米网</a>
+                        <a href="" target="_blank">聚米网</a>
+                        <a href="" target="_blank">查ICP</a>
+                        <a href="" target="_blank">域铺</a>
+                        <a href="" target="_blank">NamePre</a>
+                        <a href="" target="_blank">麦宝新品</a>
+                        <a href="" target="_blank">聚名资讯</a>
+                        <a href="" target="_blank">模块无忧</a>
+                        <a href="" target="_blank">查ICP</a>
+                        <a href="" target="_blank">域铺</a>
+                        <a href="" target="_blank">聚名科技</a>
+                    </div>
+                    <div class="f-copys mt10">
+                        <p>© Copyright 2019-2020 安徽百集科技有限公司All Rights Reserved. 皖ICP备19013952号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+    <!-- footer -->
+
+    <script src="../style/layui/layui.js"></script>
+    <script>
+        layui.config({
+            version: true,
+            base: '/style/js/'
+        }).extend({
+            index: 'index',
+        }).use(['index', 'jquery', 'form', 'layer'], function () {
+            var $ = layui.$,
+                layer = layui.layer,
+                form = layui.form;
+            //下一步跳转
+            $('.l_next_btn').click(function () {
+                var sjhm   = $("#user_czmm_sjhm").val();
+                var yzm    = $("#user_czmm_yzm").val();
+
+                if(sjhm == '') {
+                    layer.msg("对不起，手机号不能为空！");return false;
+                }
+                if (!checkPhone(sjhm))
+                {
+                    layer.msg("对不起，请您填写正确手机号码！",{offset:'50%', shift: 0});return false;
+                }
+                if (!yzm)
+                {
+                    layer.msg("对不起，请您填写短信验证码！",{offset:'50%', shift: 0});return false;
+                }
+
+                $('.l_wrapper_container').addClass('step2-transition');
+                $('.l_reg_ul li').eq(1).addClass('on');
+                return false;
+            });
+
+            //发送验证码
+            $("#user_czmm_sms").click(function(){
+                var dh = $("#user_czmm_sjhm").val();
+
+                if (!dh)
+                {
+                    layer.msg("对不起，请您填写手机号码！",{offset:'50%', shift: 0});return false;
+                }
+                if (!checkPhone(dh))
+                {
+                    layer.msg("对不起，请您填写正确手机号码！",{offset:'50%', shift: 0});return false;
+                }
+
+                var obj = $(this);
+                setTime(obj);
+                return false;
+
+            });
+
+            //完成注册跳转
+            // $('.l_finish_btn').click(function () {
+            //     $('.l_wrapper_container').addClass('step3-transition');
+            //     $('.l_reg_ul li').eq(2).addClass('on');
+            //     dTime();
+            // });
+
+
+            //完成注册跳转
+            form.on('submit(user_czmm_finish)', function(obj){
+                $('.l_wrapper_container').addClass('step3-transition');
+                $('.l_reg_ul li').eq(2).addClass('on');
+                dTime();
+                return false;
+            });
+            //5s倒计时
+            var inTime =5;
+            function dTime() {
+                setInterval(function () {
+                    if (inTime == 0) {
+                        window.location.href = 'http://www.baidu.com';
+                        return;
+                    } else {
+                        inTime--;
+                        $('.span_time').empty().text(inTime);
+                    }
+                }, 1000);
+            };
+
+            //60s倒计时
+            var countdown = 60;
+
+            function setTime(obj) {
+                if (countdown == 0) {
+                    obj.prop('disabled', false);
+                    obj.text("发送验证码");
+                    countdown = 60; //60秒过后button上的文字初始化,计时器初始化;
+                    return;
+                } else {
+                    obj.prop('disabled', true);
+                    obj.text(countdown + "s");
+                    countdown--;
+                }
+                setTimeout(function () {
+                    setTime(obj)
+                }, 1000) //每1000毫秒执行一次
+            };
+
+            // 手机号验证
+            function checkPhone(phone) {
+                if (!(/^1[3456789]\d{9}$/.test(phone))) {
+                    return false;
+                }
+                return true;
+            }
+
+        });
+    </script>
+</body>
+
+</html>

@@ -47,9 +47,9 @@
                                 <span class="name">数&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量：</span>
                                 <td class="td-cont">
                                     <div class="change-buyNumber clearfix">
-                                        <b class="btn btn-reduce" @click="lessNum">－</b>
+                                        <b class="btn btn-reduce" >－</b>
                                         <input type="text" id="buy-num" min="1" class="buy-num" value="1">
-                                        <b class="btn btn-add"  @click="addNum">+</b>
+                                        <b class="btn btn-add" >+</b>
                                     </div>
                                 </td>
                             </li>
@@ -228,6 +228,25 @@
             }
             $("#searchvalue").attr('placeholder',msg_s);
         }
+
+        // 购物车数量加减
+        $(function(){
+            var t = $('#buy-num');/*  数量显示框*/
+            $('.btn-add').click(function(){
+                if(t.val()< 10){/* 数量最大不能超过商品库存量 */
+                    t.val(parseInt(t.val())+1);
+                }else{
+                    t.val(10);
+                }
+            })
+            $('.btn-reduce').click(function(){
+                if(t.val()<=1){	/*数量最少为1  */
+                    t.val(1);
+                }else{
+                    t.val(parseInt(t.val())-1);
+                }
+            })
+        });
 
     </script>
 

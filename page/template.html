@@ -182,7 +182,7 @@
 <!--main end-->
     <div class="m_zz" style="display: none;"></div>
     <div class="layui-layer layui-layer-page" id="layui-layer8" type="page"
-         times="8" showtime="0" contype="string" style="z-index: 999; width: 810px; height:720px; top: 50%; left: 50%;margin-top: -360px;margin-left: -405px;display: none;">
+         times="8" showtime="0" contype="string" style="z-index: 999; width: 810px;top: 50%; left: 50%;margin-top: -360px;margin-left: -405px;display: none;">
         <div class="layui-layer-title" style="cursor: move;">
             《商标注册申请书》在线预览
         </div>
@@ -213,8 +213,7 @@
             base: '../style/js/'
         }).extend({
             index: 'index',
-            help_list: 'help_list',
-        }).use(['index', 'help_list'], function () {
+        }).use(['index'], function () {
             var $ = layui.$;
 
             $('.i_yulan').click(function(){

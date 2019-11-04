@@ -254,6 +254,20 @@ input:disabled {
     bottom: unset;
 }
 
+/*radio*/
+.layui-form-radio>i {
+    margin-right: 8px;
+    font-size: 20px;
+    color: #e7e7e7;
+}
+
+.layui-form-radio{
+    padding-right: 0!important;
+    margin: 0!important;
+}
+.layui-form-radio>i:hover, .layui-form-radioed>i{
+    color: #FBCB07;
+}
 .layui-form-item {
     margin-bottom: 16px;
 }
@@ -387,7 +401,6 @@ input:disabled {
     text-align: center;
 }
 
-body{background-color: #fff;}
 .ellipsis{text-overflow:ellipsis;white-space:nowrap;overflow:hidden}
 .ellipsis2 {overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;word-break:break-all;}
 .ellipsis3 {overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 3;}
@@ -459,6 +472,18 @@ body{background-color: #fff;}
 .cl-oran{color:#f90!important;}
 .cl-white{color:#fff!important;}
 .cl-black{color:#555!important;}
+.bg_white{
+    background-color: #fff;
+}
+.cl-yellow{
+    color: #f0c420!important;
+}
+.cl-orange{
+    color: #ff6600!important;
+}
+.cl-blue{
+    color: #26b8d4!important;
+}
 .table-v-h-center,.tc{text-align:center}
 .bbox {box-sizing: border-box;-webkit-box-sizing: border-box;-o-box-sizing: border-box;-ms-box-sizing: border-box;-moz-box-sizing: border-box}
 .flex {display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;}
@@ -742,7 +767,9 @@ body{background-color: #fff;}
 .location-box a {
     color: #999999;
 }
-
+.f-w300{
+    width: 300px!important;
+}
 
 /* footer */
 .qh-foot {
@@ -759,17 +786,14 @@ body{background-color: #fff;}
 
 .f-flink-wrapper {
     overflow: hidden;
-    margin-top: 45px;
+    margin-top: 40px;
 }
-
-
 .f-flink-wrapper .flinks {
     width: 1200px;
     line-height: 26px;
     color: #798289;
     font-size: 14px;
 }
-
 .f-flink-wrapper .flinks a {
     padding: 0 9px;
     color: #798289;
@@ -781,7 +805,7 @@ body{background-color: #fff;}
 
 .f-nav-wrapper {
     overflow: hidden;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .f-nav-wrapper .nav {

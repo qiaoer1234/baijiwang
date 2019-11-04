@@ -1,7 +1,7 @@
 .login_main{
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: #F2F2F2;
 }
 .l_head{
     width: 1200px;
@@ -38,7 +38,6 @@
     width: 100%;
     height:50px;
     border-bottom: 1px solid #f2f2f2;
-    background: url(img/bg_login_line.png) no-repeat center center;
 }
 .l_box .l_form_ul li{
     float: left;
@@ -85,6 +84,10 @@
     overflow: hidden;
     border: solid 1px #e7e7e7;
 }
+.l_box .l_form_yzm{
+    width: 258px;
+    float: left;
+}
 .l_box .l_form_pass{
     /*margin-bottom: 40px;*/
 }
@@ -118,7 +121,6 @@
     height: 55px;
     background-color: #fbcb07;
     border-radius: 40px;
-    letter-spacing: 20px;
 }
 .l_box .l_form_msg{
     padding: 0 15px;
@@ -133,14 +135,14 @@
     color: #999;
 }
 /*记住密码*/
-.l_box .l_form_msg input{
+/*.l_box .l_form_msg input{
     width: 16px;
     height: 16px;
     border-radius: 50%;
     border: solid 1px #e7e7e7;
     display: block!important;
     background-color: #fff;
-}
+}*/
 .l_form_zc{
     font-size: 14px;
     line-height: 50px;
@@ -163,15 +165,15 @@
     color: #999;
 }
 .l_box .l_form_nextName .l_tit{
-    background: #f7f7f7 url(img/ico_mob.png) no-repeat center center;
+    background: url(img/ico_mob.png) no-repeat center center;
 }
 
 .l_box .l_form_yzm .l_tit{
-    background: #f7f7f7 url(img/ico_yzm.png) no-repeat center center;
+    background:  url(img/ico_yzm.png) no-repeat center center;
 }
 
 .l_box .l_form_safe .l_tit{
-    background: #f7f7f7 url(img/ico_safe.png) no-repeat center center;
+    background: url(img/ico_pass.png) no-repeat center center;
 }
 .l_box .l_form_yzm .l_inp,.l_box .l_form_safe .l_inp{
     width: 50%;
@@ -184,107 +186,162 @@
     position: absolute;
     right: 68px;
 }
-
-.l_box .l_send{
+.l_box .l_send {
     border: none;
     outline: none;
-    width: 68px;
+    width: 120px;
     height: 100%;
+    height: 46px;
     line-height: 50px;
     text-align: center;
-    color: #ff9c00;
+    color: #f0c420;
     background: url(img/bg_login_line.png) no-repeat center left;
     cursor: pointer;
+    border-radius: 23px;
+    border: solid 1px #fbcb07;
 }
 .l_box .l_form_next{
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/
+}
+.f-flink-wrapper {
+    overflow: hidden;
+    margin-top: 45px!important;
+}
+.f-flink-wrapper .flinks a:hover {
+    color: #0F2A3D;
 }
 
+/*找回密码*/
 .l_reg{
     width: 100%;
     min-height:auto;
-    background-color: #fff;
+    background-color: #f2f2f2;
+}
+.l_title{
+    line-height: 50px;
+    font-size: 18px;
+    color: #0f2a3d;
+    margin-bottom:40px;
 }
 .l_reg .l_reg_main{
-    width: 1200px;
+    width: 1000px;
     margin: 0 auto;
-    padding: 100px 0 80px;
+    padding:50px 0 10px;
+    background-color: #fff;
+    margin-top: 60px;
 }
 .l_reg .l_reg_con{
-    width: 600px;
+    width: 480px;
     margin:0 auto;
 }
 
 .l_reg .l_reg_ul li{
     position: relative;
     float: left;
-    width: 200px;
+    width: 160px;
     height: 4px;
     background-color: #e5e5e5;
 }
 .l_reg .l_reg_ul .num{
     position: absolute;
-    left: 90px;
-    top: -10px;
+    left: 70px;
+    top: -11px;
     display: inline-block;
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
+    width: 21px;
+    height: 21px;
+    line-height: 21px;
     text-align: center;
-    background-color: #e5e5e5;
+    background-color: #fff;
     border-radius: 50%;
     font-size: 18px;
+    padding: 3px;
     color: #fff;
+    border: 1px #e5e5e5 solid;
+}
+.l_reg .l_reg_ul .num p{
+    background: #e5e5e5;
+    border-radius: 50%;
+    width: 21px;
+    height: 21px;
+    display: block;
 }
 .l_reg .l_reg_ul .txt{
     margin-top: 30px;
     text-align: center;
     color: #999;
 }
-.l_reg .l_reg_ul li.on,.l_reg .l_reg_ul li.on .num{
-    background-color: #0076e5;
+.l_reg .l_reg_ul li.on,.l_reg .l_reg_ul li.on .num p{
+    background-color: #FBCB07;
 }
+.l_reg .l_reg_ul li.on .num{
+    border: 1px #FBCB07 solid;
+ }
 .l_reg .l_reg_ul li.on .txt{
-    color: #0076e5;
+    color: #FBCB07;
 }
 
-.l_wrapper .l_tit{
-    display: inline-block;
-    width: 60px;
-    height: 48px;
-    line-height: 48px;
-    color: #333;
-    margin-right: 20px;
-    text-align: right;
-}
-.l_wrapper .l_inp{
-    width: 420px;
-	height: 46px;
-	background-color: #fff;
-	border-radius: 4px;
-    border: solid 1px #e5e5e5;
-    text-indent: 20px;
+.l_reg_list .l_form_sj{
+    position: relative;
+    width: 386px;
+    height: 46px;
     box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 40px;
+    border: solid 1px #e7e7e7;
 }
-.l_wrapper .l_yzm{
-    width: 306px;
+.l_wrapper .l_form_sj .l_tit {
+    width: 50px;
+    height: 100%;
+    background: url(img/ico_mob.png) no-repeat center center;
+}
+.l_wrapper .l_inp,.l_wrapper .l_inp2,.l_wrapper .l_inp3{
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 330px;
+}
+.l_wrapper input::-webkit-input-placeholder {
+    /* placeholder颜色  */
+    color: #ccc;
+}
+.l_wrapper .l_inp2{
+    width: 200px;
+}
+.l_wrapper .l_inp3{
+    width: 250px;
+}
+.l_wrapper .l_form_yzm{
 	height: 46px;
+    width: 258px;
+    float: left;
 	background-color: #fff;
-	border-radius: 4px;
-	border: solid 1px #e5e5e5;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 40px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: solid 1px #e7e7e7;
+}
+.l_wrapper .l_form_yzm .l_tit {
+    width: 50px;
+    height: 100%;
+    background: url(img/ico_pass.png) no-repeat center center;
 }
 .l_wrapper .l_reg_first .l_btn{
     outline: none;
     border:none;
-    width: 100px;
+    width: 120px;
     height: 46px;
     line-height: 46px;
     text-align: center;
-	background-color: #ccc;
-    border-radius: 4px;
-    color: #fefefe;
-    margin-left: 14px;
+	background-color:#fff;
+    border-radius: 40px;
+    color: #f0c420;
+    margin-left:8px;
+    border: solid 1px #fbcb07;
 }
+
 .l_wrapper .l_reg_first .l_desc{
     margin-left: 80px;
 }
@@ -292,17 +349,33 @@
 .l_wrapper .l_desc a{
     color: #0076e5;
 }
-.l_wrapper .l_next{
+
+.l_wrapper .l_next {
     outline: none;
     border: none;
-    width: 306px;
+    width: 376px;
     height: 46px;
-    margin-left: 80px;
-    background-color: #0076e5;
+    background-color: #FBCB07;
     color: #fff;
-	border-radius: 4px;
-}
+    font-size: 18px;
+    border-radius: 40px;
+    margin-top: 30px;
 
+}
+.l_reg_list .l_form_mm{
+    position: relative;
+    width: 386px;
+    height: 46px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 40px;
+    border: solid 1px #e7e7e7;
+}
+.l_wrapper .l_form_mm .l_tit {
+    width: 50px;
+    height: 100%;
+    background: url(img/ico_pass.png) no-repeat center center;
+}
 .l_wrapper .l_reg_succ{
     margin: 0 auto;
     text-align: center;
@@ -316,8 +389,8 @@
 }
 .l_wrapper .l_p2{
     margin-bottom: 10px;
-    font-size: 30px;
-    color: #333;
+    font-size: 18px;
+    color: #0f2a3d;
 }
 .l_wrapper .l_p3{
     font-size: 16px;
@@ -327,29 +400,26 @@
     color: #0076e5;
 }
 .l_wrapper .l_p4{
-    margin: 20px 0;
     font-size: 16px;
-    color: #0076e5;
+    color: #FBCB07;
 }
 .l_wrapper .l_p5 a{
     display: inline-block;
-    width: 154px;
-    height: 46px;
-    line-height: 46px;
-    margin: 0 10px;
+    width: 228px;
+    height: 55px;
+    line-height:55px;
+    margin:30px auto;
     text-align: center;
-	border-radius: 4px;
-    border: solid 1px #ccc;
+	border-radius: 40px;
     box-sizing: border-box;
-    font-size: 16px;
-    color: #999;
+    font-size: 18px;
 }
 
 .l_wrapper .l_p5 .l_p_enter{
-    background-color: #0076e5;
+    background-color: #fbcb07;
     color: #fff;
-    border-color: #0076e5;
 }
+
 
 /* .password-wrapper{
     width: 490px;
@@ -369,11 +439,11 @@
 
 
 .step2-transition{
-    -webkit-transform: translate(-520px, 0);
-    -moz-transform: translate(-520px, 0);
-    -ms-transform: translate(-520px, 0);
-    -o-transform: translate(-520px, 0);
-    transform: translate(-520px, 0);
+    -webkit-transform: translate(-386px, 0);
+    -moz-transform: translate(-386px, 0);
+    -ms-transform: translate(-386px, 0);
+    -o-transform: translate(-386px, 0);
+    transform: translate(-386px, 0);
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -381,11 +451,11 @@
     transition: all 0.3s ease-in-out;
 }
 .step3-transition{
-    -webkit-transform: translate(-1040px, 0);
-    -moz-transform: translate(-1040px, 0);
-    -ms-transform: translate(-1040px, 0);
-    -o-transform: translate(-1040px, 0);
-    transform: translate(-1040px, 0);
+    -webkit-transform: translate(-772px, 0);
+    -moz-transform: translate(-772px, 0);
+    -ms-transform: translate(-772px, 0);
+    -o-transform: translate(-772px, 0);
+    transform: translate(-772px, 0);
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -ms-transition: all 0.3s ease-in-out;
@@ -398,12 +468,12 @@
 }
 
 .l_wrapper{
-    width: 520px;
-    margin: 100px auto;
+    width: 386px;
+    margin: 100px auto 0 auto;
     overflow: hidden;
 }
 .l_wrapper .l_reg_first li{
-    margin-bottom: 30px;
+    margin-bottom:20px;
     overflow: hidden;
 }
 .l_wrapper .redstar{
@@ -413,7 +483,7 @@
     color: #e50016;
 }
 .l_wrapper_container{
-    width: 1560px;
+    width: 1440px;
     overflow: hidden;
     -webkit-transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
@@ -424,5 +494,5 @@
 
 .l_reg .l_reg_list{
     float: left;
-    width: 520px;    
+    width: 386px;
 }

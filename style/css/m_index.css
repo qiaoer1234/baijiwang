@@ -805,6 +805,7 @@ background:url("img/icon_1.png") no-repeat left 80px  center;
     right: 16px;
     padding-left: 42px;
     border-radius: 10px;
+    z-index: 999;
 }
 .step-entry-logo {
     color: #f8f8fb;

@@ -14,9 +14,11 @@
 <body>
 
     <div class="login_main">
-        <div class="l_head">
-            <div class="logo fl"><img src="../style/images/logo_m.png" alt="logo" title="logo"></div>
-            <div class="tell fr"><img src="../style/images/bj_tell.png" alt="logo" title="logo"></div>
+        <div class="w100 bg_white">
+            <div class="l_head">
+                <div class="logo fl"><img src="../style/images/logo_m.png" alt="logo" title="logo"></div>
+                <div class="tell fr"><img src="../style/images/bj_tell.png" alt="logo" title="logo"></div>
+            </div>
         </div>
         <div class="l_box">
             <div class="l_form clear">
@@ -27,8 +29,8 @@
                     </ul>
 
                     <div class="l_form_list bbox">
-                        <form class="layui-form" action="">
-                            <div class="l_t">
+                        <form class="layui-form mt30" action="">
+                            <div class="l_t hide">
                                 <p class="l_tips bbox">用户名或密码错误，请重新输入</p>
                             </div>
                             <div class="l_form_name l_form_same">
@@ -42,13 +44,11 @@
                                 <span class="l_close fr"></span>
                             </div>
                             <div class="l_form_msg clear">
-                                <label class="fl"><input type="radio" name="abc">记住密码</label><br>
-<!--                                <a class="fl l_left">记住密码</a>-->
-
+                                <label class="fl"><input type="radio" name="abc">记住密码</label>
                                 <a class="fr l_right">忘记密码？</a>
                             </div>
                             <div class="l_form_btn">
-                                <button type="button" class="l_btn">登录</button>
+                                <button type="button" class="l_btn">登  录</button>
                             </div>
                             <div class="l_form_zc clear tc">
                                 <a class="">注册账号</a>
@@ -58,8 +58,8 @@
                     </div>
 
                     <div class="l_form_list l_form_next bbox" style="display: none;">
-                        <form class="layui-form" action="">
-                            <div class="l_t">
+                        <form class="layui-form mt30" action="">
+                            <div class="l_t hide">
                                 <p class="l_tips bbox">短信验证码输入错误，请重新输入</p>
                             </div>
                             <div class="l_form_nextName l_form_same">
@@ -67,24 +67,29 @@
                                 <input class="l_inp fl" type="text" placeholder="请输入手机号">
                                 <span class="l_close fr"></span>
                             </div>
-                            <div class="l_form_yzm l_form_same">
+                         <!--   <div class="l_form_yzm l_form_same">
                                 <span class="l_tit fl"></span>
                                 <input class="l_inp fl" type="text" placeholder="请输入图形验证码">
                                 <span class="l_close fl"></span>
                                 <span class="fr"><img src="/style/images/login_yzm.png" alt="验证码" titl=""></span>
-                            </div>
-                            <div class="l_form_safe l_form_same">
-                                <span class="l_tit fl"></span>
-                                <input class="l_inp fl" type="text" placeholder="请输入短信验证码">
-                                <span class="l_close fr"></span>
-                                <button type="button" class="l_send fr">发送</button>
-                            </div>
-                            <div class="l_form_btn">
-                                <button type="button" class="l_btn">登　录</button>
+                            </div>-->
+                            <div class="yzm_box clearfix">
+                                <div class="l_form_safe l_form_same l_form_yzm">
+                                    <span class="l_tit fl"></span>
+                                    <input class="l_inp fl" type="text" placeholder="请输入短信验证码">
+                                    <span class="l_close fr"></span>
+                                </div>
+                                <button type="button" class="l_send fr">获取验证码</button>
                             </div>
                             <div class="l_form_msg clear">
-                                <a class="fl l_left">忘记密码</a>
-                                <a class="fr l_right">免费注册</a>
+                                <label class="fl"><input type="radio" name="abc">记住密码</label>
+                                <a class="fr l_right">忘记密码？</a>
+                            </div>
+                            <div class="l_form_btn">
+                                <button type="button" class="l_btn">登  录</button>
+                            </div>
+                            <div class="l_form_zc clear tc">
+                                <a class="">注册账号</a>
                             </div>
                         </form>    
                     </div>
@@ -131,7 +136,7 @@
             base: '/style/js/'
         }).extend({
             index: 'index'
-        }).use(['index', 'jquery','layer'], function () {
+        }).use(['index', 'jquery','layer','form'], function () {
             var $ = layui.$,
             layer = layui.layer;
             // 登录tab切换

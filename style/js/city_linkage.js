@@ -48,9 +48,12 @@ function treeSelect(config) {
             form.render();
             return false;
         }
-        // form.on('select(' + config.s2 + ')', function (data) {
-        //     areaEvent(data);
-        // });
+        // 请选择县区打开运行
+         form.on('select(' + config.s2 + ')', function (data) {
+             areaEvent(data);
+        });
+        //end
+
     });
 
     form.on('select(' + config.s2 + ')', function (data) {

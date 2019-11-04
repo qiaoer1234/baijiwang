@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>用户注册-企慧网</title>
+    <link rel="stylesheet" href="/style/layui/css/layui.css">
+    <link rel="stylesheet" href="/style/css/base.css">
+    <link rel="stylesheet" href="/style/css/login.css">
+    <script src="/style/js/include.js"></script>
+    <style>
+        .l_wrapper .l_inp,.l_wrapper .l_inp3 {
+           text-indent: 24px;
+        }
+        .l_reg_list .l_form_sj,.l_wrapper .l_form_yzm{
+          border-radius: 0px;
+        }
+        .l_wrapper .l_reg_first .l_btn{
+            border: none;
+        }
+        .l_wrapper .l_inp4 {
+            width: 310px;
+            height: 46px;
+            background-color: #fff;
+            border-radius: 4px;
+            border: solid 1px #e5e5e5;
+            text-indent: 20px;
+            box-sizing: border-box;
+        }
+        .l_wrapper .l_tit {
+            display: inline-block;
+            width: 60px;
+            height: 48px;
+            line-height: 48px;
+            color: #333;
+            margin-right: 16px;
+            text-align: right;
+            padding: 0;
+        }
+        .l_reg .l_reg_list{
+            padding-bottom: 50px;
+        }
+        .layui-form-select .layui-input {
+            padding-right: 22px!important;
+            cursor: pointer;
+        }
+        .layui-form-item {
+            margin-bottom: 0px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #f2f2f2;">
+    <!-- header -->
+    <div class="login_main">
+        <div class="w100 bg_white">
+            <div class="l_head">
+                <div class="logo fl"><img src="../style/images/logo_m.png" alt="logo" title="logo"></div>
+                <div class="tell fr"><img src="../style/images/bj_tell.png" alt="logo" title="logo"></div>
+            </div>
+        </div>
+    <!-- main -->
+    <div class="l_reg">
+        <div class="l_reg_main">
+            <div class="l_reg_con">
+                <p class="l_title tc">用户注册</p>
+                <ul class="l_reg_ul clear">
+                    <li class="on">
+                        <span class="num"><p>1</p></span>
+                        <p class="txt">验证手机</p>
+                    </li>
+                    <li>
+                        <span class="num"><p>2</p></span>
+                        <p class="txt">完善账号</p>
+                    </li>
+                    <li>
+                        <span class="num"><p>3</p></span>
+                        <p class="txt">注册成功</p>
+                    </li>
+                </ul>
+
+
+                <div class="l_wrapper">
+                    <div class="l_wrapper_container">
+                        <form class="layui-form" action="" id="provform2">
+                            <ul class="l_reg_list l_reg_first" >
+                                <li class="l_form_sj">
+                                    <input class="l_inp fl"  name="sjhm" id="user_reg_sjhm" type="text" placeholder="请输入绑定的手机号" lay-verify="required">
+                                </li>
+                                <li class="l_form_sj">
+                                    <input class="l_inp3 l_yzm fl" name="smsyzm" id="user_reg_yzm" type="text" placeholder="请输入验证码"
+                                           lay-verify="required">
+                                    <button class="l_btn l_send_btn fr" id="user_reg_sms" type="button">获取验证码</button>
+                                </li>
+                                <li class="l_form_sj">
+                                    <input class="l_inp3 fl" name="txyzm" id="user_reg_txyzm" type="text" placeholder="请输入图形验证码" lay-verify="required">
+                                    <img class="txyzm fr" src="/user_fws/g_getcode?t=1572486618" alt="图形验证码" id="user_login_code">
+                                </li>
+
+                                <li>
+                                    <button class="l_next l_next_btn" type="button">立即注册</button>
+                                </li>
+                            </ul>
+
+
+
+                            <ul class="l_reg_list l_reg_first">
+                                <li>
+                                    <span class="l_tit fl">用户名</span>
+                                    <input class="l_inp4 fl" type="text" name="zh" placeholder="请输入用户名" lay-verify="required">
+                                </li>
+                                <li>
+                                    <span class="l_tit fl">密码</span>
+                                    <input class="l_inp4 fl" type="password" placeholder="请输入8~20位的字母、数字、特殊字符的组合" lay-verify="required" autocomplete="off">
+                                </li>
+                                <li>
+                                    <span class="l_tit fl">确认密码</span>
+                                    <input class="l_inp4 fl" type="password" placeholder="再次输入密码" lay-verify="required">
+                                </li>
+                                <div class="layui-form-item">
+                                    <div class="layui-form-label l_tit">地区 </div>
+                                    <div class="layui-input-inline" style="width:95px;">
+                                        <select name="province2" id="province2" lay-filter="province2" lay-verify="required"
+                                                lay-verType="tips">
+                                            <option value="">请选择省</option>
+                                        </select>
+                                    </div>
+                                    <div class="layui-input-inline" style="width:95px;">
+                                        <select name="city2" id="city2" lay-filter="city2" lay-verify="required"
+                                                lay-verType="tips">
+                                            <option value="">请选择市</option>
+                                        </select>
+                                    </div>
+                                    <div class="layui-input-inline" style="width:100px;margin-right: 0">
+                                        <select name="area2" id="area2" lay-filter="area2" lay-verify="required"
+                                                lay-verType="tips">
+                                            <option value="">请选择县区</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <li style="margin-bottom:8px">
+                                    <span class="l_tit fl"></span>
+                                    <input class="l_inp4 fl" type="text" placeholder="详细联系地址【选填】" >
+                                </li>
+                                <li>
+                                    <span class="l_tit fl">营业执照</span>
+                                    <label class="fl" style="line-height: 48px;color: #ccc;">
+                                        <input type="radio" name="sex" lay-verify="otherReq" lay-verify="required">
+                                        <div class="layui-unselect layui-form-radio layui-form-radioed">
+                                            <i class="layui-anim layui-icon layui-anim-scaleSpring"></i>
+                                        </div>有
+                                    </label>
+                                    <label class="fl" style="line-height: 48px;margin-left:40px;color: #ccc;">
+                                        <input type="radio" name="sex" lay-verify="otherReq" lay-verify="required">
+                                        <div class="layui-unselect layui-form-radio layui-form-radioed">
+                                            <i class="layui-anim layui-icon layui-anim-scaleSpring"></i>
+                                        </div>无
+                                    </label>
+                                </li>
+                                <li>
+                                    <button class="l_next l_finish_btn" type="button" lay-filter="user_reg_finish" lay-submit="" id="user_reg_finish">保存</button>
+                                </li>
+                            </ul>
+                        </form>
+
+                        <div class="l_reg_list l_reg_succ">
+                            <p class="l_p1"><img src="../style/images/l_reg_succ.png" alt="" title=""></p>
+                            <p class="l_p2">恭喜，您已注册成功！</p>
+                            <p class="font14 cl-gray6">您现在可以通过手机号+验证码登录去<a href="javascript:;" target="_blank" class="cl-blue">完善信息</a></p>
+                            <p class="l_p5">
+                                <a class="l_p_enter" href="javascript:;" target="_blank;">立即登录</a>
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--底部-->
+    <div class="l_bottom">
+            <div class="f-flink-wrapper w1200 auto0">
+                <div class="flinks fr">
+                    <div class="f-nav-item">
+                        <p class="i-b">友情链接：</p>
+                        <a href="" target="_blank">聚名科技</a>
+                        <a href="" target="_blank">地瓜建站</a>
+                        <a href="" target="_blank">金米网</a>
+                        <a href="" target="_blank">玩米网</a>
+                        <a href="" target="_blank">聚米网</a>
+                        <a href="" target="_blank">查ICP</a>
+                        <a href="" target="_blank">域铺</a>
+                        <a href="" target="_blank">NamePre</a>
+                        <a href="" target="_blank">麦宝新品</a>
+                        <a href="" target="_blank">聚名资讯</a>
+                        <a href="" target="_blank">模块无忧</a>
+                        <a href="" target="_blank">查ICP</a>
+                        <a href="" target="_blank">域铺</a>
+                        <a href="" target="_blank">聚名科技</a>
+                    </div>
+                    <div class="f-copys mt10">
+                        <p>© Copyright 2019-2020 安徽百集科技有限公司All Rights Reserved. 皖ICP备19013952号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+
+    <!-- footer -->
+
+    <script src="../style/layui/layui.js"></script>
+    <script src="../style/js/city.js"></script>
+    <script src="../style/js/city_linkage.js"></script>
+    <script>
+        layui.config({
+            version: true,
+            base: '../style/js/'
+        }).extend({
+            index: 'index',
+        }).use(['index', 'jquery', 'form', 'layer'], function () {
+            var $ = layui.$,
+                layer = layui.layer,
+                form = layui.form;
+
+            //城市二级联动
+            treeSelect({
+                s1: 'province2',
+                s2: 'city2',
+                s3: 'area2',
+                id: 'provform2'
+            });
+
+            //下一步跳转
+            $('.l_next_btn').click(function () {
+                var sjhm   = $("#user_reg_sjhm").val();
+                var txyzm    = $("#user_reg_txyzm").val();
+                var yzm    = $("#user_reg_yzm").val();
+
+                if(sjhm == '') {
+                    layer.msg("对不起，手机号不能为空！");return false;
+                }
+                if (!checkPhone(sjhm))
+                {
+                    layer.msg("对不起，请您填写正确手机号码！",{offset:'50%', shift: 0});return false;
+                }
+                if (!yzm)
+                {
+                    layer.msg("对不起，请您填写短信验证码！",{offset:'50%', shift: 0});return false;
+                }
+                if (!txyzm)
+                {
+                    layer.msg("对不起，请您填写图形验证码！",{offset:'50%', shift: 0});return false;
+                }
+
+
+/*                $.ajax({
+                    type: "POST",
+                    url:'/pt_user/reg_do',
+                    data:{step:1,sjhm:sjhm,smsyzm:yzm,tongyi:tongyi},
+                    error: function(request) {
+                        layer.alert("提交失败!");
+                    },
+                    success: function(data) {
+                        if (data.code != 1) {
+                            layer.msg(data.msg, {offset: '50%', shift: 0});return false;
+                        }
+                        $('.l_wrapper_container').addClass('step2-transition');
+                        $('.l_reg_ul li').eq(1).addClass('on');
+                    }
+                });*/
+
+
+                $('.l_wrapper_container').addClass('step2-transition');
+                $('.l_reg_ul li').eq(1).addClass('on');
+                return false;
+            });
+
+            //发送验证码
+            $('#user_reg_sms').click(function(){
+
+                var dh = $("#user_reg_sjhm").val();
+
+                if (!dh)
+                {
+                    layer.msg("对不起，请您填写手机号码！",{offset: '50%', shift: 0});return false;
+                }
+                if (!checkPhone(dh))
+                {
+                    layer.msg("对不起，请您填写正确手机号码！",{offset:'50%', shift: 0});return false;
+                }
+
+
+/*                $.ajax({
+                    type: "POST",
+                    url:'/pt_user/get_smsyzm',
+                    data:{lx:1,dh:dh,yzm:yzm},
+                    error: function(request) {
+                        layer.alert("提交失败!");
+                    },
+                    success: function(data) {
+                        $("#user_login_code").attr('src','/user_fws/g_getcode?t='+ new Date().getTime()) ;
+                        if (data.code != 1) {
+                            layer.msg(data.msg, {offset: '50%', shift: 0});return false;
+                        }
+                        layer.msg(data.msg, {offset: '50%', shift: 0});
+                        var sendbtn=$('#user_reg_sms');
+                        sendbtn.attr('disabled', true).addClass("layui-btn-disabled");
+                        sendsms();
+
+                    }
+                });*/
+
+                var obj = $(this);
+                setTime(obj);
+                return false;
+            });
+
+         /*   function sendsms(){
+                var obj = $("#user_reg_sms");
+                setTime(obj);
+            }*/
+
+            //完成注册跳转
+         /*   $('.l_finish_btn').click(function () {
+                $('.l_wrapper_container').addClass('step3-transition');
+                $('.l_reg_ul li').eq(2).addClass('on');
+                // dTime();
+            });*/
+
+            //完成注册跳转
+            form.on('submit(user_reg_finish)', function(data){
+                // console.log(data.field)
+                $('.l_wrapper_container').addClass('step3-transition');
+                $('.l_reg_ul li').eq(2).addClass('on');
+                dTime();
+                return false;
+            });
+
+
+            //5s倒计时
+            var inTime =5;
+            function dTime() {
+                setInterval(function () {
+                    if (inTime == 0) {
+                        window.location.href = 'http://www.baidu.com';
+                        return;
+                    } else {
+                        inTime--;
+                        $('.span_time').empty().text(inTime);
+                    }
+                }, 1000);
+            };
+
+            //60s倒计时
+            var countdown = 60;
+
+            function setTime(obj) {
+                if (countdown == 0) {
+                    obj.prop('disabled', false);
+                    obj.text("发送验证码");
+                    countdown = 60; //60秒过后button上的文字初始化,计时器初始化;
+                    return;
+                } else {
+                    obj.prop('disabled', true);
+                    obj.text(countdown + "s");
+                    countdown--;
+                }
+                setTimeout(function () {
+                    setTime(obj)
+                }, 1000) //每1000毫秒执行一次
+            };
+
+            // 手机号验证
+            function checkPhone(phone) {
+                if (!(/^1[3456789]\d{9}$/.test(phone))) {
+                    return false;
+                }
+                return true;
+            }
+
+        });
+    </script>
+</body>
+
+</html>

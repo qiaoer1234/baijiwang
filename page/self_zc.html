@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=7" />
+    <meta name="renderer" content="webkit">
+    <title>百集网-代理记账_工商注册_财税咨询_知识产权_企业一站式B2B服务平台</title>
+    <meta name="keywords"
+        content="工商注册,公司注册代办,营业执照代办,注册公司流程,代理记账公司,代办营业执照,资质代办,公司注册费用,财税服务,知识产权代办,商标注册,商标转让办理,工商财税,企慧网,企慧网,B2B平台,许可证办理">
+    <meta name="description" content="百集网，全国领先的企业一站式B2B服务平台，全国上千家服务商！业务范围包括代理记账、工商注册、工商变更、税务审计、资质代办、社保托管和知识产权等企业服务。">
+    <link rel="stylesheet" href="../style/layui/css/layui.css">
+    <link rel="stylesheet" href="../style/css/base.css">
+    <link rel="stylesheet" href="../style/css/style.css">
+    <script src="../style/js/include.js"></script>
+</head>
+
+<body id="bodyL" style="background-color: #F2F2F2;">
+<include src="../header.html"></include>
+
+<!--main start-->
+    <div class="m_main w100 clearfix">
+        <div class="location-box w1200 auto0">
+            <a href="">首页 &gt; </a> 商标担保注册
+        </div>
+        <!-- main -->
+        <div class="content-prolist  w1200 auto0 ">
+            <div class="service_form service_form2">
+                <form method="post" action="" onkeydown="if(event.keyCode==13)return false;" id="savesubmit">
+                    <div class="cont">
+                        <h1><span>申请主体信息</span></h1>
+                        <table class="table">
+                            <colgroup>
+                                <col width="180">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <td class="tright"><span class="font16 c_gray4">申请主体类型</span></td>
+                                <td class="tleft">
+                                    <ul class="typeul clearfix" id="apOne">
+                                        <li class="fl"><a href="javascript:;" data-type="1" class="btn bd_blue">企业（大陆）</a></li>
+                                        <li class="fl"><a href="javascript:;" data-type="-1" class="btn bd_gray">个体工商户（大陆）</a></li>
+                                        <li class="fl"><a href="javascript:;" data-type="3" class="btn bd_gray">企业（港澳台/海外）</a></li>
+                                        <li class="fl"><a href="javascript:;" data-type="4" class="btn bd_gray">个体（港澳台/海外）</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <!-- 大陆企业 -->
+                        <div class="j-cont" id="ap_mgs">
+                            <table class="table">
+                                <colgroup>
+                                    <col width="180">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <td class="tright valign_top pt30"><span class="fn16 c_gray4">申请主体身份证明</span></td>
+                                    <td class="tleft pb0" style="width: 80%">
+                                        <div class="clearfix mt10 tip_box_close">
+<!--                                            <a href="javascript:choseap();" class="left btn bd_gray ml0">选择模板</a>-->
+                                            <select tabindex="-1" class="left btn bd_gray ml0" >
+                                                <option selected="" value="">选择模板</option>
+                                                <option value="muban1">模板1</option>
+                                                <option value="muban2">模板2</option>
+                                                <option value="muban3">模板3</option>
+                                                <option value="muban4">模板4</option>
+                                                <option value="muban5">模板5</option>
+                                                <option value="muban16">模板6</option>
+                                            </select>
+                                            <a href="javascript:;" class="left btn cl-blue ml0 bg_white">创建模板</a>
+                                            <a href="javascript:;" class="left btn bd_red ml0 ">无营业执照？</a>
+                                        </div>
+                                        <div class="clearfix mt20">
+                                            <div class="upload upload3 left c_gray4">
+                                                <p id="titlemsg">请上传营业执照<br>复印件盖章</p>
+                                                <a class="img_box mt5  noemp_first" href="javascript:;" id="">
+                                                    <img src="../style/images/empty.png" id="firstImageText">
+                                                </a>
+                                                <label><span class="btn btn_orange w_60"><em id="firstupid">上传图片</em>
+                                           <input type="file" value="上传图片" style="display: none" id="firstImage" name="BusinessImg_test" onchange="checkFileEmpty('first','BusinessImg');"></span>
+                                                </label>
+                                                <input type="hidden" name="BusinessImg" value="" id="firstImage_val">
+                                            </div>
+                                            <a id="example3-1" class="exp_box left" title="" href="../style/images/comlicense.jpg">
+                                                <img alt="" src="../style/images/comlicense.jpg" id="exp1">
+                                                <div class="exp_mask">
+                                                    <div class="mask"></div>
+                                                    <p class="to_big"><span>点击放大</span></p>
+                                                </div>
+                                            </a>
+                                            <!-- 企业（港澳台/海外）-->
+                                            <div id="ap_person" style="display: none">
+                                                <div class="upload upload3 left c_gray4">
+                                                    <p id="titlemsg1">请上传身份证<br>正反面复印件签字</p>
+                                                    <a class="img_box mt5  noemp_second" href="javascript:;">
+                                                        <img src="../style/images/empty.png" id="secondImageText">
+                                                    </a>
+                                                    <label>
+                                                        <span class="btn btn_orange w_60"><em id="secondupid">上传图片</em>
+                                                            <input type="file" value="上传图片" style="display: none" id="secondImage" name="IDCardImg_test" onchange="checkFileEmpty('second','IDCardImg')">
+                                                        </span>
+                                                    </label>
+                                                    <input type="hidden" name="IDCardImg" value="" id="secondImage_val">
+                                                </div>
+                                                <a id="example3-2" class="exp_box left" title="" href="../style/images/identity.jpg">
+                                                    <img alt="" src="../style/images/identity.jpg" id="exp2">
+                                                    <div class="exp_mask">
+                                                        <div class="mask"></div>
+                                                        <p class="to_big"><span>点击放大</span></p>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <!-- 个体工商户-->
+                                        </div>
+                                        <div id="ap_warm">
+                                            <p class="fn12 mt5 clearfix"><i class="icon icon-i left" style="margin-top: 2px;"></i>请按照要求上传扫描件，jpg格式、小于5M</p>
+                                        </div>
+
+                                    </td>
+                                </tr>
+                                <tr id="inContory">
+                                    <td class="tright"><span class="fn16 c_gray4">邮政编码</span></td>
+                                    <td class="tleft">
+                                        <div class="posrel left ">
+                                            <input class="inp w_458 err" name="PostCode" id="PostCode" type="text"  placeholder="请填写营业执照地址所属邮政编码如" lay-verType="tips" lay-verify="required">
+                                            <span class="icon_not"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr id="in_set">
+                                        <td class="tright"><span class="fn16 c_gray4">联系人姓名</span></td>
+                                        <td class="tleft">
+                                            <div class="posrel left">
+                                                <input class="inp w_458" type="text" id="Contacts" name="Contacts"  placeholder="如：张三">
+                                                <span class="icon_not"></span>
+                                            </div>
+                                        </td>
+                                </tr>
+                                <tr id="in_set">
+                                    <td class="tright"><span class="fn16 c_gray4">联系人电话</span></td>
+                                    <td class="tleft">
+                                        <div class="posrel left">
+                                            <input class="inp w_458" type="text" id="PhoneMd" name="PhoneMd" placeholder="请填写真实手机号码，方便如：13866668888" >
+                                            <span class="icon_not"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            <!-- 企业（港澳台/海外）-->
+                                <tr id="hap_mg" style="display: none">
+                                    <td class="tright"><span class="fn16 c_gray4">大陆邮政编码</span></td>
+                                    <td class="tleft">
+                                        <div class="posrel left">
+                                            <input class="inp w_458" id="PostCodeMd" name="PostCodeMd"  type="text" placeholder="请填写大陆境内邮寄地址邮编">
+                                            <span class="icon_not"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr id="out_set" style="display: none">
+                                    <td class="tright"><span class="fn16 c_gray4">大陆联系人姓名</span></td>
+                                    <td class="tleft">
+                                        <div class="posrel left">
+                                            <input class="inp w_458" type="text" id="ContactsMd" name="ContactsMd"  placeholder="如：张三">
+                                            <span class="icon_not"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr id="out_set" style="display: none">
+                                    <td class="tright"><span class="fn16 c_gray4">大陆联系方式</span></td>
+                                    <td class="tleft">
+                                        <div class="posrel left ml10">
+                                            <input class="inp w_300" type="text" id="PhoneMd" name="PhoneMd"  placeholder="如：13866668888">
+                                            <span class="icon_not"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tright"><span class="fn16 c_gray4">联系人邮箱</span></td>
+                                    <td class="tleft">
+                                        <div class="posrel left ">
+                                            <input class="inp w_458 " name="Email" id="Email" type="text"  placeholder="如：baiji@baiji.com">
+                                            <span class="icon_not"></span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+<!--                            自动识别-->
+                            <div class="template h435" id="stp_ap">
+                                <div class="top fn15 c_blue">自动识别</div>
+                                <div class="content fn12 c_gray posrel">
+                                    <p class="c_blue" id="stp_title">请上传清晰的身份证明图片，系统识别后请再次核对信息，若识别有误请修改</p>
+                                    <div id="au_mg"></div>
+                                    <p class="fn14 lh40 mt5">申请主体名称</p>
+                                    <div class="posrel">
+                                        <input class="inp" type="text" name="AName" id="AName" onblur="judge_tm(this.value,'AName',2,60);" onchange="updatenew('AName');" placeholder="请与营业执照的企业名称保持一致" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                        <span class="icon_not"></span>
+                                    </div>
+                                    <div class="posrel">
+                                        <input class="inp mt5 hide" type="text" name="ANameOs" id="ANameOs" onblur="judge_tm(this.value,'ANameOs',2,60);" onchange="updatenew('ANameOs');" placeholder="营业执照中文名称，必须为中文简体" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                        <span class="icon_not"></span>
+                                    </div>
+                                    <div id="outContory" style="display: none">
+                                        <p class="fn14 lh40">护照所属国籍</p>
+                                        <select class="w_230" id="Country" tabindex="-1" >
+                                            <option selected="" value="">请选择国籍</option>
+                                            <option value="CN">中国(港澳台)</option>
+                                            <option value="YU">南斯拉夫</option>
+                                            <option value="ZA">南非</option>
+                                            <option value="ZM">赞比亚</option>
+                                            <option value="ZR">扎伊尔</option>
+                                            <option value="ZW">津巴布韦</option>
+                                        </select>
+                                        <input type="hidden" id="Country_val" name="Country">
+                                    </div>
+                                    <p class="fn14 lh40" id="IDAddress_title">证件地址</p>
+                                    <div class="posrel">
+                                        <input class="inp" type="text" name="IDAddress" id="IDAddress" onblur="judge_tm(this.value,'IDAddress',2,300);" placeholder="请填写营业执照地址" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                        <span class="icon_not"></span>
+                                    </div>
+                                    <p id="warmf" class="fn12 c_red">若不含省、市（县）请补足，以免不予受理</p>
+                                    <div class="posrel">
+                                        <input class="inp fn13 mt5 hide" name="IDAddressOs" id="IDAddressOs" type="text" onblur="judge_tm(this.value,'IDAddressOs',2,120);" placeholder="营业执照中文地址，必须为中文简体" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                        <span class="icon_not"></span>
+                                    </div>
+                                    <div id="outcon" >
+                                        <p class="fn14 lh40" id="IDNumber_title">身份证号</p>
+                                        <div class="posrel">
+                                            <input class="inp" type="text" name="IDNumber" id="IDNumber" onblur="judge_tm(this.value,'IDNumber',9,20);" placeholder="请填写18位身份证号码" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                            <span class="icon_not"></span>
+                                        </div>
+                                    </div>
+                                    <div id="outcon" style="display:none">
+                                        <p class="fn14 lh40" id="IDNumber_title">社会代码</p>
+                                        <div class="posrel">
+                                            <input class="inp" type="text" name="IDNumber" id="IDNumber" onblur="judge_tm(this.value,'IDNumber',9,20);" placeholder="请与营业执照社会代码号保持一致" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                            <span class="icon_not"></span>
+                                        </div>
+                                    </div>
+                                    <div id="person_">
+                                        <p class="fn14 lh40">社会代码</p>
+                                        <div class="posrel">
+                                            <input class="inp" type="text" name="CodeNum" id="CodeNum" onblur="judge_tm(this.value,'CodeNum',18,18);" placeholder="请与营业执照社会代码号保持一致">
+                                            <span class="icon_not"></span>
+                                        </div>
+                                    </div>
+                                    <p class="warm">主体信息可在个人中心 <a href="javascript:;" target="_blank" class="cl-blue">添加模板</a>，便于后期
+                                        直接引用</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cont">
+                            <h1><span>注册商标信息</span></h1>
+                            <table class="table">
+                                <colgroup>
+                                    <col width="160">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                <tr>
+                                    <td class="tright" valign="top"><span class="fn16 c_gray4">商标名称</span></td>
+                                    <td class="tleft pb0">
+                                        <div class="clearfix">
+                                            <div class="left">
+                                                <input class="inp-load c_gray4"  id="TmName" placeholder="如：请描述商标要素，并使用“+”作为隔开区分">
+                                            </div>
+                                            <div class="form_tip fn12 left">
+                                                <i class="icon icon-q left"></i>
+                                                商标名称即注册商标的代用词，包含注册商标的文字、图形、字母、数字等要素。
+                                                商标局会对商标的要素分开审查。<a href="javascript:;" class="cl-blue shows _1">怎么填？</a>
+                                                <div class="mark_main mark_border mark_how1 hide" id="how1">
+                                                    <!--商标名称怎么填-->
+                                                    <h3 class="mark_til cl-blue">怎么填<a href="javascript:;" class="mark_close"></a></h3>
+                                                 <!--   <div class="mark_cont2 tleft font14">
+                                                        <ul>
+                                                            <li>
+                                                                <p class="center"><strong class="font16 mr20">纯文字商标</strong></p>
+                                                                <p class="mt5">填写商标中含有的文字，中文英文（或拼音）以“+”隔开，注意字母大小写必须与商标图样一致</p>
+                                                                <div class="clearfix mt20 center">
+                                                                    <div class="left">
+                                                                        <img src="../style/images/exp1.jpg">
+                                                                        <p>易名</p>
+                                                                    </div>
+                                                                    <div class="right">
+                                                                        <img src="../style/images/exp2.jpg">
+                                                                        <p>商标注册网+www.tm.cn</p>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <p class="center"><strong class="font16 mr20">纯图标商标</strong></p>
+                                                                <p class="mt5">仅由图形组成，不包含文字的图标，统一写成“图形”</p>
+                                                                <div class="clearfix mt20 center">
+                                                                    <div class="left">
+                                                                        <img src="../style/images/exp3.jpg">
+                                                                    </div>
+                                                                    <div class="right">
+                                                                        <img src="../style/images/exp4.jpg">
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <p class="center"><strong class="font16 mr20">图文组合商标</strong></p>
+                                                                <p class="mt5">填写商标中含有的文字，中文英文（或拼音）以“+”隔开，并加上“图形”</p>
+                                                                <div class="clearfix center mt20">
+                                                                    <div class="left">
+                                                                        <img src="../style/images/exp5.jpg">
+                                                                        <p>易名+NME+图形</p>
+                                                                    </div>
+                                                                    <div class="right">
+                                                                        <img src="../style/images/exp6.jpg">
+                                                                        <p>WATCH+图形</p>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="fn12 mt10 c_orange clearfix" id="tmsame"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tright valign_top pt30"><span class="fn16 c_gray4">商标说明</span></td>
+                                    <td class="tleft">
+                                        <div class="posrel left">
+                                            <textarea class="note left w_350" id="TmExplain" name="TmExplain" onblur="judge_tm(this.value,'TmExplain',1,100);" placeholder="请输入商标说明
+例：商标由中文“**”英文“**”及图形构成，无特殊含义"></textarea>
+                                            <span class="icon_not"></span>
+                                        </div>
+                                        <div class="form_tip fn12 left">
+                                            <i class="icon icon-q left"></i>
+                                            商标说明即对注册商标的含义说明。
+                                            <a href="javascript:shows('howtwo');" class="shows _2 cl-blue">怎么填？</a>
+                                            <div class="mark_main mark_border mark_how1 hide" id="howtwo">
+                                                <!--商标说明怎么填-->
+                                                <h3 class="mark_til">怎么填<a href="javascript:;" class="mark_close"></a></h3>
+                                                <div class="mark_cont2 tleft font14">
+                                                    <ul>
+                                                        <li><strong class="font16 mr20">含有汉字的</strong><span>填写字体</span></li>
+                                                        <li><strong class="font16 mr20">含有拼音的</strong><span>填写说明拼音的中文</span></li>
+                                                        <li><strong class="font16 mr20">含有英文的</strong><span>填写英文的中文含义</span></li>
+                                                        <li><strong class="font16 mr20">含有图形的</strong><span>填写图形设计要素及含义</span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr style="display: none">
+                                    <td class="tright"><span class="fn16 c_gray4">商标图样</span></td>
+                                    <td class="tleft clearfix hide">
+                                        <label class="left fn16 c_gray mr20 hide">
+                                            <input type="radio" name="Color" value="1" checked="">
+                                            <span>黑白</span>
+                                        </label>
+                                        <label class="left fn16 c_gray mr10 hide">
+                                            <input type="radio" value="2" name="Color">
+                                            <span>着色</span>
+                                        </label>
+                                        <div class="ml15 fn12 left hide">
+                                            <i class="icon icon-q left"></i>
+                                            注册着色商标，注册后只能使用着色图样；注册黑白商标，注册后不限颜色使用。
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tright valign_top pt30"><span class="fn16 c_gray4">商标图样</span></td>
+                                    <td class="tleft">
+                                        <div class="clearfix">
+                                            <div class="upload upload2 left" id="colortwo_del">
+                                                <p class="title c_gray4">请上传商标图样</p>
+                                                <a class="img_box second w_120" href="javascript:;" id=""><img src="../style/images/empty.png" onerror="this.src='../style/images/empty.png';this.onerror=null" id="tmsecondImageText" alt="图样"></a>
+                                                <a href="javascript:;" onclick="addImgs()" class="btn w_60">智能生成</a>
+                                                <label><span class="btn btn_orange w_60">上传图片
+                                               <input type="file" name="TmPattern" id="tmsecondImage" onchange="upfiletm('second','TmPattern',this)" style="display: none"></span>
+                                                    <input type="hidden" name="TmPattern" id="TmPattern_test" value="">
+                                                </label>
+                                            </div>
+                                            <div class="upload upload2 left" id="colorOne" style="display: none">
+                                                <p class="title">请上传着色图样</p>
+                                                <a class="img_box three" href="javascript:;" id=""><img src="../style/images/empty.png" id="tmthreeImageText" alt="着色图样"></a>
+                                                <label><span class="btn btn_orange w_60">上传图片
+                                               <input type="file" name="TmPatternTwo" id="tmthreeImage" onchange="upfiletm('three','TmPatternTwo',this)" style="display: none"></span>
+                                                    <input type="hidden" name="TmPatternTwo" id="TmPatternTwo_test" value="">
+                                                </label>
+                                            </div>
+                                            <div class="ml15 fn12 left">
+                                                <i class="icon icon-q left"></i>
+                                                注册着色商标，注册后只能使用着色图样；注册黑白商标，注册后不限颜色使用。
+                                            </div>
+                                            <div class="form_tip fn12 left">
+                                                <p style="width:385px "><i class="icon icon-i left" style="margin-top: 2px;"></i>
+                                                    像素介于“400*400-1500*1500”，通过扫描获得商标图样的，
+                                                    应按24位彩色、RGB格式、300dpi分辨率扫描，JPG格式，小于10M</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="tright valign_top pt30"><span class="fn16 c_gray4">上传委托书</span></td>
+                                    <td class="tleft">
+                                        <p class="fn14 lh50" id="hispro"></p>
+                                        <div class="clearfix">
+                                            <div class="upload upload2 left">
+                                                <p class="title c_gray4">请上传委托书</p>
+                                                <a class="img_box first w_120" href="javascript:;" id=""><img src="../style/images/empty.png" id="tmfirstImageText" alt="委托书"></a>
+                                                <a href="javascript:downProxy();" class="btn w_60">下载委托书</a>
+                                                <label><span class="btn btn_orange w_60">上传图片
+                                               <input type="file" name="ProxyImg" id="tmfirstImage" onchange="upfiletm('first','ProxyImg',this)" style="display: none"></span></label>
+                                            </div>
+                                            <a id="example2-1" class="exp_box left" title="" href="../style/images/case.png">
+                                                <img alt="" src="../style/images/case.png">
+                                                <div class="exp_mask">
+                                                    <div class="mask"></div>
+                                                    <p class="to_big"><span>点击放大</span></p>
+                                                </div>
+                                            </a>
+                                            <input type="hidden" name="ProxyImg" id="ProxyImg_test" value="">
+                                            <div class="form_tip fn12 left w_350">
+                                                <p class="clearfix"><i class="icon icon-q left" style="margin-top: 2px;"></i>
+                                                    <span class="w_300 left">委托书已自动生成，您只需要下载后仔细核对后打印。企业盖章（个体工商户签字）后扫描彩色件上传。
+                                                        <em class="c_red">（注意：部分企业的营业执照地址不含省份，导致自动生成的委托书中“委托人地址”缺少省份信息，请下载委托书后补全省份信息再打印，否则商标局将不予审核通过）</em></span></p>
+                                                <p><i class="icon icon-i left" style="margin-top: 2px;"></i>
+                                                    <span class="w_300 left">JPG格式，文件小于10M</span></p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="cont">
+                            <h1><span>注册商标信息</span></h1>
+                            <div class="innerBox">
+                                <div class="fn12 mt10 clearfix">
+                                    <i class="icon icon-i left"></i>
+                                    根据商标所使用的商品或服务范围来选定大的分类（共45类）。根据商标注册原则：一个商标在一个大类里算一个申请
+                                    根据所选类别选择具体的商品或服务项目。根据商标注册收费标准，每个大类可以选择10个商品/服务项目；10个以上，每增加一个商品/服务项目，多加30元
+                                </div>
+                                <div class="confirmOrder clearfix">
+                                    <div class="l_confirm left">
+                                        <div class="brand_search">
+                                            <div class="clearfix">
+                                                <input type="text" class="ui-input" placeholder="请输入商品/服务关键字或编号" id="sortName" autocomplete="off">
+                                                <button type="button" class="ui-btn ui-btn-blue mr15 w_70 fn14" id="search">搜索</button>
+                                                <a class="reset cl-blue" href="javascript:;" onclick="resetTm();">重置</a>
+                                            </div>
+                                            <div class="clearfix c_gray fn14">
+                                                <label class="left mr20">
+                                                    <input type="radio" name="show" value="1" checked="checked">
+                                                    <span>展示全部类别</span>
+                                                </label>
+                                                <label class="left">
+                                                    <input type="radio" name="show" value="2">
+                                                    <span>只展示查询结果</span>
+                                                </label>
+                                            </div>
+                                            <!-- 下拉 -->
+                                            <ul class="drop_list" style="display:none;" id="listTotals">
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="18,23,24,25,26,27,35">
+                                                        服装纺织
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="29,30,31,32,33,40,39">
+                                                        食品饮料
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="29,30,31,32,33,35,40,43">
+                                                        餐饮酒店
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="03,05,10,21,30,44">
+                                                        化妆美容
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="05,10,35,40,44">
+                                                        医药设备
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="02,03,05,06,08,09,16,34,35,40">
+                                                        日常用品
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="20,21,37,40">
+                                                        家具用具
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="09,16,35,38,41,42">
+                                                        IT互联网
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="01,02,04,07,11,16,17,22,40,42">
+                                                        化工能源
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="09,11">
+                                                        电子仪器
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="06,07,11,37">
+                                                        机械制造
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="02,06,14,17,19,37,40,42">
+                                                        建材五金
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:void(0);" data-classes="36,37,42,40,41,42,45">
+                                                        房产金融
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                            <!-- 下拉 -->
+                                        </div>
+
+                                        <!-- 大类 -->
+                                        <ul class="tit_box posrel" id="sort_first">
+                                            <li>
+                                                <div class="tit fn16 c_gray j-tit" onclick="firststep('01')" id="01">01类 化学原料
+                                                    <div class="dis_inl posrel" id="deng-01"></div></div>
+                                            </li>
+                                            <li>
+                                                <div class="tit fn16 c_gray j-tit" onclick="firststep('02')" id="02">02类 颜料油漆
+                                                    <div class="dis_inl posrel" id="deng-02"></div></div></li>
+                                            <li>
+                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('03')" id="03">03类 化妆品
+                                                <div class="dis_inl posrel" id="deng-03"></div></div></li>
+                                            <li>
+                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('04')" id="04">04类 燃料油脂
+                                                <div class="dis_inl posrel" id="deng-04"></div></div>
+                                            </li>
+                                            <li>
+                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('05')" id="05">05类 医药
+                                                <div class="dis_inl posrel" id="deng-05"></div></div></li><li>
+                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('06')" id="06">06类 五金金属
+                                                <div class="dis_inl posrel" id="deng-06"></div></div></li><li>
+                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('07')" id="07">07类 机械设备
+                                                <div class="dis_inl posrel" id="deng-07"></div></div></li><li>
+                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('08')" id="08">08类 手工器械
+                                                <div class="dis_inl posrel" id="deng-08"></div></div></li><li>
+                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('09')" id="09">09类 电子电脑
+                                                <div class="dis_inl posrel" id="deng-09"></div></div></li><li>
+                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('10')" id="10">10类 医疗器械
+                                                <div class="dis_inl posrel" id="deng-10"></div></div></li><li>
+                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('11')" id="11">11类 家用电器
+                                                <div class="dis_inl posrel" id="deng-11"></div></div></li>
+                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('12')" id="12">12类 运输工具
+                                                <div class="dis_inl posrel" id="deng-12"></div></div></li>
+                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('13')" id="13">13类 军火烟火
+                                                <div class="dis_inl posrel" id="deng-13"></div></div></li>
+                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('14')" id="14">14类 珠宝钟表
+                                                <div class="dis_inl posrel" id="deng-14"></div></div></li>
+                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('15')" id="15">15类 乐器
+                                                <div class="dis_inl posrel" id="deng-15"></div></div></li>
+                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('16')" id="16">16类 办公文具
+                                                <div class="dis_inl posrel" id="deng-16"></div></div></li>
+                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('17')" id="17">17类 橡胶制品
+                                                <div class="dis_inl posrel" id="deng-17"></div></div></li>
+                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('18')" id="18">18类 皮革箱包
+                                                <div class="dis_inl posrel" id="deng-18"></div></div></li>
+                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('19')" id="19">19类 建筑材料
+                                                <div class="dis_inl posrel" id="deng-19"></div></div></li>
+                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('20')" id="20">20类 家具
+                                                <div class="dis_inl posrel" id="deng-20"></div></div></li>
+                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('21')" id="21">21类 厨房洁具
+                                                <div class="dis_inl posrel" id="deng-21"></div></div></li>
+                                        </ul>
+                                        <!-- 大类 -->
+                                        <!-- 没有查询符合条件的结果 -->
+                                        <div class="center mt50" style="display: none" id="search_msg">
+                                            <p class="fn18 c_gray8"><img src="../style/images/blank.png" class="p-mid">没有查询符合条件的结果</p>
+                                            <p class="fn14 c_gray">换个关键字试试，或<a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzkzODA3MTU1MV8yODU5MjdfNDAwMDY5OTM5M18yXw" target="_blank">联系顾问</a></p>
+                                        </div>
+                                        <!-- 没有查询符合条件的结果 -->
+
+                                    </div>
+                                    <div class="r_confirm right">
+                                        <div class="title fn22 c_gray4 mb10">已选群组 <a class="fr fn14 cl-blue" href="javascript:showdeletegoods();">清空</a></div>
+                                        <div class="box" id="class_info"><img class="mt50 ml40" src="../style/images/sb_blank.png"></div>
+                                        <div class="bottom fn14 c_gray8">
+                                            <span class="fn22 c_gray">订单总额：<em class="cl-yellow" id="tprice">￥0</em></span>
+                                            <span id="detail"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="fn12 c_gray upbtn center">
+                                    <dl class="mian mr20 registhide" onclick="checksubmit(3)">免审直提</dl>
+                                    <dl class="kuai" onclick="checksubmit(2)">保存订单</dl>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="AId" id="AId" value="">
+                        <input type="hidden" name="Aptitude" id="Aptitude" value="1">
+                        <input type="hidden" name="saveother" id="saveother" value="">
+                        <input type="hidden" id="extra" name="extraPrc" value="-1">
+                        <input type="hidden" id="IsSave" name="IsSave" value="1">
+                        <input type="hidden" id="IsProxy" name="IsProxy" value="-1">
+                        <input type="hidden" id="subform">
+
+                    </div></form>
+            </div>
+
+        </div>
+
+    </div>
+<!--main end-->
+
+<!--    底部-->
+    <include src="../footer.html"></include>
+    <script src="../style/js/trademark.js"></script>
+    <script src="../style/js/regcore.js"></script>
+    <script src="../style/js/jquery.min.js"></script>
+    <script src="../style/layui/layui.js"></script>
+    <script src="../style/js/jquery.imgbox.js"></script>
+    <script src="../style/js/self_zc.js"></script>
+    <script>
+
+        layui.config({
+            version: true,
+            base: '../style/js/'
+        }).extend({
+            index: 'index'
+        }).use(['index', 'jquery'], function () {
+            var $ = layui.$;
+
+                // tab切换
+                //  $(function () {
+                //       initTab($('._tab-nav-d'),$(' ._tab-cont'),'_on')
+                //   });
+
+            $(function () {
+
+                $('._tab-navs-d a').click(function (ev) {
+                    $(this).addClass('on').siblings().removeClass('on')
+                        if ($(this).hasClass('_a0')) {
+                        $('.ywjs')[0].scrollIntoView({
+                            behavior: 'smooth', // smooth scroll
+                            block: 'start' // the upper border of the element will be aligned at the top of the visible part of the window of the scrollable area.
+                        })
+                    } else if ($(this).hasClass('_a1')) {
+                        let top = this.getBoundingClientRect().top
+                        $('.ywbz')[0].scrollIntoView({
+                            behavior: 'smooth', // smooth scroll
+                            // top: top
+                            block: 'start'
+                        })
+                    }
+                })
+
+            })
+
+        });
+
+
+        // 搜索框切换
+        function chos_tm_x(num)
+        {
+            var msg_s = '';
+            switch(num)
+            {
+                case '1':
+                    msg_s = '请输入您想要注册的商标名称';
+                    break;
+                case '2':
+                    msg_s = '请输入商标的申请主体';
+                    break;
+                case '3':
+                    msg_s = '请输入商标的注册号';
+                    break;
+                case '4':
+                    msg_s = '请输入商标的代理机构';
+                    break;
+                default:
+                    return;
+            }
+            $("#searchvalue").attr('placeholder',msg_s);
+        }
+
+        // 点击图片放大
+        $(document).ready(function() {
+            tup_mt();
+        });
+        function tup_mt(){
+            $("#example3-1,#example3-2,#enlarge-second,#enlarge-first,#example2-1,#example2-2,#example2-first,#example2-second,#example2-three").imgbox({
+                'speedIn'       : 0,
+                'speedOut'      : 0,
+                'alignment'     : 'center',
+                'overlayShow'   : true,
+                'allowMultiple' : false
+            });
+        }
+
+
+// 怎么填弹窗
+        $('.shows').click(function(){
+            if($(this).hasClass('_1')){
+                $('#how1').show();
+            }else  if($(this).hasClass('_2')){
+                $('#howtwo').show();
+            }else if($(this).hasClass('_3')){
+                $('#howthree').show();
+            }
+        })
+        $('.mark_close').click(function(){
+            $('.mark_main').hide();
+        })
+
+
+    </script>
+
+<script type="text/javascript">
+    var search_key='';
+    if(search_key){
+        var captcha=new TencentCaptcha(document.getElementById('TencentCaptcha'),"2000100680",function(res){
+            callback(res);
+        });
+        captcha.show();
+    }
+    function notused(){
+        $.ajax({
+            type:"post",
+            url:"/tm/cancleuse",
+            data:{'id':''},
+            dataType:"json",
+            success:function(datas){
+            }
+        })
+        $("#cpon").hide();
+        $("#cpons").hide();
+    }
+/*    var clipboard = new Clipboard('#copyCoup');
+    clipboard.on('success', function(e) {
+        alert("复制成功");
+    });
+
+    clipboard.on('error', function(e) {
+        alert("复制失败，请手动复制");
+    });*/
+
+    //申请主体类型选择
+    var can_edit=false;
+    $("#apOne").find('li>a').click(function(){    //申请主体类型选择
+        if(can_edit==true) return;
+        var aptype=$(this).data('type');
+        $("#AId").val('');
+        setinputVal();
+        setApData(aptype);
+    });
+
+    //切换时去掉红色警告
+    function setinputVal() {
+        $("#ap_mgs input").removeClass('err');
+    }
+
+
+    function alert_show(msg)
+    {
+        $("#sigle_msg").show();
+        $("#comm_msgs").html(msg);
+    }
+    function confirm_show(msg,id,func)
+    {
+        $("#duble_msg").show();
+        $("#comm_msg").html(msg);
+        $("#duble_submit").attr('onclick',func+'('+(id)+')')
+    }
+
+    //有后续操作
+    function alert_showyhx(msg,func)
+    {
+        $("#yhx_msg").show();
+        $("#comm_yhxs").html(msg);
+        $("#yhx_x").attr('href','javascript:'+func+'();')
+    }
+    function alert_showdrjk(msg,func,cc){
+        $("#drtz_msg").show();
+        $("#comm_drtz").html(msg);
+        $("#drtz").attr('href','https://my.ename.cn/cas/sso?sid=12&backurl='+cc)
+    }
+
+    function alert_showsmrz(msg){
+        $("#smrz_msg").show();
+        $("#comm_smrz").html(msg);
+    }
+    //zhengshusuoyao ->
+    function confirms_show(msg,vas)
+    {
+        $("#duble_msgs").show();
+        $("#comm_msgx").html(msg);
+        $("#mt_oky").attr('href',"javascript:mt_ok('"+vas+"');")
+    }
+    function mt_ok(vas)
+    {
+        $("#vals").val(vas);
+        $("#duble_msgs").hide();
+        timescer=1;
+        document.formUser.submit();
+    }
+    function mt_no()
+    {
+        $("#vals").val('');
+        $("#duble_msgs").hide();
+        timescer=1;
+        document.formUser.submit();
+    }
+    //
+    function cancle()
+    {
+        $("#yhx_msg").hide();
+        $("#duble_msg").hide();
+        $("#sigle_msg").hide();
+        $("#upfiles_mark").hide();
+        $("#duble_msgs").hide();
+        $("#duble_apx").hide();
+        $("#drtz_msg").hide();
+        $("#smrz_msg").hide();
+        $("#makelogo").hide();
+        $("#downproxy").hide();
+        $("#authBox_se,#sellBoxcr,#sellBoxpt").hide();
+        $("#logisticsBox,#delBox,#auditBox").hide();
+    }
+
+    function sell_mt_cancle()
+    {
+        window.location.reload();
+    }
+
+    $(document).ready(function(){
+        $("#duble_submit").click(function(){
+            $("#duble_msg").hide();
+        });
+
+        $('#UserName').bind({
+            focus:function(){
+                if (this.value == this.defaultValue){
+                    this.value = "";
+                }
+            },
+            blur:function(){
+                if (this.value == ""){
+                    this.value = this.defaultValue;
+                }
+            }
+        });
+
+    })
+
+    function jsreloads(){
+        var scriptx = document.createElement("script");
+        scriptx.src = "/js/common.js";
+        document.body.appendChild(scriptx);
+    }
+
+    function confirms_ocr_show(AName, ANameOs, IDAddress, IDAddressOs, IDNumber, Country, CodeNum)
+    {
+        $ts = 1;
+        var param = ['AName','ANameOs','Country','IDAddress','IDAddressOs','IDNumber','CodeNum'];
+        for (var i=0; i<param.length; i++) {
+            if ($("#" + param[i]).length>0 && $("#" + param[i]).val()!='') {
+                $ts = 0;
+            }
+        }
+        if ($ts == 1){
+            mt_ocr_ok(AName, ANameOs, IDAddress, IDAddressOs, IDNumber, Country, CodeNum);
+        }
+        else{
+            $("#ocr_msgs").show();
+            $("#mt_ocr_oky").attr('href',"javascript:mt_ocr_ok('"+AName+"','"+ANameOs+"','"+IDAddress+"','"+IDAddressOs+"','"+IDNumber+"','"+Country+"','"+CodeNum+"');");
+        }
+    }
+
+    function mt_ocr_ok(AName, ANameOs, IDAddress, IDAddressOs, IDNumber, Country, CodeNum)
+    {
+        if ($("#AName").length>0 && AName!='' && AName!='undefined') {
+            $("#AName").val(AName);
+        }
+        if ($("#ANameOs").length>0 && ANameOs!='' && ANameOs!='undefined') {
+            $("#ANameOs").val(ANameOs);
+        }
+        if ($("#Country").length>0 && Country!='' && Country!='undefined') {
+            countryinit = Country;//initSeleCty();
+            $("#Country option:contains('"+countryinit+"')").attr("selected", true).trigger("change");
+            $("#Country_val").val(countryinit);
+        }
+        if ($("#IDAddress").length>0 && IDAddress!='' && IDAddress!='undefined') {
+            $("#IDAddress").val(IDAddress);
+        }
+        if ($("#IDAddressOs").length>0 && IDAddressOs!='' && IDAddressOs!='undefined') {
+            $("#IDAddressOs").val(IDAddressOs);
+        }
+        if ($("#IDNumber").length>0 && IDNumber!='' && IDNumber!='undefined') {
+            $("#IDNumber").val(IDNumber);
+        }
+        if ($("#CodeNum").length>0 && CodeNum!='' && CodeNum!='undefined') {
+            $("#CodeNum").val(CodeNum);
+        }
+        $("#ocr_msgs").hide();
+    }
+
+    function mt_ocr_no()
+    {
+        $("#ocr_msgs").hide();
+    }
+
+</script>
+</body>
+
+</html>
