@@ -223,8 +223,11 @@ select:focus {
 /* 去掉select的默认样式 */
 select {
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance:none;
+    background:none;
 }
-
+select::-ms-expand { display: none; }
 /* 如果有输入内容IE会给输入框右边加一个大大的X */
 input::-ms-clear {
     display: none;

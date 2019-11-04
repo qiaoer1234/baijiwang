@@ -582,7 +582,8 @@
 }
 /*商标分类搜索结果*/
 .sbfl_results{
-    line-height: 80px;
+    line-height: 2;
+    padding: 15px 0;
 }
 .sbfl_results p{
     color: #0f2a3d;

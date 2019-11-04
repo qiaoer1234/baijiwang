@@ -131,7 +131,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr id="in_set">
+                                <tr id="in_set" class="in_set">
                                         <td class="tright"><span class="fn16 c_gray4">联系人姓名</span></td>
                                         <td class="tleft">
                                             <div class="posrel left">
@@ -140,11 +140,11 @@
                                             </div>
                                         </td>
                                 </tr>
-                                <tr id="in_set">
+                                <tr class="in_set">
                                     <td class="tright"><span class="fn16 c_gray4">联系人电话</span></td>
                                     <td class="tleft">
                                         <div class="posrel left">
-                                            <input class="inp w_458" type="text" id="PhoneMd" name="PhoneMd" placeholder="请填写真实手机号码，方便如：13866668888" >
+                                            <input class="inp w_458" type="text" id="Phone" name="Phone" placeholder="如：13866668888" >
                                             <span class="icon_not"></span>
                                         </div>
                                     </td>
@@ -160,7 +160,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr id="out_set" style="display: none">
+                                <tr class="out_set" style="display: none">
                                     <td class="tright"><span class="fn16 c_gray4">大陆联系人姓名</span></td>
                                     <td class="tleft">
                                         <div class="posrel left">
@@ -169,11 +169,11 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr id="out_set" style="display: none">
+                                <tr class="out_set" style="display: none">
                                     <td class="tright"><span class="fn16 c_gray4">大陆联系方式</span></td>
                                     <td class="tleft">
-                                        <div class="posrel left ml10">
-                                            <input class="inp w_300" type="text" id="PhoneMd" name="PhoneMd"  placeholder="如：13866668888">
+                                        <div class="posrel left ">
+                                            <input class="inp w_458" type="text" id="PhoneMd" name="PhoneMd"  placeholder="如：13866668888">
                                             <span class="icon_not"></span>
                                         </div>
                                     </td>
@@ -330,7 +330,7 @@
                                     <td class="tright valign_top pt30"><span class="fn16 c_gray4">商标说明</span></td>
                                     <td class="tleft">
                                         <div class="posrel left">
-                                            <textarea class="note left w_350" id="TmExplain" name="TmExplain" onblur="judge_tm(this.value,'TmExplain',1,100);" placeholder="请输入商标说明
+                                            <textarea class="note left w_350" id="TmExplain" name="TmExplain" placeholder="请输入商标说明
 例：商标由中文“**”英文“**”及图形构成，无特殊含义"></textarea>
                                             <span class="icon_not"></span>
                                         </div>
@@ -377,18 +377,10 @@
                                             <div class="upload upload2 left" id="colortwo_del">
                                                 <p class="title c_gray4">请上传商标图样</p>
                                                 <a class="img_box second w_120" href="javascript:;" id=""><img src="../style/images/empty.png" onerror="this.src='../style/images/empty.png';this.onerror=null" id="tmsecondImageText" alt="图样"></a>
-                                                <a href="javascript:;" onclick="addImgs()" class="btn w_60">智能生成</a>
+                                                <a href="javascript:;" class="btn w_60">智能生成</a>
                                                 <label><span class="btn btn_orange w_60">上传图片
                                                <input type="file" name="TmPattern" id="tmsecondImage" onchange="upfiletm('second','TmPattern',this)" style="display: none"></span>
-                                                    <input type="hidden" name="TmPattern" id="TmPattern_test" value="">
-                                                </label>
-                                            </div>
-                                            <div class="upload upload2 left" id="colorOne" style="display: none">
-                                                <p class="title">请上传着色图样</p>
-                                                <a class="img_box three" href="javascript:;" id=""><img src="../style/images/empty.png" id="tmthreeImageText" alt="着色图样"></a>
-                                                <label><span class="btn btn_orange w_60">上传图片
-                                               <input type="file" name="TmPatternTwo" id="tmthreeImage" onchange="upfiletm('three','TmPatternTwo',this)" style="display: none"></span>
-                                                    <input type="hidden" name="TmPatternTwo" id="TmPatternTwo_test" value="">
+                                               <input type="hidden" name="TmPattern" id="TmPattern_test" value="">
                                                 </label>
                                             </div>
                                             <div class="ml15 fn12 left">
@@ -413,8 +405,11 @@
                                                 <p class="title c_gray4">请上传委托书</p>
                                                 <a class="img_box first w_120" href="javascript:;" id=""><img src="../style/images/empty.png" id="tmfirstImageText" alt="委托书"></a>
                                                 <a href="javascript:downProxy();" class="btn w_60">下载委托书</a>
-                                                <label><span class="btn btn_orange w_60">上传图片
-                                               <input type="file" name="ProxyImg" id="tmfirstImage" onchange="upfiletm('first','ProxyImg',this)" style="display: none"></span></label>
+                                                <label>
+                                                    <span class="btn btn_orange w_60">上传图片
+                                               <input type="file" name="ProxyImg" id="tmfirstImage" onchange="upfiletm('first','ProxyImg',this)" style="display: none">
+                                                    </span>
+                                                </label>
                                             </div>
                                             <a id="example2-1" class="exp_box left" title="" href="../style/images/case.png">
                                                 <img alt="" src="../style/images/case.png">
@@ -426,7 +421,7 @@
                                             <input type="hidden" name="ProxyImg" id="ProxyImg_test" value="">
                                             <div class="form_tip fn12 left w_350">
                                                 <p class="clearfix"><i class="icon icon-q left" style="margin-top: 2px;"></i>
-                                                    <span class="w_300 left">委托书已自动生成，您只需要下载后仔细核对后打印。企业盖章（个体工商户签字）后扫描彩色件上传。
+                                                    <span class="w_400 left">委托书已自动生成，您只需要下载后仔细核对后打印。企业盖章（个体工商户签字）后扫描彩色件上传。
                                                         <em class="c_red">（注意：部分企业的营业执照地址不含省份，导致自动生成的委托书中“委托人地址”缺少省份信息，请下载委托书后补全省份信息再打印，否则商标局将不予审核通过）</em></span></p>
                                                 <p><i class="icon icon-i left" style="margin-top: 2px;"></i>
                                                     <span class="w_300 left">JPG格式，文件小于10M</span></p>
@@ -671,6 +666,9 @@
 
             })
 
+
+
+
         });
 
 
@@ -698,6 +696,10 @@
             $("#searchvalue").attr('placeholder',msg_s);
         }
 
+
+
+
+
         // 点击图片放大
         $(document).ready(function() {
             tup_mt();
@@ -710,7 +712,9 @@
                 'overlayShow'   : true,
                 'allowMultiple' : false
             });
+
         }
+
 
 
 // 怎么填弹窗

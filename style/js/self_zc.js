@@ -108,8 +108,8 @@ function setApData(aptype)   //申请人数据处理
     var fit="若不含省、市（县）请补足，以免不予受理";
     $("#ap_person").hide();
     $("#hap_mg").hide();
-    $("#contact_").html("联系人及联系方式");
-    $("#Contacts").attr('placeholder','请填写联系人姓名');
+    // $("#contact_").html("联系人及联系方式");
+    $("#Contacts").attr('placeholder','如：张三');
     showName=["ANameOs","IDAddressOs","ContactsMd","PhoneMd","PostCodeMd","Country"];
     $("#outContory").hide();
     $("#inContory").show();
@@ -132,8 +132,8 @@ function setApData(aptype)   //申请人数据处理
             titlecode={"IDNumber_title":"社会代码","IDAddress_title":"证件地址"};
             imgurl="../style/images/comlicense.jpg";
             $("#stp_ap").addClass("h435");
-            $("#in_set").show();
-            $("#out_set").hide();
+            $(".in_set").show();
+            $(".out_set").hide();
             $("#warmf").html(fit);
             $("#person_").show();
             $("#outcon").hide();
@@ -154,8 +154,8 @@ function setApData(aptype)   //申请人数据处理
             $("#secondImage").attr('name',"secondImage");
             $("#secondImage").attr('onchange',"checkFileEmpty('second','IDCardImg')");
             $("#stp_ap").removeClass("h435");
-            $("#in_set").show();
-            $("#out_set").hide();
+            $(".in_set").show();
+            $(".out_set").hide();
             $("#warmf").html(fit);
             $("#person_").show();
             name_id="AName";
@@ -180,8 +180,8 @@ function setApData(aptype)   //申请人数据处理
             $("#Contacts").attr('placeholder','请填写大陆联系人姓名');
             $("#stp_ap").removeClass("h435");
             $("#downap").show();
-            $("#in_set").hide();
-            $("#out_set").show();
+            $(".in_set").hide();
+            $(".out_set").show();
             $(".registhide").hide();
             $("#warmf").html("");
             name_id="AName";
@@ -211,8 +211,8 @@ function setApData(aptype)   //申请人数据处理
             $("#ap_person").show();
             $("#stp_ap").removeClass("h435");
             $("#downap").show();
-            $("#in_set").hide();
-            $("#out_set").show();
+            $(".in_set").hide();
+            $(".out_set").show();
             $(".registhide").hide();
             $("#warmf").html("");
             name_id="AName";
@@ -540,49 +540,6 @@ function colsemoban(ty)
     })
 }
 
-function addImgs()   //显示智能提示
-{
-    if(enameid=='' || enameid==0) return false;
-    $("#makelogo_msg").html("智能生成图样字体为“黑体”。如果您有设计要求，请点击图标样式上传按钮上传定稿图样。");
-    $("#makelogo").show();
-}
-
-function makeImg()   //智能生成图样
-{
-    if(enameid=='' || enameid==0)return;
-    var name=$("#TmName").val();
-    if(name=='' || name==0){
-        alert_show("请填写商标名称");
-        return false;
-    }
-    $.ajax({
-        type:'post',
-        url:'/tm/addimgs',
-        data:{'name':name},
-        datatype:'json',
-        success:function(son){
-            var sons = eval("(" + son + ")");
-            if(sons.status==200)
-            {
-                $("#tmsecondImageText").attr('src',sons.data.path+sons.data.img);
-                $("#TmPattern_test").val(sons.data.img);
-                $("#showlink").show();
-                $(".second").attr('id','example2-second');
-                $('#example2-second').attr('href',sons.data.path+sons.data.img);
-                tup_mt();
-            }else{
-                if(sons.msg){
-                    alert_show(sons.msg);
-                }else{
-                    alert_show("自动生成失败，请上传");
-                }
-            }
-        },
-        error:function(son){
-            alert_show("自动生成失败，请上传");
-        }
-    })
-}
 
 function isenabled(src) {
     return $(src).hasClass("c_gray") || $(src).hasClass("c_orange");
