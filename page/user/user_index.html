@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>用户中心-百集网</title>
+    <link rel="stylesheet" href="../../style/layui/css/layui.css">
+    <link rel="stylesheet" href="../../style/css/base.css">
+    <link rel="stylesheet" href="../../style/css/user_center.css">
+    <script src="../../style/js/include.js"></script>
+</head>
+<body style="background-color: #F2F2F2;">
+    <!-- header -->
+    <include src="../../header.html"></include>
+
+    <!-- main -->
+    <div class="bj-main">
+        <div class="left-wrapper fl">
+            <div class="sidebar-items">
+                <dl class="i1">
+                    <dt>个人中心</dt>
+                    <dd><a href="javascript:;" data-one-page="grxx.html" class="current">个人信息</a></dd>
+                </dl>
+                <dl class="i2">
+                    <dt>订单中心</dt>
+                    <dd><a href="javascript:;" data-one-page="ddlb.html">订单列表</a></dd>
+                </dl>
+                <dl class="i3">
+                    <dt>模板管理</dt>
+                    <dd><a href="javascript:;" data-one-page="">新建模板</a></dd>
+                    <dd><a href="javascript:;" data-one-page="">模板管理</a></dd>
+                </dl>
+                <dl class="i4">
+                    <dt>商标管理</dt>
+                    <dd><a href="javascript:;" data-one-page="">商标列表</a></dd>
+                    <dd><a href="javascript:;" data-one-page="">商铺</a></dd>
+                </dl>
+                <dl class="i5">
+                    <dt>财务中心</dt>
+                    <dd><a href="javascript:;" data-one-page="">财务管理</a></dd>
+                    <dd><a href="javascript:;" data-one-page="">申请开票</a></dd>
+                    <dd><a href="javascript:;" data-one-page="">开票记录</a></dd>
+                </dl>
+                <dl class="i6">
+                    <dt>安全中心</dt>
+                    <dd><a href="javascript:;" data-one-page="">修改密码</a></dd>
+                    <dd><a href="javascript:;" data-one-page="">修改手机号</a></dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="right-wrapper fr" id="layuiuser-content-page">
+        </div>
+    </div>
+
+    <!-- footer -->
+    <include src="../../footer.html"></include>
+
+    <script src="../../style/layui/layui.js"></script>
+    <script>
+        layui.config({
+            version: true,
+            base: '../../style/js/'
+        }).extend({
+            index: 'index',
+            layuiUser: 'layuiUser'
+        }).use(['index','layuiUser','jquery'], function(){
+            var $ = layui.jquery;
+            var locationHref = window.location.href;
+            var urlArr = locationHref.split('#');
+            if(urlArr.length >= 2) {
+                var href = urlArr.pop();
+                layuiUser.init(href);
+
+                var itemsA = $('.sidebar-items dd a');
+                itemsA.removeClass('current');
+                for(var i=0; i<itemsA.length; i++) {
+                    $(itemsA[i]).data('one-page') == href && $(itemsA[i]).addClass('current');
+                }
+                return;
+            }
+
+            layuiUser.init('grxx.html');
+        });
+    </script>
+</body>
+</html>

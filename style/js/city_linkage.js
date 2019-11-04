@@ -48,16 +48,23 @@ function treeSelect(config) {
             form.render();
             return false;
         }
+<<<<<<< HEAD
         // 请选择县区打开运行
          form.on('select(' + config.s2 + ')', function (data) {
              areaEvent(data);
         });
         //end
 
+=======
+        form.on('select(' + config.s2 + ')', function (data) {
+            areaEvent(data);
+        });
+>>>>>>> 8493254329a7a47ebb8a9e23ca432215fb2a8ae1
     });
 
     form.on('select(' + config.s2 + ')', function (data) {
-        areaCheckBox(data)
+        //areaCheckBox(data);
+        areaEvent(data);
     });
 
     function cityEvent(data) {

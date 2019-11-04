@@ -1,0 +1,179 @@
+<h1 class="title-wrapper">订单列表</h1>
+
+<div class="right-fluid">
+    <form action="" class="layui-form">
+        <div class="layui-form-item bj-form-item">
+            <div class="layui-inline f-w140">
+                <select name="ddzt">
+                    <option value="">全部订单状态</option>
+                    <option value="-1">已删除</option>
+                    <option value="1">保存订单</option>
+                    <option value="2">已支付</option>
+                    <option value="3">已审核</option>
+                    <option value="4">注册中</option>
+                    <option value="4">注册失败</option>
+                    <option value="4">注册成功</option>
+                </select>
+            </div>
+
+            <div class="layui-inline f-w140">
+                <select name="sbzt">
+                    <option value="">全部商标状态</option>
+                    <option value="100">已发受理通知</option>
+                    <option value="101">申请不予受理</option>
+                    <option value="102">已发补正通知</option>
+                    <option value="103">已提交补正</option>
+                    <option value="200">初审公告</option>
+                    <option value="201">已驳回</option>
+                    <option value="202">已部分驳回</option>
+                    <option value="203">已发同日申补送通知</option>
+                    <option value="204">已发同日申协商通知</option>
+                    <option value="205">已发抽签通知</option>
+                    <option value="206">已中签</option>
+                    <option value="207">未中签</option>
+                    <option value="208">已发注册审查意见</option>
+                    <option value="209">复审已受理</option>
+                    <option value="210">已发评审意见书</option>
+                    <option value="211">已出复审决定</option>
+                    <option value="212">复审通过</option>
+                    <option value="300">准予注册</option>
+                    <option value="301">被异议中</option>
+                    <option value="302">不予注册</option>
+                    <option value="400">已注册</option>
+                    <option value="501">被撤三中</option>
+                    <option value="502">被撤三成功，商标失效</option>
+                    <option value="503">被撤三失败</option>
+                    <option value="601">被宣告无效中</option>
+                    <option value="602">被宣告无效失败</option>
+                    <option value="603">被宣告无效成功</option>
+                    <option value="100">已发受理通知</option>
+                    <option value="101">申请不予受理</option>
+                    <option value="102">已发补正通知</option>
+                    <option value="103">已提交补正</option>
+                    <option value="200">初审公告</option>
+                    <option value="201">已驳回</option>
+                    <option value="202">已部分驳回</option>
+                    <option value="203">已发同日申补送通知</option>
+                    <option value="204">已发同日申协商通知</option>
+                    <option value="205">已发抽签通知</option>
+                    <option value="206">已中签</option>
+                    <option value="207">未中签</option>
+                    <option value="208">已发注册审查意见</option>
+                    <option value="209">复审已受理</option>
+                    <option value="210">已发评审意见书</option>
+                    <option value="211">已出复审决定</option>
+                    <option value="212">复审通过</option>
+                    <option value="300">准予注册</option>
+                    <option value="301">被异议中</option>
+                    <option value="302">不予注册</option>
+                    <option value="400">已注册</option>
+                </select>
+            </div>
+
+            <div class="layui-inline f-w140">
+                <select name="sblx">
+                    <option value="">全部商标类型</option>
+                    <option value="01">1类</option>
+                    <option value="03">3类</option>
+                </select>
+            </div>
+
+            <div class="layui-inline f-w140">
+                <select name="ddlx">
+                    <option value="">全部订单类型</option>
+                    <option value="01">自助注册</option>
+                    <option value="03">保姆注册</option>
+                    <option value="03">担保注册</option>
+                </select>
+            </div>
+
+            <div class="layui-inline f-w140">
+                <input type="text" name="sbmc" autocomplete="off" class="layui-input" placeholder="商标名称">
+            </div>
+
+            <div class="layui-inline">
+                <button class="layui-btn" lay-submit="" lay-filter="search-btn">搜索</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="layui-table" id="orderlist" lay-filter="orderlist"></table>
+</div>
+
+<!-- 操作工具条按钮 -->
+<script type="text/html" id="tooltpl">
+    <a lay-event="confirm">确认</a>
+    <a lay-event="edit">编辑</a>
+    <a lay-event="look">查看</a>
+    <a lay-event="cancel">取消</a>
+</script>
+
+<script>
+    layui.use(['layer', 'jquery', 'form', 'table'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+
+        var _http_ = "https://b1be0a37-aa66-4dd6-b23b-a05c9af3775a.mock.pstmn.io";  
+
+        // 渲染数据表格
+        table.render({
+            elem: '#orderlist',
+            url: _http_ + '/get_list',
+            cellMinWidth: 92,
+            page: true,
+            skin: 'line',
+            limit: 15,
+            limits: [15, 50, 100, 500, 1000],
+            cols: [
+                [
+                    {
+                        field: 'ddlx',
+                        align: 'center',
+                        title: '订单类型'
+                    },
+                    {
+                        field: 'ddzt',
+                        align: 'center',
+                        title: '订单状态'
+                    },
+                    {
+                        field: 'ddjg',
+                        align: 'center',
+                        title: '订单价格'
+                    },
+                    {
+                        field: 'sbmc',
+                        width: 120,
+                        align: 'center',
+                        title: '商标名称'
+                    },
+                    {
+                        field: 'sblb',
+                        align: 'center',
+                        title: '商标列表'
+                    },
+                    {
+                        field: 'time',
+                        width: 100,
+                        align: 'center',
+                        title: '申请日期'
+                    },
+                    {
+                        field: 'sbzt',
+                        align: 'center',
+                        title: '商标状态'
+                    },
+                    {
+                        width: 190,
+                        align: 'center',
+                        toolbar: '#tooltpl',
+                        title: '操作'
+                    }
+                ]
+            ]
+        });
+
+    });
+</script>
