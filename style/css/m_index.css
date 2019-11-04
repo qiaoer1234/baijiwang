@@ -175,6 +175,10 @@
     -o-border-bottom-left-radius:4px;
 
 }
+.search-wrapper select{
+    background-color: #f6f6f6;
+
+}
 .dropdown2{
     width: 150px;
     height: 50px!important;
@@ -183,14 +187,14 @@
     color: #999999!important;
     display: inline-block;
     border: none;
-    padding: 0 30px!important;
-    background: #f6f6f6 url(img/down.png) no-repeat right 30px center;
+    padding: 0 0 0 15px!important;
+    background: url(img/down.png) no-repeat right 30px center;
     position: relative;
 }
 
 .search-wrapper input.btn {
     float: right;
-    width: 170px;
+    width: 190px;
     height: 50px;
     border: none;
     padding-left: 38px;

@@ -224,10 +224,16 @@ select:focus {
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
+    -ms-appearance: none;
     appearance:none;
-    background:none;
 }
-select::-ms-expand { display: none; }
+.layui-tab-item select::-ms-expand { display: none; }
+.layui-tab-item select{
+    appearance:none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
 /* 如果有输入内容IE会给输入框右边加一个大大的X */
 input::-ms-clear {
     display: none;
@@ -624,7 +630,7 @@ input:disabled {
     line-height:1;
     min-width: 36px;
     padding: 0 10px;
-    font-size: 16px;
+    font-size: 15px;
     color: #0F2A3D;
     position: relative;
 }
@@ -698,6 +704,21 @@ input:disabled {
     border: 2px solid #0F2A3D;
     padding-left: 134px;
 }
+.DivSelect
+{
+    position: absolute;
+    left: 0;
+    background-color: transparent;
+    width: 100px;
+    height: 36px;
+    overflow: hidden; /*隐藏了小三角，因为宽度为110px,而select宽度为130px*/
+    border-width:0px;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+}
+
 .ser_form .ser_form_main .dropdown {
     background-color:#fff;
     font-size: 14px;
@@ -707,11 +728,27 @@ input:disabled {
     left: 0;
     border:none;
     height: 100%;
-    width: 100px;
+    width: 120px;
     z-index: 100;
-    padding: 0 20px;
+    padding:0 0 0 20px!important;
     cursor: pointer;
-
+    background:  url(img/down.png) no-repeat right 30px center;
+}
+.DivSelect-sy{
+    background-color:#fff;
+    font-weight: bold;
+    color:#0f2a3d;
+    border:none;
+    width: 130px;
+    z-index: 100;
+    cursor: pointer;
+    overflow: hidden; /*隐藏了小三角，因为宽度为110px,而select宽度为130px*/
+    border-width:0px;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+    background:  url(img/down.png) no-repeat right 30px center;
 }
 .ser_form .ser_form_main  .option{
     border-bottom: 1px solid #E7E7E7;
@@ -831,7 +868,7 @@ input:disabled {
 .f-nav-wrapper .nav dl:first-child+dl{
     margin-right: 127px;
 }
-.f-nav-wrapper .nav dd  a{
+.f-nav-wrapper .nav dd  a,.f-nav-wrapper .nav dd{
     line-height: 35px;
     color: #A6ABB0;
 }

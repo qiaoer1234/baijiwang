@@ -189,7 +189,7 @@
                                 </tr>
                                 </tbody>
                             </table>
-<!--                            自动识别-->
+<!-- 自动识别-->
                             <div class="template h435" id="stp_ap">
                                 <div class="top fn15 c_blue">自动识别</div>
                                 <div class="content fn12 c_gray posrel">
@@ -197,11 +197,11 @@
                                     <div id="au_mg"></div>
                                     <p class="fn14 lh40 mt5">申请主体名称</p>
                                     <div class="posrel">
-                                        <input class="inp" type="text" name="AName" id="AName" onblur="judge_tm(this.value,'AName',2,60);" onchange="updatenew('AName');" placeholder="请与营业执照的企业名称保持一致" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                        <input class="inp" type="text" name="AName" id="AName"  onchange="updatenew('AName');" placeholder="请与营业执照的企业名称保持一致" >
                                         <span class="icon_not"></span>
                                     </div>
                                     <div class="posrel">
-                                        <input class="inp mt5 hide" type="text" name="ANameOs" id="ANameOs" onblur="judge_tm(this.value,'ANameOs',2,60);" onchange="updatenew('ANameOs');" placeholder="营业执照中文名称，必须为中文简体" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                        <input class="inp mt5 hide" type="text" name="ANameOs" id="ANameOs"  onchange="updatenew('ANameOs');" placeholder="营业执照中文名称，必须为中文简体">
                                         <span class="icon_not"></span>
                                     </div>
                                     <div id="outContory" style="display: none">
@@ -219,32 +219,32 @@
                                     </div>
                                     <p class="fn14 lh40" id="IDAddress_title">证件地址</p>
                                     <div class="posrel">
-                                        <input class="inp" type="text" name="IDAddress" id="IDAddress" onblur="judge_tm(this.value,'IDAddress',2,300);" placeholder="请填写营业执照地址" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                        <input class="inp" type="text" name="IDAddress" id="IDAddress"  placeholder="请填写营业执照地址"  >
                                         <span class="icon_not"></span>
                                     </div>
                                     <p id="warmf" class="fn12 c_red">若不含省、市（县）请补足，以免不予受理</p>
                                     <div class="posrel">
-                                        <input class="inp fn13 mt5 hide" name="IDAddressOs" id="IDAddressOs" type="text" onblur="judge_tm(this.value,'IDAddressOs',2,120);" placeholder="营业执照中文地址，必须为中文简体" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                        <input class="inp fn13 mt5 hide" name="IDAddressOs" id="IDAddressOs" type="text"  placeholder="营业执照中文地址，必须为中文简体" >
                                         <span class="icon_not"></span>
                                     </div>
                                     <div id="outcon" >
                                         <p class="fn14 lh40" id="IDNumber_title">身份证号</p>
                                         <div class="posrel">
-                                            <input class="inp" type="text" name="IDNumber" id="IDNumber" onblur="judge_tm(this.value,'IDNumber',9,20);" placeholder="请填写18位身份证号码" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                            <input class="inp" type="text" name="IDNumber" id="IDNumber"  placeholder="请填写18位身份证号码" >
                                             <span class="icon_not"></span>
                                         </div>
                                     </div>
                                     <div id="outcon" style="display:none">
                                         <p class="fn14 lh40" id="IDNumber_title">社会代码</p>
                                         <div class="posrel">
-                                            <input class="inp" type="text" name="IDNumber" id="IDNumber" onblur="judge_tm(this.value,'IDNumber',9,20);" placeholder="请与营业执照社会代码号保持一致" readonly="readonly" style="cursor:pointer" onclick="location='/tm/regtm?IsProxy=-1&amp;login=true'">
+                                            <input class="inp" type="text" name="IDNumber2" id="IDNumber2"  placeholder="请与营业执照社会代码号保持一致">
                                             <span class="icon_not"></span>
                                         </div>
                                     </div>
                                     <div id="person_">
                                         <p class="fn14 lh40">社会代码</p>
                                         <div class="posrel">
-                                            <input class="inp" type="text" name="CodeNum" id="CodeNum" onblur="judge_tm(this.value,'CodeNum',18,18);" placeholder="请与营业执照社会代码号保持一致">
+                                            <input class="inp" type="text" name="CodeNum" id="CodeNum"  placeholder="请与营业执照社会代码号保持一致">
                                             <span class="icon_not"></span>
                                         </div>
                                     </div>

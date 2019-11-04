@@ -17,6 +17,45 @@
     <link rel="stylesheet" href="../style/css/m_index.css">
     <link rel="stylesheet" href="../style/css/iconfont/iconfont.css">
     <script src="../style/js/include.js"></script>
+    <!--[if IE 9]>
+    <style>
+        .layui-form-select dl{
+            /*height: 300px;*/
+        }
+    </style>
+    <![endif]-->
+    <style>
+       /* .DivSelect
+        {
+            position: relative;
+            background-color: transparent;
+            width: 140px;
+            height: 40px;
+            overflow: hidden; !*隐藏了小三角，因为宽度为110px,而select宽度为130px*!
+            border-width:0px;
+            border-top-style: none;
+            border-right-style: none;
+            border-left-style: none;
+            border-bottom-style: none;
+        }
+        !*设置Select样式*!
+        .SelectList
+        {
+            position: relative;
+            background-color: transparent;
+            TOP: -2px;
+            left:-2px;
+            border-width: 0px;
+            border-top-style: none;
+            border-right-style: none;
+            border-left-style: none;
+            border-bottom-style: none;
+            width:160px;
+            display:block;
+            height: 40px;
+            overflow:hidden;
+        }*/
+    </style>
 </head>
 
 <body id="bodyL" style="background-color: #fff;">
@@ -67,41 +106,49 @@
                         <div class="layui-tab-item layui-show">
                             <form action="">
                                 <input class="text" type="text" placeholder="如：百集网">
+                                <span class="DivSelect-sy i-b">
                                 <select class="dropdown2 " id="search_ty" name="searchType" onchange="chos_tm_x(this.value);">
                                     <option value="1" selected="" class="option">商标名称</option>
                                     <option value="3" class="option">注册号</option>
                                     <option value="2" class="option">申请人</option>
                                     <option value="4" class="option">代理机构</option>
                                 </select>
+                                </span>
                                 <input class="btn" type="submit" value="搜索">
                             </form>
                         </div>
                         <div class="layui-tab-item">
                             <form action="">
                                 <input class="text" type="text" placeholder="如：电子产品">
+                                <span class="DivSelect-sy i-b">
                                 <select class="dropdown2 " id="search_ty" name="searchType" onchange="chos_tm_x(this.value);">
                                     <option value="1" selected="" class="option">商标名称</option>
                                     <option value="3" class="option">注册号</option>
                                     <option value="2" class="option">申请人</option>
                                     <option value="4" class="option">代理机构</option>
                                 </select>
+                                </span>
                                 <input class="btn" type="submit" value="搜索">
                             </form>
                         </div>
                         <div class="layui-tab-item">
                             <form action="">
                                 <input class="text" type="text" placeholder="如：企慧网">
+                                <span class="DivSelect-sy i-b">
                                 <select class="dropdown2 " id="search_ty" name="searchType" onchange="chos_tm_x(this.value);">
                                     <option value="1" selected="" class="option">商标名称</option>
                                     <option value="3" class="option">注册号</option>
                                     <option value="2" class="option">申请人</option>
                                     <option value="4" class="option">代理机构</option>
                                 </select>
+                                </span>
                                 <input class="btn" type="submit" value="搜索">
                             </form>
                         </div>
                     </div>
                 </div>
+
+
 
                 <div class="hot-search">
                     <a>热门推荐：</a>
