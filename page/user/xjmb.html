@@ -1,0 +1,389 @@
+<h1 class="title-wrapper">新建模板</h1>
+
+<div class="right-fluid">
+    <div class="layui-tab mb-tab-wrapper">
+        <h3 class="label-name">申请主体类型</h3>
+        <ul class="layui-tab-title">
+            <li class="layui-this">企业（大陆）</li>
+            <li>个体（大陆）</li>
+            <li>企业（港澳台/海外）</li>
+            <li>个体（港澳台/海外）</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <form action="" class="layui-form">
+                    <div class="main-form fl">
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">主体身份证明</div>
+                            <div class="layui-input-inline">
+                                <p class="tip">无营业执照？</p>
+                                <div class="upload-wrapper">
+                                    <div class="upload-item fl">
+                                        <p>请上传营业执照<br>复印盖章件</p>
+                                        <div class="pic"><img src="/style/images/upload-img-default.png"></div>
+                                        <button>点击上传</button>
+                                    </div>
+                                    <div class="upload-example fl">
+                                        <img src="/style/images/comlicense.jpg">
+                                        <div class="mask"></div>
+                                        <button>点击放大</button>
+                                    </div>
+                                </div>
+                                <p class="hint">请按照要求上传扫描件，jpg格式、小于5M</p>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人姓名</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="xm" autocomplete="off" placeholder="请输入联系人姓名（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人电话</div>
+                            <div class="layui-input-inline">
+                                <input type="number" name="phone" autocomplete="off" placeholder="请输入联系人手机号（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人邮箱</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="email" autocomplete="off" placeholder="请输入联系人邮箱（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人邮编</div>
+                            <div class="layui-input-inline">
+                                <input type="number" name="postcode" autocomplete="off" placeholder="请输入联系人邮编（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人地址</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="adress" autocomplete="off" placeholder="请输入联系人地址（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label"></div>
+                            <div class="layui-input-block mt60">
+                                <button class="layui-btn f-w310" lay-submit="" lay-filter="submit-btn">立即提交</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zdsb-form fr">
+                        <h3 class="title">自动识别</h3>
+                        <p class="txt1">请上传清晰的营业执照，或个人身份证照片；系统识别以后，请再次确认信息，若识别有误请修改。</p>
+
+                        <label>申请主体名称</label>
+                        <input class="layui-input" type="text" placeholder="请与营业执照的企业名称保持一致">
+                        <label>证件地址</label>
+                        <input class="layui-input" type="text" placeholder="请填写营业执照地址">
+                        <p class="txt2">若不含省、市（县）请补足，以免不予受理</p>
+                        <label>社会代码</label>
+                        <input class="layui-input" type="text" placeholder="请与营业执照社会代码号保持一致">
+                        <p class="txt3">主体信息可在个人中心<a href="">添加模板</a>，便于后期直接引用</p>
+                    </div>
+                    <div class="clear"></div>
+                </form>
+            </div>
+
+            <div class="layui-tab-item">
+                <form action="" class="layui-form">
+                    <div class="main-form fl">
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">主体身份证明</div>
+                            <div class="layui-input-inline">
+                                <p class="tip">无营业执照？</p>
+                                <div class="upload-wrapper">
+                                    <div class="upload-item fl">
+                                        <p>请上传营业执照<br>复印盖章件</p>
+                                        <div class="pic"><img src="/style/images/upload-img-default.png"></div>
+                                        <button>点击上传</button>
+                                    </div>
+                                    <div class="upload-example fl">
+                                        <img src="/style/css/img/sliccense.jpg">
+                                        <div class="mask"></div>
+                                        <button>点击放大</button>
+                                    </div>
+                                </div>
+                                <div class="upload-wrapper">
+                                    <div class="upload-item fl">
+                                        <p>请上传身份证<br>正反面复印件签字</p>
+                                        <div class="pic"><img src="/style/images/upload-img-default.png"></div>
+                                        <button>点击上传</button>
+                                    </div>
+                                    <div class="upload-example fl">
+                                        <img src="/style/images/identity.jpg">
+                                        <div class="mask"></div>
+                                        <button>点击放大</button>
+                                    </div>
+                                </div>
+                                <p class="hint">请按照要求上传扫描件，jpg格式、小于5M</p>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人姓名</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="xm" autocomplete="off" placeholder="请输入联系人姓名（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人电话</div>
+                            <div class="layui-input-inline">
+                                <input type="number" name="phone" autocomplete="off" placeholder="请输入联系人手机号（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人邮箱</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="email" autocomplete="off" placeholder="请输入联系人邮箱（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人邮编</div>
+                            <div class="layui-input-inline">
+                                <input type="number" name="postcode" autocomplete="off" placeholder="请输入联系人邮编（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人地址</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="adress" autocomplete="off" placeholder="请输入联系人地址（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label"></div>
+                            <div class="layui-input-block mt60">
+                                <button class="layui-btn f-w310" lay-submit="" lay-filter="submit-btn">立即提交</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zdsb-form fr">
+                        <h3 class="title">自动识别</h3>
+                        <p class="txt1">请上传清晰的营业执照，或个人身份证照片；系统识别以后，请再次确认信息，若识别有误请修改。</p>
+
+                        <label>申请主体名称</label>
+                        <input class="layui-input" type="text" placeholder="请与身份证上的姓名保持一致">
+                        <label>证件地址</label>
+                        <input class="layui-input" type="text" placeholder="请填写身份证的地址">
+                        <p class="txt2">若不含省、市（县）请补足，以免不予受理</p>
+                        <label>身份证号</label>
+                        <input class="layui-input" type="text" placeholder="证件号码只支持数字/英文">
+                        <label>社会代码</label>
+                        <input class="layui-input" type="text" placeholder="请与营业执照社会代码号保持一致">
+                        <p class="txt3">主体信息可在个人中心<a href="">添加模板</a>，便于后期直接引用</p>
+                    </div>
+                    <div class="clear"></div>
+                </form>
+            </div>
+
+            <div class="layui-tab-item">
+                <form action="" class="layui-form">
+                    <div class="main-form fl">
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">主体身份证明</div>
+                            <div class="layui-input-inline">
+                                <p class="tip">无营业执照？</p>
+                                <div class="upload-wrapper">
+                                    <div class="upload-item fl">
+                                        <p>请上传当地商事<br>登记证明盖章</p>
+                                        <div class="pic"><img src="/style/images/upload-img-default.png"></div>
+                                        <button>点击上传</button>
+                                    </div>
+                                    <div class="upload-example fl">
+                                        <img src="/style/css/img/comlicenseout1.jpg">
+                                        <div class="mask"></div>
+                                        <button>点击放大</button>
+                                    </div>
+                                </div>
+                                <div class="upload-wrapper">
+                                    <div class="upload-item fl">
+                                        <p>请上传中英文<br>证明盖章</p>
+                                        <div class="pic"><img src="/style/images/upload-img-default.png"></div>
+                                        <button>点击上传</button>
+                                    </div>
+                                    <div class="upload-example fl">
+                                        <img src="/style/css/img/componout.jpg">
+                                        <div class="mask"></div>
+                                        <button>点击放大</button>
+                                    </div>
+                                </div>
+                                <p class="hint">请按照要求上传扫描件，jpg格式、小于5M</p>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人姓名</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="xm" autocomplete="off" placeholder="请输入联系人姓名（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人电话</div>
+                            <div class="layui-input-inline">
+                                <input type="number" name="phone" autocomplete="off" placeholder="请输入联系人手机号（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人邮箱</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="email" autocomplete="off" placeholder="请输入联系人邮箱（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人邮编</div>
+                            <div class="layui-input-inline">
+                                <input type="number" name="postcode" autocomplete="off" placeholder="请输入联系人邮编（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人地址</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="adress" autocomplete="off" placeholder="请输入联系人地址（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label"></div>
+                            <div class="layui-input-block mt60">
+                                <button class="layui-btn f-w310" lay-submit="" lay-filter="submit-btn">立即提交</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zdsb-form fr">
+                        <h3 class="title">自动识别</h3>
+                        <p class="txt1">请上传清晰的营业执照，或个人身份证照片；系统识别以后，请再次确认信息，若识别有误请修改。</p>
+
+                        <label>申请主体名称</label>
+                        <input class="layui-input" type="text" placeholder="请填写企业的英文名称">
+                        <input class="layui-input" type="text" placeholder="营业执照中文名称，必须为中文简体">
+                        <label>营业执照所属国籍</label>
+                        <select name="nationality">
+                            <option value="">请选择所属国籍</option>
+                        </select>
+                        <label>证件地址</label>
+                        <input class="layui-input" type="text" placeholder="请输入营业执照对应的英文地址">
+                        <input class="layui-input" type="text" placeholder="营业执照中文地址，必须为中文简体">
+                        <p class="txt3">主体信息可在个人中心<a href="">添加模板</a>，便于后期直接引用</p>
+                    </div>
+                    <div class="clear"></div>
+                </form>
+            </div>
+
+            <div class="layui-tab-item">
+                <form action="" class="layui-form">
+                    <div class="main-form fl">
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">主体身份证明</div>
+                            <div class="layui-input-inline">
+                                <p class="tip">无营业执照？</p>
+                                <div class="upload-wrapper">
+                                    <div class="upload-item fl">
+                                        <p>请上传境外自然人<br>身份证明签字</p>
+                                        <div class="pic"><img src="/style/images/upload-img-default.png"></div>
+                                        <button>点击上传</button>
+                                    </div>
+                                    <div class="upload-example fl">
+                                        <img src="/style/css/img/sliccenseout.jpg">
+                                        <div class="mask"></div>
+                                        <button>点击放大</button>
+                                    </div>
+                                </div>
+                                <div class="upload-wrapper">
+                                    <div class="upload-item fl">
+                                        <p>请上传中英文<br>证明签字</p>
+                                        <div class="pic"><img src="/style/images/upload-img-default.png"></div>
+                                        <button>点击上传</button>
+                                    </div>
+                                    <div class="upload-example fl">
+                                        <img src="/style/css/img/personout.jpg">
+                                        <div class="mask"></div>
+                                        <button>点击放大</button>
+                                    </div>
+                                </div>
+                                <p class="hint">请按照要求上传扫描件，jpg格式、小于5M</p>
+                                <p class="hints">
+                                    1、境外自然人护照复印件<br>
+                                    2、公安部门颁发的、有效期(一年以上)内的“外国人永久居留证”<br>
+                                    3、公安部门颁发的、有效期(一年以上)内的“外国人居留许可”<br>
+                                    4、公安部门颁发的、有效期(一年以上)内的“外国人居留证”
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人姓名</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="xm" autocomplete="off" placeholder="请输入联系人姓名（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人电话</div>
+                            <div class="layui-input-inline">
+                                <input type="number" name="phone" autocomplete="off" placeholder="请输入联系人手机号（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人邮箱</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="email" autocomplete="off" placeholder="请输入联系人邮箱（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人邮编</div>
+                            <div class="layui-input-inline">
+                                <input type="number" name="postcode" autocomplete="off" placeholder="请输入联系人邮编（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">联系人地址</div>
+                            <div class="layui-input-inline">
+                                <input type="text" name="adress" autocomplete="off" placeholder="请输入联系人地址（必填）" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-form-label"></div>
+                            <div class="layui-input-block mt60">
+                                <button class="layui-btn f-w310" lay-submit="" lay-filter="submit-btn">立即提交</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zdsb-form fr">
+                        <h3 class="title">自动识别</h3>
+                        <p class="txt1">请上传清晰的企业中英文证明，系统识别后请再次核对信息并完善信息。</p>
+
+                        <label>申请主体名称</label>
+                        <input class="layui-input" type="text" placeholder="请填写企业的英文名称">
+                        <input class="layui-input" type="text" placeholder="营业执照中文名称，必须为中文简体">
+                        <label>营业执照所属国籍</label>
+                        <select name="nationality">
+                            <option value="">请选择所属国籍</option>
+                        </select>
+                        <label>护照地址</label>
+                        <input class="layui-input" type="text" placeholder="请填写护照对应的英文地址">
+                        <input class="layui-input" type="text" placeholder="护照的中文地址，必须为中文简体">
+                        <label>证件号码</label>
+                        <input class="layui-input" type="text" placeholder="请填写身份证明文件号码">
+                        <p class="txt3">主体信息可在个人中心<a href="">添加模板</a>，便于后期直接引用</p>
+                    </div>
+                    <div class="clear"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    layui.use(['layer', 'jquery', 'form', 'element'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form,
+            element = layui.element;
+
+        
+    });
+</script>

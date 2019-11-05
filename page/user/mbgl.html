@@ -1,0 +1,140 @@
+<h1 class="title-wrapper">模板管理</h1>
+
+<div class="right-fluid">
+    <div class="fluid-content">
+        <div class="fl">
+            <button class="btn-normal">添加模板</button>
+        </div>
+        <div class="fr">
+            <form action="" class="layui-form">
+                <div class="layui-form-item bj-form-item">
+                    <div class="layui-inline f-w140">
+                        <select name="lx">
+                            <option value="">请选择类型</option>
+                            <option value="企业">企业</option>
+                            <option value="个体">个体</option>
+                        </select>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn" lay-submit="" lay-filter="search-btn">搜索</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="layui-table" id="templatelist" lay-filter="templatelist"></table>
+</div>
+
+<!-- 操作工具条按钮 -->
+<script type="text/html" id="tooltpl">
+    <a lay-event="edit" class="color1">编辑</a>
+    <a lay-event="del">删除</a>
+</script>
+
+<script>
+    layui.use(['layer', 'jquery', 'form', 'table'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+
+        // mock接口
+        var _http_ = "https://b1be0a37-aa66-4dd6-b23b-a05c9af3775a.mock.pstmn.io";  
+
+        // 渲染数据表格
+        table.render({
+            elem: '#templatelist',
+            url: _http_ + '/get_template_list?r=q',
+            cellMinWidth: 90,
+            page: {
+                limit: 5,
+                limits: [5,10],
+                layout: ['count', 'prev', 'page', 'next', 'refresh', 'skip'],
+                theme: '#26b8d4'
+            },
+            skin: 'line',
+            even: true,
+            cols: [
+                [
+                    {
+                        field: 'bh',
+                        align: 'center',
+                        width: 240,
+                        title: '编号'
+                    },
+                    {
+                        field: 'zzmc',
+                        title: '营业执照名称'
+                    },
+                    {
+                        field: 'lx',
+                        align: 'center',
+                        width: 120,
+                        title: '类型'
+                    },
+                    {
+                        width: 160,
+                        align: 'center',
+                        toolbar: '#tooltpl',
+                        title: '操作'
+                    }
+                ]
+            ]
+        });
+
+        // table操作栏
+        table.on('tool(templatelist)', function(obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+
+            if (layEvent === 'edit') {
+                
+            } else if(layEvent === 'del') {
+                var index = layer.open({
+                    type: 1,
+                    title: false,
+                    skin: 'made-layer-style',
+                    shadeClose: true,
+                    area: '400px',
+                    btn: ['确定', '取消'],
+                    btnAlign: 'c',
+                    content: '<div class="bj-fluid"><h3>您确认删除该模板？</h3><p>删除后，之前申请的商标并不会受影响</p></div>',
+                    yes: function(index){
+                        var loading = layer.load(3);
+
+                        $.ajax({
+                            type: "POST",
+                            url: '', //删除接口
+                            data: 'id=' + data.id,
+                            success: function(res) {
+                                layer.close('loading');
+                                if(res.code == 1){
+                                    obj.del();
+                                    layer.msg(res.msg, {icon: 6,time:2000});
+                                }else{
+                                    layer.msg(res.msg, {icon: 5, anim: 6,time:2000});
+                                }
+                            }
+                        });
+                    },
+                    btn2: function(index){
+                        layer.close(index);
+                    }
+                });
+            }
+        });
+
+        // 搜索表单
+        form.on('submit(search-btn)', function(data) {
+            table.reload('templatelist', {
+                where: data.field.lx,
+                page: {
+                    curr: 1
+                }
+            });
+            return false;
+        });
+
+    });
+</script>
