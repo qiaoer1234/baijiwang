@@ -27,9 +27,6 @@ body{
 .mb20{
     margin-bottom: 20px !important;
 }
-.mt60{
-    margin-top: 60px !important;
-}
 .mt50{
     margin-top: 50px !important;
 }
@@ -453,14 +450,14 @@ textarea::-webkit-input-placeholder {
 }
 .mb-tab-wrapper .label-name{
     position: absolute;
-    left: 0;
+    left: 15px;
     top: 0;
     line-height: 32px;
     color: #0f2a3d;
 }
 .mb-tab-wrapper .layui-tab-title{
     height: 32px;
-    padding-left: 112px;
+    padding-left: 125px;
     border: none;
 }
 .mb-tab-wrapper .layui-tab-title li{
@@ -483,8 +480,8 @@ textarea::-webkit-input-placeholder {
     width: 500px;
 }
 .main-form .layui-form-label{
-    width: 84px;
-    padding: 10px 28px 10px 0;
+    width: 100px;
+    padding: 10px 25px 10px 0;
 }
 .main-form .layui-input-inline{
     width: 360px;
@@ -518,6 +515,10 @@ textarea::-webkit-input-placeholder {
     border: 1px solid #e9e9e9;
     margin: 12px auto 15px;
 }
+.upload-item .pic img{
+    width: 100%;
+    height: 100%;
+}
 .upload-item button{
     display: block;
     width: 94px;
@@ -534,6 +535,7 @@ textarea::-webkit-input-placeholder {
     height: 195px;
     margin-left: 20px;
     border: 1px solid #ddd;
+    cursor: pointer;
 }
 .upload-example img{
     width: 140px;
