@@ -306,6 +306,13 @@ function setSort()
     if(deng_sort!=''){
         sortsdeng=deng_sort.split(',');
     }
+
+/*  var submit_fls= $("#sbfls").val().filter(",");//input type=hidden  value= "010010,010021,"  [010010,010021]
+    if(!n_array(id,submit_fls)){
+    submit_fls.push(id);
+    $("#sbfls").val(submit_fls.join(","));
+}*/
+
     var k=0;
     for (var i=1;i<=45;i++) {    //45类
         tag = ('0' + i).slice(-2);
@@ -822,6 +829,7 @@ function addgoods(one, two, three, desc, noupdate) {  //添加商品项
         html += '<div class="content clearfix" id="clearfix"></div></div>';
         $("#class_info").append(html);
     }
+
     var block = $("#class_info>div[data-id='" + one + "']").get(0).lastChild;
     if (!getid("tm-sub-" + two)) {
         $(block).append('<div id="tm-sub-' + two + '"><span class="newlook" style="display:none;">' + two + '</span></div>');
@@ -1023,60 +1031,6 @@ $("input[name='Color']").click(function(){
         $("#colorOne").hide();
     }
 })
-
-function showtmlogo(types)   //手机扫描上传
-{
-    if(enameid=='' || enameid==0)return;
-    $("#"+types).html('<img src="/tm/showlogo">');
-    $("#"+types+"_").show();
-    var timestart=Date.parse(new Date());
-    timestart=timestart/1000;
-    var times= setInterval(function(){
-        var nowtime=Date.parse(new Date());
-        nowtime=nowtime/1000;
-        if(nowtime>Number(timestart)+120){
-            clearInterval(times);
-        }
-        $.ajax({
-            type:'post',
-            url:'/tm/getcode',
-            datatype:'json',
-            success:function(son){
-                var sons = eval("(" + son + ")");
-                if(sons.status==200 && sons.data!=null){
-                    if(sons.data['TmPattern']!=null &&sons.data['TmPattern']!='undefind' && sons.data['TmPattern']!=''){
-                        $("#tmsecondImageText").attr('src', sons.data['path']+'/tm'+sons.data['TmPattern']);
-                        $("#TmPattern_test").val(sons.data['TmPattern']);
-                        $(".second").attr('id','example2-second');
-                        $('#example2-second').attr('href',sons.data['path']+'/tm'+sons.data['TmPattern']);
-                        tup_mt();
-                    }
-
-                    if(sons.data['TmPatternTwo']!=null && sons.data['TmPatternTwo']!='undefind' && sons.data['TmPatternTwo']!=''){
-                        $("#tmthreeImageText").attr('src', sons.data['path']+'/tm'+sons.data['TmPatternTwo']);
-                        $("#TmPatternTwo_test").val(sons.data['TmPatternTwo']);
-                        $("input:radio:last").attr('checked','checked');
-                        $("#colorOne").show();
-                        $(".three").attr('id','example2-three');
-                        $('#example2-three').attr('href',sons.data['path']+'/tm'+sons.data['TmPatternTwo']);
-                        tup_mt();
-                    }
-
-                    if(sons.data['ProxyImg']!='undefind' && sons.data['ProxyImg']!=''&& sons.data['ProxyImg']!=null){
-                        $("#tmfirstImageText").attr('src',sons.data['path']+'/tm'+sons.data['ProxyImg']);
-                        $("#ProxyImg_test").val(sons.data['ProxyImg']);
-                        $(".first").attr('id','example2-first');
-                        $('#example2-first').attr('href',sons.data['path']+'/tm'+sons.data['ProxyImg']);
-                        tup_mt();
-                    }
-                    if(sons.data!=null){
-                        clearInterval(times);
-                    }
-                }
-            }
-        });
-    },2000);
-}
 
 function upfiletm(num,name,obj)   //上传图样
 {

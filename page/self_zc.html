@@ -126,7 +126,7 @@
                                     <td class="tright"><span class="fn16 c_gray4">邮政编码</span></td>
                                     <td class="tleft">
                                         <div class="posrel left ">
-                                            <input class="inp w_458 err" name="PostCode" id="PostCode" type="text"  placeholder="请填写营业执照地址所属邮政编码如" lay-verType="tips" lay-verify="required">
+                                            <input class="inp w_458" name="PostCode" id="PostCode" type="text"  placeholder="请填写营业执照地址所属邮政编码如" lay-verType="tips" lay-verify="required">
                                             <span class="icon_not"></span>
                                         </div>
                                     </td>
@@ -206,7 +206,7 @@
                                     </div>
                                     <div id="outContory" style="display: none">
                                         <p class="fn14 lh40">护照所属国籍</p>
-                                        <select class="w_230" id="Country" tabindex="-1" >
+                                        <select class="w_230" id="Country" >
                                             <option selected="" value="">请选择国籍</option>
                                             <option value="CN">中国(港澳台)</option>
                                             <option value="YU">南斯拉夫</option>
@@ -227,17 +227,10 @@
                                         <input class="inp fn13 mt5 hide" name="IDAddressOs" id="IDAddressOs" type="text"  placeholder="营业执照中文地址，必须为中文简体" >
                                         <span class="icon_not"></span>
                                     </div>
-                                    <div id="outcon" >
+                                    <div id="outcon" style="display: none">
                                         <p class="fn14 lh40" id="IDNumber_title">身份证号</p>
                                         <div class="posrel">
                                             <input class="inp" type="text" name="IDNumber" id="IDNumber"  placeholder="请填写18位身份证号码" >
-                                            <span class="icon_not"></span>
-                                        </div>
-                                    </div>
-                                    <div id="outcon" style="display:none">
-                                        <p class="fn14 lh40" id="IDNumber_title">社会代码</p>
-                                        <div class="posrel">
-                                            <input class="inp" type="text" name="IDNumber2" id="IDNumber2"  placeholder="请与营业执照社会代码号保持一致">
                                             <span class="icon_not"></span>
                                         </div>
                                     </div>
@@ -769,14 +762,14 @@
         if(can_edit==true) return;
         var aptype=$(this).data('type');
         $("#AId").val('');
-        setinputVal();
+        // setinputVal();
         setApData(aptype);
     });
 
     //切换时去掉红色警告
-    function setinputVal() {
-        $("#ap_mgs input").removeClass('err');
-    }
+    // function setinputVal() {
+    //     $("#ap_mgs input").removeClass('err');
+    // }
 
 
     function alert_show(msg)

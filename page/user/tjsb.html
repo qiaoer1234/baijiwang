@@ -1,0 +1,303 @@
+<style>
+.f-w780{
+    width:780px!important;
+}
+.f-w90{
+    width:90px;
+}
+.ml-110{
+    margin-left: 110px;
+}
+.box-title{
+    font-size: 24px;
+    color: #0f2a3d;
+    font-weight: bold;
+    padding: 50px 0 10px 0;
+}
+.layui-form-item .layui-input-inline{
+    margin-right: 0;
+}
+.lb_p{
+    right: 10px;
+    top: 9px;
+}
+.box-title-f {
+    padding: 26px 0 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0f2a3d;
+}
+.upload_box li{
+    float: left;
+    padding: 15px 40px;
+    width: 200px;
+    height: 270px;
+    margin-right: 40px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #d1d1d1;
+    background: #fbfbfb;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.upload_box li .img_box {
+    display: inline-block;
+    height: 120px;
+    width: 120px;
+    margin-top: 26px;
+    overflow: hidden;
+    border: 1px solid #e9e9e9;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.upload_box li .img_box img {
+    width: 118px;
+    height: 118px;
+    margin: 0 10px 10px 0;
+}
+.upload_box li .btn {
+    padding: 8px 30px;
+    margin: 10px 0;
+    position: relative;
+    font-size: 12px;
+    border-radius: 28px !important;
+    outline: none;
+    color:#26b8d4;
+    border: 1px solid #26b8d4;
+    margin-bottom: 30px;
+    background: none!important;
+}
+    .cz_btn {
+        width: 180px;
+        height: 50px;
+        background-color: #ffffff;
+        border: solid 1px #eeeeee;
+        color: #999999;
+        font-size: 16px;
+        margin-top: 80px;
+        margin-right: 40px;
+    }
+
+    .tj_btn{
+        width: 180px;
+        height: 50px;
+        background-color: #26b8d4;
+        border: solid 1px #26b8d4;
+        color: #fff;
+        font-size: 16px;
+        margin-top: 80px;
+    }
+ </style>
+<b class="box-title tc block">添加商标</b>
+
+<div class="right-fluid">
+
+    <form action="" class="layui-form">
+        <h1 class="box-title-f mb20">基本信息</h1>
+        <div class="layui-inline mb20">
+            <div class="layui-form-label layui-right">商标名称</div>
+            <div class="layui-input-inline f-w300">
+                <input type="text" name="title" autocomplete="off" placeholder="如：百集网" class="layui-input" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-inline fr  mb20">
+            <div class="layui-form-label layui-right">申请号</div>
+            <div class="layui-input-inline f-w300">
+                <input type="text" name="sqh" autocomplete="off" placeholder="如：123456789" class="layui-input" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-inline  mb20">
+            <div class="layui-form-label layui-right">商标类别</div>
+            <div class="layui-input-inline f-w300 re">
+                <input type="text" name="sblb" autocomplete="off" placeholder="如：35" class="layui-input" lay-verify="required" style="padding-right: 30px;">
+                <span class="ab lb_p">类</span>
+            </div>
+        </div>
+        <div class="layui-inline fr  mb20">
+            <div class="layui-form-label layui-right">申请人</div>
+            <div class="layui-input-inline f-w300">
+                <input type="text" name="sqr" autocomplete="off" placeholder="如：安徽百集知识产权有限公司" class="layui-input" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline mb20">
+            <div class="layui-form-label layui-right">申请地址</div>
+            <div class="layui-input-inline f-w780">
+                <input type="text" name="adress" autocomplete="off" placeholder="如：安徽省合肥市蜀山区110号" class="layui-input" lay-verify="required">
+            </div>
+        </div>
+
+        <h1 class="box-title-f mb20">日期信息</h1>
+
+        <div class="layui-inline  mb20">
+            <div class="layui-form-label layui-right">初审公告日</div>
+            <div class="layui-input-inline f-w300">
+                <input type="text" value="2019-10-22" class="layui-input date-birth" id="cs-date-birth" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-inline fr mb20">
+            <div class="layui-form-label layui-right">注册日</div>
+            <div class="layui-input-inline f-w300">
+                <input type="text" value="2019-10-22" class="layui-input date-birth" id="zc-date-birth" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-inline  mb20">
+            <div class="layui-form-label layui-right">申请日期</div>
+            <div class="layui-input-inline f-w300">
+                <input type="text" value="2019-10-22" class="layui-input date-birth" id="start-date-birth" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-inline fr  mb20">
+            <div class="layui-form-label layui-right f-w140">异议截至日期</div>
+            <div class="layui-input-inline f-w300">
+                <input type="text" value="2019-10-22" class="layui-input date-birth" id="yy-date-birth" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-inline  mb20">
+            <div class="layui-form-label layui-right">有效期至</div>
+            <div class="layui-input-inline f-w300">
+                <input type="text" value="2019-10-22" class="layui-input date-birth" id="end-date-birth" lay-verify="required">
+            </div>
+        </div>
+        <div class="layui-inline fr  mb20">
+            <div class="layui-form-label layui-right f-w140">驳回收文日期</div>
+            <div class="layui-input-inline f-w300">
+                <input type="text" value="2019-10-22" class="layui-input date-birth" id="bh-date-birth" lay-verify="required">
+            </div>
+        </div>
+
+        <h1 class="box-title-f mb20">商标服务信息</h1>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label f-w90">申报商品/服务</label>
+            <div class="layui-input-block ml-110">
+                <textarea name="sbsp" placeholder="不超过200字" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label f-w90">类似群</label>
+            <div class="layui-input-block ml-110">
+                <textarea name="lsq" placeholder="不超过200字" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label f-w90">核准商品/服务</label>
+            <div class="layui-input-block ml-110">
+                <textarea name="bzsp" placeholder="不超过200字" class="layui-textarea"></textarea>
+            </div>
+        </div>
+        <div class="layui-inline  mb20">
+            <div class="layui-form-label layui-right f-w90">代理机构</div>
+            <div class="layui-input-inline f-w300">
+                <input type="text" name="jg" autocomplete="off" placeholder="如：百集网" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-inline fr  mb20">
+            <div class="layui-form-label layui-right f-w140">重点保护商品</div>
+            <div class="layui-input-inline f-w300">
+                <input type="text" name="bhsp" autocomplete="off" placeholder="如：安徽百集知识产权有限公司" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label layui-right f-w90">备注</label>
+            <div class="layui-input-block ml-110">
+                <textarea name="bz" placeholder="不超过200字" class="layui-textarea"></textarea>
+            </div>
+        </div>
+
+        <h1 class="box-title-f mb20">档案管理</h1>
+        <ul class="upload_box ml-110 w100 clearfix">
+            <li class="layui-upload">
+                <p class="tc">官方发文</p>
+                <div class="layui-upload">
+                    <div class="layui-upload-list img_box">
+                        <img class="layui-upload-img" id="demo1" src="../../style/images/empty2.png">
+                        <p class="demoText"></p>
+                    </div>
+                    <button type="button" class="btn" id="test1">点击上传</button>
+                    <input class="layui-upload-file" type="file" accept="" name="file">
+                </div>
+            </li>
+            <li class="layui-upload">
+                <p class="tc">交关文件</p>
+                <div class="layui-upload">
+                    <div class="layui-upload-list img_box">
+                        <img class="layui-upload-img" id="demo2" src="../../style/images/empty2.png">
+                        <p class="demoText"></p>
+                    </div>
+                    <button type="button" class="btn" id="test2">点击上传</button>
+                    <input class="layui-upload-file" type="file" accept="" name="file">
+                </div>
+            </li>
+            <li class="layui-upload">
+                <p class="tc">使用记录</p>
+                <div class="layui-upload">
+                    <div class="layui-upload-list img_box">
+                        <img class="layui-upload-img" id="demo3" src="../../style/images/empty2.png">
+                        <p class="demoText"></p>
+                    </div>
+                    <button type="button" class="btn" id="test3">点击上传</button>
+                    <input class="layui-upload-file" type="file" accept="" name="file">
+                </div>
+            </li>
+        </ul>
+
+        <div class="layui-form-item tc">
+            <div class="layui-input-block">
+                <button type="reset" class="cz_btn">取消</button>
+                <button class="layui-btn tj_btn " lay-submit lay-filter="formDemo">保存</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    layui.use(['layer', 'jquery', 'form', 'element','laydate','upload'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form,
+            element = layui.element;
+            laydate = layui.laydate;
+             upload = layui.upload;
+
+        // 日期组件
+        lay('.date-birth').each(function(){
+            laydate.render({
+                elem: this,
+                theme: '#26b8d4',
+                trigger: 'click'
+            });
+        });
+
+        uploadImg('test1','demo1');
+        uploadImg('test2','demo2');
+        uploadImg('test3','demo3');
+
+
+        // 图片上传
+        function uploadImg(el, id) {
+            var uploadInst = upload.render({
+                elem: '#' + el,
+                url: '',
+                before: function(obj){
+                    obj.preview(function(index, file, result){
+                        $('#' + id).attr('src', result); //图片链接（base64）
+                    });
+                },
+                done: function(res){
+                    //如果上传失败
+                    if(res.code > 0){
+                        return layer.msg('上传失败');
+                    }
+                    //上传成功
+                }
+            });
+        }
+
+
+
+    });
+</script>
