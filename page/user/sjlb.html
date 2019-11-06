@@ -1,0 +1,135 @@
+<h1 class="title-wrapper">商标列表</h1>
+
+<div class="right-fluid">
+    <div class="fluid-content">
+        <div class="fl">
+            <button class="btn-normal" onclick="layuiUser.init('tjsb.html')">添加商标</button>
+        </div>
+        <div class="fr">
+            <form action="" class="layui-form">
+                <div class="layui-form-item bj-form-item">
+                    <div class="layui-inline f-w140">
+                        <select name="zt">
+                            <option value="">全部订单状态</option>
+                            <option value="状态1">状态1</option>
+                            <option value="状态2">状态2</option>
+                        </select>
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn" lay-submit="" lay-filter="search-btn">搜索</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="layui-table" id="brandlist" lay-filter="brandlist"></table>
+</div>
+
+<!-- 操作工具条按钮 -->
+<script type="text/html" id="tooltpl">
+    <a lay-event="edit" class="color1">编辑</a>
+    <a lay-event="look">查看</a>
+</script>
+
+<script>
+    layui.use(['layer', 'jquery', 'form', 'table'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+
+        // mock接口
+        var _http_ = "https://b1be0a37-aa66-4dd6-b23b-a05c9af3775a.mock.pstmn.io";  
+
+        // 渲染数据表格
+        table.render({
+            elem: '#brandlist',
+            url: _http_ + '/get_sb_list?r=q',
+            cellMinWidth: 90,
+            page: {
+                limit: 5,
+                limits: [5,10],
+                layout: ['count', 'prev', 'page', 'next', 'refresh', 'skip'],
+                theme: '#26b8d4'
+            },
+            skin: 'line',
+            even: true,
+            cols: [
+                [
+                    {
+                        field: 'sqh',
+                        align: 'center',
+                        width: 160,
+                        title: '申请号'
+                    },
+                    {
+                        field: 'sbmc',
+                        width: 90,
+                        title: '商标名称'
+                    },
+                    {
+                        field: 'lb',
+                        align: 'center',
+                        width: 120,
+                        title: '类别'
+                    },
+                    {
+                        field: 'sqr',
+                        width: 160,
+                        title: '申请人'
+                    },
+                    {
+                        field: 'sqrq',
+                        align: 'center',
+                        width: 100,
+                        title: '申请日期'
+                    },
+                    {
+                        field: 'yxq',
+                        align: 'center',
+                        width: 100,
+                        title: '有效期至'
+                    },
+                    {
+                        field: 'dljg',
+                        align: 'center',
+                        width: 120,
+                        title: '代理机构'
+                    },
+                    {
+                        fixed: 'right',
+                        width: 120,
+                        align: 'center',
+                        toolbar: '#tooltpl',
+                        title: '操作'
+                    }
+                ]
+            ]
+        });
+
+        // table操作栏
+        table.on('tool(brandlist)', function(obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+
+            if (layEvent === 'edit') {
+                
+            } else if(layEvent === 'del') {
+                
+            }
+        });
+
+        // 搜索表单
+        form.on('submit(search-btn)', function(data) {
+            table.reload('brandlist', {
+                where: data.field.zt,
+                page: {
+                    curr: 1
+                }
+            });
+            return false;
+        });
+
+    });
+</script>

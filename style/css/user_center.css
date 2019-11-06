@@ -6,13 +6,16 @@ body{
     width: 590px;
 }
 .f-w380{
-    width: 380px;
+    width: 380px !important;
 }
 .f-w310{
     width: 310px;
 }
 .f-w300{
     width: 300px;
+}
+.f-w260{
+    width: 260px !important;
 }
 .f-w200{
     width: 200px;
@@ -639,4 +642,123 @@ textarea::-webkit-input-placeholder {
     margin-top: 10px;
     border: 1px solid #c9ebf2;
     font-size: 12px;
+}
+
+.l_reg_con{
+    width: 600px;
+    margin:0 auto;
+    padding-top: 60px;
+    overflow: hidden;
+}
+
+.l_reg_ul li{
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 4px;
+    background-color: #e5e5e5;
+}
+.l_reg_ul .num{
+    position: absolute;
+    left: 50%;
+    top: -14px;
+    margin-left: -15px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: url(img/user-step-icons.png) no-repeat right center;
+}
+.l_reg_ul .txt{
+    margin-top: 30px;
+    text-align: center;
+    color: #999;
+}
+.l_reg_ul li.on{
+    background-color: #f0c420;
+}
+.l_reg_ul li.on .num{
+    background-position: left center;
+}
+.l_reg_ul li.on .txt{
+    color: #f0c420;
+}
+
+.l_wrapper{
+    padding: 80px 0px 0;
+    margin: 0 50px;
+    overflow: hidden;
+}
+
+.l_wrapper_container{
+    width: 1620px;
+    overflow: hidden;
+}
+.l_reg_list{
+    float: left;
+    width: 540px;
+}
+
+.get-yzm{
+    height: 40px;
+    padding: 0 20px;
+    background: #26b8d4;
+    color: #fff;
+    border: none;
+}
+input.get-yzm:disabled{
+    background-color: #d1d1d1;
+}
+input.get-yzm:disabled:hover{
+    color: #fff;
+    border: none;
+}
+
+.step2-transition{
+    -webkit-transform: translate(-540px, 0);
+    -moz-transform: translate(-540px, 0);
+    -ms-transform: translate(-540px, 0);
+    -o-transform: translate(-540px, 0);
+    transform: translate(-540px, 0);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.step3-transition{
+    -webkit-transform: translate(-1080px, 0);
+    -moz-transform: translate(-1080px, 0);
+    -ms-transform: translate(-1080px, 0);
+    -o-transform: translate(-1080px, 0);
+    transform: translate(-1080px, 0);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.success-wrapper{
+    width: 242px;
+    padding: 90px 0 0;
+    margin-left: 126px;
+    background: url(img/success-icon.png) no-repeat center 0;
+}
+.success-wrapper .txt{
+    padding: 10px 0 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}
+.success-wrapper .login-btn{
+    width: 100%;
+    height: 42px !important;
+    line-height: 42px !important;
 }

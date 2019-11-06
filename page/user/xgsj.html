@@ -1,0 +1,208 @@
+<h1 class="title-wrapper">修改手机</h1>
+
+<div class="right-fluid">
+    <div class="l_reg_con">
+        <ul class="l_reg_ul clear">
+            <li class="on">
+                <span class="num">1</span>
+                <p class="txt">验证手机</p>
+            </li>
+            <li>
+                <span class="num">2</span>
+                <p class="txt">修改手机</p>
+            </li>
+            <li>
+                <span class="num">3</span>
+                <p class="txt">修改成功</p>
+            </li>
+        </ul>
+
+        <div class="l_wrapper">
+            <div class="l_wrapper_container">
+                <form class="layui-form" action="">
+                    <div class="l_reg_list">
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">手机号</div>
+                            <div class="layui-input-inline f-w380">
+                                <input type="number" name="phone" autocomplete="off" placeholder="请输入您的手机号，如：13866668888" lay-verify="required" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">验证码</div>
+                            <div class="layui-input-inline f-w260">
+                                <input type="text" name="smsyzm1" placeholder="请输入短信验证码" lay-verify="required" class="layui-input" autocomplete="off">
+                            </div>
+                            <input type="button" class="get-yzm" id="get-yzm1" value="获取验证码" onclick="getYzm('phone', 'smsyzm1', '#get-yzm1')">
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-form-label"></div>
+                            <div class="layui-input-block mt50">
+                                <button type="button" class="layui-btn f-w200" id="next-btn">确定</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="l_reg_list">
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">新手机号</div>
+                            <div class="layui-input-inline f-w380">
+                                <input type="number" name="newphone" autocomplete="off" placeholder="请输入新手机号" lay-verify="required" class="layui-input">
+                            </div>
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-form-label layui-right">验证码</div>
+                            <div class="layui-input-inline f-w260">
+                                <input type="text" name="smsyzm2" placeholder="请输入短信验证码" lay-verify="required" class="layui-input" autocomplete="off">
+                            </div>
+                            <input type="button" class="get-yzm" id="get-yzm2" value="获取验证码" onclick="getYzm('newphone', 'smsyzm2', '#get-yzm2')">
+                        </div>
+
+                        <div class="layui-form-item">
+                            <div class="layui-form-label"></div>
+                            <div class="layui-input-block mt50">
+                                <button type="button" class="layui-btn f-w200" lay-submit lay-filter="alter-phone">确定</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="l_reg_list">
+                        <div class="success-wrapper">
+                            <p class="txt">修改成功</p>
+                            <a href="" class="layui-btn login-btn">重新登录</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    layui.use(['layer', 'jquery', 'form'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form;
+
+        // 获取验证码
+        getYzm = function(p, y, e) {
+            var dh = $("input[name='" + p + "']").val();
+            var yzm = $("input[name='" + y + "']").val();
+
+            if (!dh){
+                layer.msg("对不起，请输入您的手机号！",{offset: '50%', shift: 0});
+                return false;
+            }
+            if(!/^1[34578][0-9]{9}$/.test(dh)) {
+                return layer.msg('对不起，您输入的手机号码有误', {offset:'50%',time:1600});
+            }
+                    
+            $.ajax({
+                type: "POST",
+                url:'',
+                data:{dh:dh,yzm:yzm},
+                error: function(request) {
+                    layer.alert("提交失败!");
+                },
+                success: function(data) {
+                    if (data.code != 1) {
+                        layer.msg(data.msg, {offset:'50%', shift: 0});return false;
+                    }
+                    layer.msg(data.msg, {offset:'50%', shift: 0});
+                    var sendbtn=$(e);
+                    sendbtn.attr('disabled', true).addClass("layui-btn-disabled");
+                    countDown(e);
+                    
+                }
+            });
+            
+            return false;
+        }
+
+        // 下一步
+        $('#next-btn').on('click', function(){
+            var dh = $("input[name='phone']").val();
+            var yzm = $("input[name='smsyzm1']").val();
+            
+            if (!dh){
+                layer.msg("对不起，请输入您的手机号！",{offset: '50%', shift: 0});
+                return false;
+            }
+            if(!yzm) {
+                return layer.msg('对不起，请您输入短信验证码', {offset:'50%',time:1600});
+            }
+            
+            $.ajax({
+                type: "POST",
+                url:'',
+                data:{step:1,dh:dh,yzm:yzm},
+                error: function(request) {
+                    layer.alert("提交失败!");
+                },
+                success: function(data) {
+                    if (data.code != 1) {
+                        layer.msg(data.msg, {offset:'50%', shift: 0});return false;
+                    }
+
+                    $('.l_wrapper_container').addClass('step2-transition');
+					$('.l_reg_ul li').eq(1).addClass('on');
+                }
+            });
+
+        });
+
+        // 修改手机号
+        form.on('submit(alter-phone)', function(obj){
+            var dh = $("input[name='newphone']").val();
+            var yzm = $("input[name='smsyzm2']").val();
+            
+            if (!dh){
+                layer.msg("对不起，请输入您的手机号！",{offset: '50%', shift: 0});
+                return false;
+            }
+            if(!yzm) {
+                return layer.msg('对不起，请您输入短信验证码', {offset:'50%',time:1600});
+            }
+
+            var field = obj.field;
+            $.ajax({
+                type: "POST",
+                url:'',
+                data:field,
+                error: function(request) {
+                    layer.alert("提交失败!");
+                },
+                success: function(data) {
+                    if (data.code != 1) {
+                        layer.msg(data.msg, {offset: '50%', shift: 0, icon: 5});return false;
+                    }
+                    $('.l_wrapper_container').addClass('step3-transition');
+                    $('.l_reg_ul li').eq(2).addClass('on');
+                }
+            });
+            
+            return false;
+            
+        });
+        
+        // 倒计时
+        function countDown(obj) {
+            var yzmBtn = $(obj);
+            var count = 60;
+            var resend = setInterval(function(){
+                count--;
+                if(count > 0) {
+                    yzmBtn.val(count + "秒后重发")
+                } else {
+                    clearInterval(resend);
+                    yzmBtn.val("获取验证码").removeAttr('disabled style');
+                }
+            }, 1000)
+            yzmBtn.attr('disabled',true).css('cursor','not-allowed');
+        }
+
+
+    });
+</script>
