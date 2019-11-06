@@ -79,7 +79,15 @@
                         <i class="icon icon-pay-xianxia"></i>
                         <span class="text">线下支付</span>
                     </li>
+
                 </ul>
+                <form action="" class="layui-form yhq_main">
+                    <div class="policy-checkbox">
+                        <input type="checkbox" name="youhui" title="是否使用优惠券" lay-skin="primary"  lay-filter="youhui">
+                    </div>
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入优惠券码" autocomplete="off" class="layui-input yhq_box">
+                </form>
+
             </div>
             <div class="row-step fr">
                 <h3><small>应付金额：</small>￥500.00</h3>
@@ -89,6 +97,32 @@
 
     </div>
 <!--main end-->
+
+<!--    遮罩-->
+
+    <div class="zz"></div>
+    <div class="mask_box">
+        <a href="javascript:;" class="close">×</a>
+        <div class="header"><span class="title"><i class="icon icon-pay-weixn"></i>微信支付</span></div>
+        <div class="bodyer clearfix">
+            <div class="wx-code-box">
+                <div class="wx-code" id="wxCode">
+                    <img src="http://files.quandashi.com/avatar/2019/11/06/48b6ab1d-a496-431f-8e34-b6913d83e78c.jpg">
+                </div>
+            </div>
+            <div class="wx-content">
+                <div class="price-box wx-price-box">
+                    <p>扫一扫付款</p>
+                    <span>
+                        ￥<i class="f-price wxPrice">600</i>
+                    </span>
+                </div>
+<!--                <div class="btns">-->
+<!--                    <a class="btn btn-next" href="/payment/order-success?orderNo=K91106361491">确认支付</a>-->
+<!--                </div>-->
+            </div>
+        </div>
+    </div>
 
 <!--    底部-->
     <include src="../footer.html"></include>
@@ -102,17 +136,12 @@
             base: '../style/js/'
         }).extend({
             index: 'index'
-        }).use(['index', 'jquery'], function () {
-            var $ = layui.$;
+        }).use(['index', 'jquery','form'], function () {
+            var layer = layui.layer,
+                $ = layui.jquery,
+                form = layui.form,
+                element = layui.element;
 
-                // tab切换
-                //  $(function () {
-                //       initTab($('._tab-nav-d'),$(' ._tab-cont'),'_on')
-                //   });
-
-            $('.item-payMode .list').click(function (ev) {
-                $(this).addClass('active').siblings().removeClass('active');
-            })
             $(function () {
 
                 $('._tab-navs-d a').click(function (ev) {
@@ -134,9 +163,118 @@
 
             })
 
+
+            $('.close ').on('click', function () {
+                $('.mask_box , .zz ').hide();
+            });
+
+            var jumpUrl = "http://www.baidu.com"
+
+            $(function(){
+                /*选择选择支付方式 */
+                $('.item-payMode .list').on('click', function(){
+                    payway = $(this).attr("data-payway");//支付方式
+                    $(this).addClass('active').siblings().removeClass('active');
+
+                    //线下支付
+                    if(payway==6){
+                        thisprice = 0;
+                        $(".yhq_main").hide();
+                    }else{
+                        $(".yhq_main").show();
+                    }
+
+                });
+
+
+                form.on('checkbox(youhui)', function(data){
+                    console.log(data.elem.checked); //是否被选中，true或者false
+                    if (data.elem.checked) {
+                        $(".yhq_box").css("display", "block");
+                    } else {
+                        $(".yhq_box").css("display", "none");
+                        return false;
+                    }
+
+                });
+
+
+
+            });
+
+
+
         });
 
+        var timernum=0,t;
 
+        $("#alisubmit").on('click', function () {
+            var text = $('.item-payMode .list.active .text').text();
+            var payway = $('#payways .list.active').attr('data-payway');
+            var payType = 0;
+            switch (text) {
+                case "微信支付":
+                    payType = 1;
+                    break;
+                case "支付宝支付":
+                    payType = 2;
+                    break;
+                case "企业网银":
+                    payType = 5;
+                    break;
+                case "线下支付":
+                    payType = 5;
+                    break;
+                case "发送收款链接":
+                    payType = 10;
+                    break;
+                default:
+                    layer.msg("请选择一种支付方式");
+                    return false;
+            }
+
+            //支付
+            if (text == "微信支付" ) {
+                $(".zz,.mask_box").show();
+            } else {
+                $(".zz,.mask_box").hide();
+            }
+
+
+            t = setInterval(setTime,5000);
+
+
+
+        });
+
+        function setTime(){
+            timernum++;
+            console.log(timernum);
+            if( timernum >60){
+                clearInterval(t);
+            }
+        }
+        /*微信支付成功回调*/
+        function ajaxStatus() {
+            var trade_no = $("#trade_no").val();
+            var couponNUm = $(".coupons-content-yhm input[name=couponNUm]").val();
+            if ( trade_no != 0) {
+                $.ajax({
+                    url: backUrl,
+                    type: "GET",
+                    dataType:"json",
+                    data: {tradeNo:trade_no,couponNUm:couponNUm},
+                    success: function (data) {
+                        if (data.status==1) { //订单状态为1表示支付成功
+                            window.location.href = jumpUrl; //页面跳转
+                        }
+                    },
+                    error: function () {
+                        myalert("请求订单状态出错");
+                    }
+                });
+            }
+        }
         // 搜索框切换
         function chos_tm_x(num)
         {

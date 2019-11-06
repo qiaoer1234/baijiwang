@@ -12,8 +12,51 @@
     <meta name="description" content="百集网，全国领先的企业一站式B2B服务平台，全国上千家服务商！业务范围包括代理记账、工商注册、工商变更、税务审计、资质代办、社保托管和知识产权等企业服务。">
     <link rel="stylesheet" href="../style/layui/css/layui.css">
     <link rel="stylesheet" href="../style/css/base.css">
+    <link rel="stylesheet" href="../../style/css/user_center.css">
     <link rel="stylesheet" href="../style/css/style.css">
     <script src="../style/js/include.js"></script>
+    <style>
+        .mb-tab-wrapper .label-name {
+            left:59px;
+        }
+        .main-form {
+            width: 800px;
+        }
+        .main-form .layui-form-label {
+            width: 155px;
+            padding: 10px 30px 10px 0;
+        }
+        .mb-tab-wrapper .layui-tab-title {
+            padding-left: 185px;
+        }
+        .layui-input-inline input{
+            font-size: 14px;
+            width: 380px;
+            background-color: #f6f6f6;
+        }
+        .tip_box_close .layui-form-select, .tip_box_close input{
+            width: 110px;
+            float: left;
+            background: #fff;
+        }
+        .main-form .layui-input-inline {
+            width: 608px;
+            margin-right: 0;
+        }
+        .upload-example {
+            margin-left:10px;
+        }
+        .upload-wrapper{
+            float: left;
+            width: 304px;
+        }
+        .upload-item button {
+            font-size: 14px;
+        }
+        .upload-example button {
+            font-size: 14px;
+        }
+    </style>
 </head>
 
 <body id="bodyL" style="background-color: #F2F2F2;">
@@ -22,231 +65,390 @@
 <!--main start-->
     <div class="m_main w100 clearfix">
         <div class="location-box w1200 auto0">
-            <a href="">首页 &gt; </a> 商标担保注册
+            <a href="">首页 &gt; </a> 商标注册
         </div>
         <!-- main -->
         <div class="content-prolist  w1200 auto0 ">
             <div class="service_form service_form2">
-                <form method="post" action="" onkeydown="if(event.keyCode==13)return false;" id="savesubmit">
-                    <div class="cont">
-                        <h1><span>申请主体信息</span></h1>
-                        <table class="table">
-                            <colgroup>
-                                <col width="180">
-                                <col>
-                            </colgroup>
-                            <tbody>
-                            <tr>
-                                <td class="tright"><span class="font16 c_gray4">申请主体类型</span></td>
-                                <td class="tleft">
-                                    <ul class="typeul clearfix" id="apOne">
-                                        <li class="fl"><a href="javascript:;" data-type="1" class="btn bd_blue">企业（大陆）</a></li>
-                                        <li class="fl"><a href="javascript:;" data-type="-1" class="btn bd_gray">个体工商户（大陆）</a></li>
-                                        <li class="fl"><a href="javascript:;" data-type="3" class="btn bd_gray">企业（港澳台/海外）</a></li>
-                                        <li class="fl"><a href="javascript:;" data-type="4" class="btn bd_gray">个体（港澳台/海外）</a></li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <!-- 大陆企业 -->
-                        <div class="j-cont" id="ap_mgs">
-                            <table class="table">
-                                <colgroup>
-                                    <col width="180">
-                                    <col>
-                                </colgroup>
-                                <tbody>
-                                <tr>
-                                    <td class="tright valign_top pt30"><span class="fn16 c_gray4">申请主体身份证明</span></td>
-                                    <td class="tleft pb0" style="width: 80%">
-                                        <div class="clearfix mt10 tip_box_close">
-<!--                                            <a href="javascript:choseap();" class="left btn bd_gray ml0">选择模板</a>-->
-                                            <select tabindex="-1" class="left btn bd_gray ml0" >
-                                                <option selected="" value="">选择模板</option>
-                                                <option value="muban1">模板1</option>
-                                                <option value="muban2">模板2</option>
-                                                <option value="muban3">模板3</option>
-                                                <option value="muban4">模板4</option>
-                                                <option value="muban5">模板5</option>
-                                                <option value="muban16">模板6</option>
-                                            </select>
-                                            <a href="javascript:;" class="left btn cl-blue ml0 bg_white">创建模板</a>
-                                            <a href="javascript:;" class="left btn bd_red ml0 ">无营业执照？</a>
-                                        </div>
-                                        <div class="clearfix mt20">
-                                            <div class="upload upload3 left c_gray4">
-                                                <p id="titlemsg">请上传营业执照<br>复印件盖章</p>
-                                                <a class="img_box mt5  noemp_first" href="javascript:;" id="">
-                                                    <img src="../style/images/empty.png" id="firstImageText">
-                                                </a>
-                                                <label><span class="btn btn_orange w_60"><em id="firstupid">上传图片</em>
-                                           <input type="file" value="上传图片" style="display: none" id="firstImage" name="BusinessImg_test" onchange="checkFileEmpty('first','BusinessImg');"></span>
-                                                </label>
-                                                <input type="hidden" name="BusinessImg" value="" id="firstImage_val">
-                                            </div>
-                                            <a id="example3-1" class="exp_box left" title="" href="../style/images/comlicense.jpg">
-                                                <img alt="" src="../style/images/comlicense.jpg" id="exp1">
-                                                <div class="exp_mask">
-                                                    <div class="mask"></div>
-                                                    <p class="to_big"><span>点击放大</span></p>
+                <!--申请主体信息-->
+                <div class="cont">
+                    <h1><span>申请主体信息</span></h1>
+                    <div class="layui-tab mb-tab-wrapper">
+                        <h3 class="label-name">申请主体类型</h3>
+                        <ul class="layui-tab-title">
+                            <li class="layui-this">企业（大陆）</li>
+                            <li>个体（大陆）</li>
+                            <li>企业（港澳台/海外）</li>
+                            <li>个体（港澳台/海外）</li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <form action="" class="layui-form">
+                                    <div class="main-form fl">
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">主体身份证明</div>
+                                            <div class="layui-input-inline">
+                                                <div class="clearfix mt10 tip_box_close mb20">
+                                                    <select name="moban left bd_gray ml0 btn">
+                                                        <option value="">选择模板</option>
+                                                        <option value="moban1">模板1</option>
+                                                        <option value="moban2">模板2</option>
+                                                    </select>
+
+                                                    <a href="javascript:;" class="left btn cl-blue ml-20 bg_white">创建模板</a>
+                                                    <a href="javascript:;" class="left btn bd_red ml-20 ">无营业执照？</a>
                                                 </div>
-                                            </a>
-                                            <!-- 企业（港澳台/海外）-->
-                                            <div id="ap_person" style="display: none">
-                                                <div class="upload upload3 left c_gray4">
-                                                    <p id="titlemsg1">请上传身份证<br>正反面复印件签字</p>
-                                                    <a class="img_box mt5  noemp_second" href="javascript:;">
-                                                        <img src="../style/images/empty.png" id="secondImageText">
-                                                    </a>
-                                                    <label>
-                                                        <span class="btn btn_orange w_60"><em id="secondupid">上传图片</em>
-                                                            <input type="file" value="上传图片" style="display: none" id="secondImage" name="IDCardImg_test" onchange="checkFileEmpty('second','IDCardImg')">
-                                                        </span>
-                                                    </label>
-                                                    <input type="hidden" name="IDCardImg" value="" id="secondImage_val">
-                                                </div>
-                                                <a id="example3-2" class="exp_box left" title="" href="../style/images/identity.jpg">
-                                                    <img alt="" src="../style/images/identity.jpg" id="exp2">
-                                                    <div class="exp_mask">
-                                                        <div class="mask"></div>
-                                                        <p class="to_big"><span>点击放大</span></p>
+<!--                                                <p class="tip">无营业执照？</p>-->
+                                                <div class="upload-wrapper w100 clearfix">
+                                                    <div class="upload-item fl">
+                                                        <p>请上传营业执照<br>复印盖章件</p>
+                                                        <div class="pic"><img src="/style/images/upload-img-default.png" id="upload-image1"></div>
+                                                        <button type="button" id="upload-img1">点击上传</button>
                                                     </div>
-                                                </a>
+                                                    <div class="upload-example fl">
+                                                        <img src="/style/images/comlicense.jpg">
+                                                        <div class="mask"></div>
+                                                        <button type="button">点击放大</button>
+                                                    </div>
+                                                </div>
+                                                <p class="hint ov">请按照要求上传扫描件，jpg格式、小于5M</p>
                                             </div>
-                                            <!-- 个体工商户-->
-                                        </div>
-                                        <div id="ap_warm">
-                                            <p class="fn12 mt5 clearfix"><i class="icon icon-i left" style="margin-top: 2px;"></i>请按照要求上传扫描件，jpg格式、小于5M</p>
                                         </div>
 
-                                    </td>
-                                </tr>
-                                <tr id="inContory">
-                                    <td class="tright"><span class="fn16 c_gray4">邮政编码</span></td>
-                                    <td class="tleft">
-                                        <div class="posrel left ">
-                                            <input class="inp w_458" name="PostCode" id="PostCode" type="text"  placeholder="请填写营业执照地址所属邮政编码如" lay-verType="tips" lay-verify="required">
-                                            <span class="icon_not"></span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr id="in_set" class="in_set">
-                                        <td class="tright"><span class="fn16 c_gray4">联系人姓名</span></td>
-                                        <td class="tleft">
-                                            <div class="posrel left">
-                                                <input class="inp w_458" type="text" id="Contacts" name="Contacts"  placeholder="如：张三">
-                                                <span class="icon_not"></span>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">联系人姓名</div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="xm" autocomplete="off" placeholder="请输入联系人姓名（必填）" class="layui-input">
                                             </div>
-                                        </td>
-                                </tr>
-                                <tr class="in_set">
-                                    <td class="tright"><span class="fn16 c_gray4">联系人电话</span></td>
-                                    <td class="tleft">
-                                        <div class="posrel left">
-                                            <input class="inp w_458" type="text" id="Phone" name="Phone" placeholder="如：13866668888" >
-                                            <span class="icon_not"></span>
                                         </div>
-                                    </td>
-                                </tr>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">联系人电话</div>
+                                            <div class="layui-input-inline">
+                                                <input type="number" name="phone" autocomplete="off" placeholder="请输入联系人手机号（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">联系人邮箱</div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="email" autocomplete="off" placeholder="请输入联系人邮箱（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">邮政编码</div>
+                                            <div class="layui-input-inline">
+                                                <input type="number" name="postcode" autocomplete="off" placeholder="请输入营业执照地址所属邮政编码（必填）" class="layui-input">
+                                            </div>
+                                        </div>
 
-                            <!-- 企业（港澳台/海外）-->
-                                <tr id="hap_mg" style="display: none">
-                                    <td class="tright"><span class="fn16 c_gray4">大陆邮政编码</span></td>
-                                    <td class="tleft">
-                                        <div class="posrel left">
-                                            <input class="inp w_458" id="PostCodeMd" name="PostCodeMd"  type="text" placeholder="请填写大陆境内邮寄地址邮编">
-                                            <span class="icon_not"></span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="out_set" style="display: none">
-                                    <td class="tright"><span class="fn16 c_gray4">大陆联系人姓名</span></td>
-                                    <td class="tleft">
-                                        <div class="posrel left">
-                                            <input class="inp w_458" type="text" id="ContactsMd" name="ContactsMd"  placeholder="如：张三">
-                                            <span class="icon_not"></span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr class="out_set" style="display: none">
-                                    <td class="tright"><span class="fn16 c_gray4">大陆联系方式</span></td>
-                                    <td class="tleft">
-                                        <div class="posrel left ">
-                                            <input class="inp w_458" type="text" id="PhoneMd" name="PhoneMd"  placeholder="如：13866668888">
-                                            <span class="icon_not"></span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="tright"><span class="fn16 c_gray4">联系人邮箱</span></td>
-                                    <td class="tleft">
-                                        <div class="posrel left ">
-                                            <input class="inp w_458 " name="Email" id="Email" type="text"  placeholder="如：baiji@baiji.com">
-                                            <span class="icon_not"></span>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-<!-- 自动识别-->
-                            <div class="template h435" id="stp_ap">
-                                <div class="top fn15 c_blue">自动识别</div>
-                                <div class="content fn12 c_gray posrel">
-                                    <p class="c_blue" id="stp_title">请上传清晰的身份证明图片，系统识别后请再次核对信息，若识别有误请修改</p>
-                                    <div id="au_mg"></div>
-                                    <p class="fn14 lh40 mt5">申请主体名称</p>
-                                    <div class="posrel">
-                                        <input class="inp" type="text" name="AName" id="AName"  onchange="updatenew('AName');" placeholder="请与营业执照的企业名称保持一致" >
-                                        <span class="icon_not"></span>
                                     </div>
-                                    <div class="posrel">
-                                        <input class="inp mt5 hide" type="text" name="ANameOs" id="ANameOs"  onchange="updatenew('ANameOs');" placeholder="营业执照中文名称，必须为中文简体">
-                                        <span class="icon_not"></span>
+
+                                    <div class="zdsb-form fr">
+                                        <h3 class="title">自动识别</h3>
+                                        <p class="txt1">请上传清晰的营业执照，或个人身份证照片；系统识别以后，请再次确认信息，若识别有误请修改。</p>
+
+                                        <label>申请主体名称</label>
+                                        <input class="layui-input" type="text" placeholder="请与营业执照的企业名称保持一致">
+                                        <label>证件地址</label>
+                                        <input class="layui-input" type="text" placeholder="请填写营业执照地址">
+                                        <p class="txt2">若不含省、市（县）请补足，以免不予受理</p>
+                                        <label>社会代码</label>
+                                        <input class="layui-input" type="text" placeholder="请与营业执照社会代码号保持一致">
+                                        <p class="txt3">主体信息可在个人中心<a href="">添加模板</a>，便于后期直接引用</p>
                                     </div>
-                                    <div id="outContory" style="display: none">
-                                        <p class="fn14 lh40">护照所属国籍</p>
-                                        <select class="w_230" id="Country" >
-                                            <option selected="" value="">请选择国籍</option>
-                                            <option value="CN">中国(港澳台)</option>
-                                            <option value="YU">南斯拉夫</option>
-                                            <option value="ZA">南非</option>
-                                            <option value="ZM">赞比亚</option>
-                                            <option value="ZR">扎伊尔</option>
-                                            <option value="ZW">津巴布韦</option>
+                                    <div class="clear"></div>
+                                </form>
+                            </div>
+
+                            <div class="layui-tab-item">
+                                <form action="" class="layui-form">
+                                    <div class="main-form fl">
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">主体身份证明</div>
+                                            <div class="layui-input-inline">
+                                                <div class="clearfix mt10 tip_box_close mb20">
+                                                    <select name="moban left bd_gray ml0 btn">
+                                                        <option value="">选择模板</option>
+                                                        <option value="moban1">模板1</option>
+                                                        <option value="moban2">模板2</option>
+                                                    </select>
+
+                                                    <a href="javascript:;" class="left btn cl-blue ml-20 bg_white">创建模板</a>
+                                                    <a href="javascript:;" class="left btn bd_red ml-20 ">无营业执照？</a>
+                                                </div>
+                                                <div class="upload-wrapper">
+                                                    <div class="upload-item fl">
+                                                        <p>请上传营业执照<br>复印件签字</p>
+                                                        <div class="pic"><img src="/style/images/upload-img-default.png" id="upload-image2"></div>
+                                                        <button type="button" id="upload-img2">点击上传</button>
+                                                    </div>
+                                                    <div class="upload-example fl">
+                                                        <img src="/style/css/img/sliccense.jpg">
+                                                        <div class="mask"></div>
+                                                        <button type="button">点击放大</button>
+                                                    </div>
+                                                </div>
+                                                <div class="upload-wrapper">
+                                                    <div class="upload-item fl">
+                                                        <p>请上传身份证<br>正反面复印件签字</p>
+                                                        <div class="pic"><img src="/style/images/upload-img-default.png" id="upload-image3"></div>
+                                                        <button type="button" id="upload-img3">点击上传</button>
+                                                    </div>
+                                                    <div class="upload-example fl">
+                                                        <img src="/style/images/identity.jpg">
+                                                        <div class="mask"></div>
+                                                        <button type="button">点击放大</button>
+                                                    </div>
+                                                </div>
+                                                <p class="hint ov">请按照要求上传扫描件，jpg格式、小于5M</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">联系人姓名</div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="xm" autocomplete="off" placeholder="请输入联系人姓名（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">联系人电话</div>
+                                            <div class="layui-input-inline">
+                                                <input type="number" name="phone" autocomplete="off" placeholder="请输入联系人手机号（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">联系人邮箱</div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="email" autocomplete="off" placeholder="请输入联系人邮箱（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">邮政编码</div>
+                                            <div class="layui-input-inline">
+                                                <input type="number" name="postcode" autocomplete="off" placeholder="请输入身份证地址所属邮政编码（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="zdsb-form fr">
+                                        <h3 class="title">自动识别</h3>
+                                        <p class="txt1">请上传清晰的营业执照，或个人身份证照片；系统识别以后，请再次确认信息，若识别有误请修改。</p>
+
+                                        <label>申请主体名称</label>
+                                        <input class="layui-input" type="text" placeholder="请与身份证上的姓名保持一致">
+                                        <label>证件地址</label>
+                                        <input class="layui-input" type="text" placeholder="请填写身份证的地址">
+                                        <p class="txt2">若不含省、市（县）请补足，以免不予受理</p>
+                                        <label>身份证号</label>
+                                        <input class="layui-input" type="text" placeholder="证件号码只支持数字/英文">
+                                        <label>社会代码</label>
+                                        <input class="layui-input" type="text" placeholder="请与营业执照社会代码号保持一致">
+                                        <p class="txt3">主体信息可在个人中心<a href="">添加模板</a>，便于后期直接引用</p>
+                                    </div>
+                                    <div class="clear"></div>
+                                </form>
+                            </div>
+
+                            <div class="layui-tab-item">
+                                <form action="" class="layui-form">
+                                    <div class="main-form fl">
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">主体身份证明</div>
+                                            <div class="layui-input-inline">
+                                                <div class="clearfix mt10 tip_box_close mb20">
+                                                    <select name="moban left bd_gray ml0 btn">
+                                                        <option value="">选择模板</option>
+                                                        <option value="moban1">模板1</option>
+                                                        <option value="moban2">模板2</option>
+                                                    </select>
+
+                                                    <a href="javascript:;" class="left btn cl-blue ml-20 bg_white">创建模板</a>
+                                                    <a href="javascript:;" class="left btn bd_red ml-20 ">无营业执照？</a>
+                                                </div>
+                                                <div class="upload-wrapper">
+                                                    <div class="upload-item fl">
+                                                        <p>请上传当地商事<br>登记证明盖章</p>
+                                                        <div class="pic"><img src="/style/images/upload-img-default.png" id="upload-image4"></div>
+                                                        <button type="button" id="upload-img4">点击上传</button>
+                                                    </div>
+                                                    <div class="upload-example fl">
+                                                        <img src="/style/css/img/comlicenseout1.jpg">
+                                                        <div class="mask"></div>
+                                                        <button type="button">点击放大</button>
+                                                    </div>
+                                                </div>
+                                                <div class="upload-wrapper">
+                                                    <div class="upload-item fl">
+                                                        <p>请上传中英文<br>证明盖章</p>
+                                                        <div class="pic"><img src="/style/images/upload-img-default.png" id="upload-image5"></div>
+                                                        <button type="button" id="upload-img5">点击上传</button>
+                                                    </div>
+                                                    <div class="upload-example fl">
+                                                        <img src="/style/css/img/componout.jpg">
+                                                        <div class="mask"></div>
+                                                        <button type="button">点击放大</button>
+                                                    </div>
+                                                </div>
+                                                <p class="hint ov">请按照要求上传扫描件，jpg格式、小于5M</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">大陆联系人姓名</div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="xm" autocomplete="off" placeholder="请输入大陆联系人姓名（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">大陆联系方式</div>
+                                            <div class="layui-input-inline">
+                                                <input type="number" name="phone" autocomplete="off" placeholder="请输入联系人手机号（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">联系人邮箱</div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="email" autocomplete="off" placeholder="请输入联系人邮箱（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">大陆邮政编码</div>
+                                            <div class="layui-input-inline">
+                                                <input type="number" name="postcode" autocomplete="off" placeholder="请输入大陆邮政编码（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="zdsb-form fr">
+                                        <h3 class="title">自动识别</h3>
+                                        <p class="txt1">请上传清晰的营业执照，或个人身份证照片；系统识别以后，请再次确认信息，若识别有误请修改。</p>
+
+                                        <label>申请主体名称</label>
+                                        <input class="layui-input" type="text" placeholder="请填写企业的英文名称">
+                                        <input class="layui-input" type="text" placeholder="营业执照中文名称，必须为中文简体">
+                                        <label>营业执照所属国籍</label>
+                                        <select name="nationality" >
+                                            <option value="">请选择所属国籍</option>
+                                            <option value="中国">中国</option>
+                                            <option value="美国">美国</option>
+                                            <option value="日本">日本</option>
+                                            <option value="天机">天机</option>
                                         </select>
-                                        <input type="hidden" id="Country_val" name="Country">
+                                        <label>证件地址</label>
+                                        <input class="layui-input" type="text" placeholder="请输入营业执照对应的英文地址">
+                                        <input class="layui-input" type="text" placeholder="营业执照中文地址，必须为中文简体">
+                                        <p class="txt3">主体信息可在个人中心<a href="">添加模板</a>，便于后期直接引用</p>
                                     </div>
-                                    <p class="fn14 lh40" id="IDAddress_title">证件地址</p>
-                                    <div class="posrel">
-                                        <input class="inp" type="text" name="IDAddress" id="IDAddress"  placeholder="请填写营业执照地址"  >
-                                        <span class="icon_not"></span>
-                                    </div>
-                                    <p id="warmf" class="fn12 c_red">若不含省、市（县）请补足，以免不予受理</p>
-                                    <div class="posrel">
-                                        <input class="inp fn13 mt5 hide" name="IDAddressOs" id="IDAddressOs" type="text"  placeholder="营业执照中文地址，必须为中文简体" >
-                                        <span class="icon_not"></span>
-                                    </div>
-                                    <div id="outcon" style="display: none">
-                                        <p class="fn14 lh40" id="IDNumber_title">身份证号</p>
-                                        <div class="posrel">
-                                            <input class="inp" type="text" name="IDNumber" id="IDNumber"  placeholder="请填写18位身份证号码" >
-                                            <span class="icon_not"></span>
+                                    <div class="clear"></div>
+                                </form>
+                            </div>
+
+                            <div class="layui-tab-item">
+                                <form action="" class="layui-form">
+                                    <div class="main-form fl">
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">主体身份证明</div>
+                                            <div class="layui-input-inline">
+                                                <div class="clearfix mt10 tip_box_close mb20">
+                                                    <select name="moban left bd_gray ml0 btn">
+                                                        <option value="">选择模板</option>
+                                                        <option value="moban1">模板1</option>
+                                                        <option value="moban2">模板2</option>
+                                                    </select>
+
+                                                    <a href="javascript:;" class="left btn cl-blue ml-20 bg_white">创建模板</a>
+                                                    <a href="javascript:;" class="left btn bd_red ml-20 ">无营业执照？</a>
+                                                </div>
+                                                <div class="upload-wrapper">
+                                                    <div class="upload-item fl">
+                                                        <p>请上传境外自然人<br>身份证明签字</p>
+                                                        <div class="pic"><img src="/style/images/upload-img-default.png" id="upload-image6"></div>
+                                                        <button type="button" id="upload-img6">点击上传</button>
+                                                    </div>
+                                                    <div class="upload-example fl">
+                                                        <img src="/style/css/img/sliccenseout.jpg">
+                                                        <div class="mask"></div>
+                                                        <button type="button">点击放大</button>
+                                                    </div>
+                                                </div>
+                                                <div class="upload-wrapper">
+                                                    <div class="upload-item fl">
+                                                        <p>请上传中英文<br>证明签字</p>
+                                                        <div class="pic"><img src="/style/images/upload-img-default.png" id="upload-image7"></div>
+                                                        <button type="button" id="upload-img7">点击上传</button>
+                                                    </div>
+                                                    <div class="upload-example fl">
+                                                        <img src="/style/css/img/personout.jpg">
+                                                        <div class="mask"></div>
+                                                        <button type="button">点击放大</button>
+                                                    </div>
+                                                </div>
+                                                <p class="hint ov">以下四种自然人证明任选一种复印件签字上传即可，jpg格式、小于5M</p>
+                                                <p class="hints ">
+                                                    1、境外自然人护照复印件<br>
+                                                    2、公安部门颁发的、有效期(一年以上)内的“外国人永久居留证”<br>
+                                                    3、公安部门颁发的、有效期(一年以上)内的“外国人居留许可”<br>
+                                                    4、公安部门颁发的、有效期(一年以上)内的“外国人居留证”
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div id="person_">
-                                        <p class="fn14 lh40">社会代码</p>
-                                        <div class="posrel">
-                                            <input class="inp" type="text" name="CodeNum" id="CodeNum"  placeholder="请与营业执照社会代码号保持一致">
-                                            <span class="icon_not"></span>
+
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">大陆联系人姓名</div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="xm" autocomplete="off" placeholder="请输入大陆联系人姓名（必填）" class="layui-input">
+                                            </div>
                                         </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">大陆联系方式</div>
+                                            <div class="layui-input-inline">
+                                                <input type="number" name="phone" autocomplete="off" placeholder="请输入联系人手机号（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">联系人邮箱</div>
+                                            <div class="layui-input-inline">
+                                                <input type="text" name="email" autocomplete="off" placeholder="请输入联系人邮箱（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+                                        <div class="layui-form-item">
+                                            <div class="layui-form-label layui-right">大陆邮政编码</div>
+                                            <div class="layui-input-inline">
+                                                <input type="number" name="postcode" autocomplete="off" placeholder="请输入大陆邮政编码（必填）" class="layui-input">
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <p class="warm">主体信息可在个人中心 <a href="javascript:;" target="_blank" class="cl-blue">添加模板</a>，便于后期
-                                        直接引用</p>
-                                </div>
+
+                                    <div class="zdsb-form fr">
+                                        <h3 class="title">自动识别</h3>
+                                        <p class="txt1">请上传清晰的企业中英文证明，系统识别后请再次核对信息并完善信息。</p>
+
+                                        <label>申请主体名称</label>
+                                        <input class="layui-input" type="text" placeholder="请填写企业的英文名称">
+                                        <input class="layui-input" type="text" placeholder="营业执照中文名称，必须为中文简体">
+                                        <label>营业执照所属国籍</label>
+                                        <select name="nationality">
+                                            <option value="">请选择所属国籍</option>
+                                        </select>
+                                        <label>护照地址</label>
+                                        <input class="layui-input" type="text" placeholder="请填写护照对应的英文地址">
+                                        <input class="layui-input" type="text" placeholder="护照的中文地址，必须为中文简体">
+                                        <label>证件号码</label>
+                                        <input class="layui-input" type="text" placeholder="请填写身份证明文件号码">
+                                        <p class="txt3">主体信息可在个人中心<a href="">添加模板</a>，便于后期直接引用</p>
+                                    </div>
+                                    <div class="clear"></div>
+                                </form>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <!--申请主体信息-->
 
+                <!--商标分类信息-->
+                <form method="post" action="" id="savesubmit">
                         <div class="cont">
                             <h1><span>注册商标信息</span></h1>
                             <table class="table">
@@ -346,7 +548,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr style="display: none">
+                              <!--  <tr style="display: none">
                                     <td class="tright"><span class="fn16 c_gray4">商标图样</span></td>
                                     <td class="tleft clearfix hide">
                                         <label class="left fn16 c_gray mr20 hide">
@@ -362,19 +564,18 @@
                                             注册着色商标，注册后只能使用着色图样；注册黑白商标，注册后不限颜色使用。
                                         </div>
                                     </td>
-                                </tr>
+                                </tr>-->
+
                                 <tr>
                                     <td class="tright valign_top pt30"><span class="fn16 c_gray4">商标图样</span></td>
                                     <td class="tleft">
                                         <div class="clearfix">
-                                            <div class="upload upload2 left" id="colortwo_del">
+                                            <div class="upload upload2 left">
                                                 <p class="title c_gray4">请上传商标图样</p>
-                                                <a class="img_box second w_120" href="javascript:;" id=""><img src="../style/images/empty.png" onerror="this.src='../style/images/empty.png';this.onerror=null" id="tmsecondImageText" alt="图样"></a>
+                                                <div class="pic img_box first w_120"><img src="/style/images/empty3.png" id="upload-image8"></div>
                                                 <a href="javascript:;" class="btn w_60">智能生成</a>
-                                                <label><span class="btn btn_orange w_60">上传图片
-                                               <input type="file" name="TmPattern" id="tmsecondImage" onchange="upfiletm('second','TmPattern',this)" style="display: none"></span>
-                                               <input type="hidden" name="TmPattern" id="TmPattern_test" value="">
-                                                </label>
+                                                <button type="button" id="upload-img8" class="btn btn_orange">上传图样</button>
+                                                <input type="hidden" name="upload-img8" id="upload-img8" value="">
                                             </div>
                                             <div class="ml15 fn12 left">
                                                 <i class="icon icon-q left"></i>
@@ -396,15 +597,20 @@
                                         <div class="clearfix">
                                             <div class="upload upload2 left">
                                                 <p class="title c_gray4">请上传委托书</p>
-                                                <a class="img_box first w_120" href="javascript:;" id=""><img src="../style/images/empty.png" id="tmfirstImageText" alt="委托书"></a>
+                                                <div class="pic img_box first w_120"><img src="/style/images/empty3.png" id="upload-image9"></div>
+                                                <a href="javascript:;" class="btn w_60">下载委托书</a>
+                                                <button type="button" id="upload-img9" class="btn btn_orange">上传委托书</button>
+                                                <input type="hidden" name="upload-img8" id="upload-img9" value="">
+
+                                               <!-- <a class="img_box first w_120" href="javascript:;" id=""><img src="../style/images/empty.png" id="tmfirstImageText" alt="委托书"></a>
                                                 <a href="javascript:downProxy();" class="btn w_60">下载委托书</a>
                                                 <label>
                                                     <span class="btn btn_orange w_60">上传图片
                                                <input type="file" name="ProxyImg" id="tmfirstImage" onchange="upfiletm('first','ProxyImg',this)" style="display: none">
                                                     </span>
-                                                </label>
+                                                </label>-->
                                             </div>
-                                            <a id="example2-1" class="exp_box left" title="" href="../style/images/case.png">
+                                            <a id="example2-1" class="exp_box left upload-example"  >
                                                 <img alt="" src="../style/images/case.png">
                                                 <div class="exp_mask">
                                                     <div class="mask"></div>
@@ -607,7 +813,7 @@
                         <input type="hidden" id="IsProxy" name="IsProxy" value="-1">
                         <input type="hidden" id="subform">
 
-                    </div></form>
+                </form>
             </div>
 
         </div>
@@ -625,44 +831,71 @@
     <script src="../style/js/self_zc.js"></script>
     <script>
 
+
         layui.config({
             version: true,
             base: '../style/js/'
         }).extend({
             index: 'index'
-        }).use(['index', 'jquery'], function () {
-            var $ = layui.$;
-
+        }).use(['index','layer', 'jquery','form', 'element', 'upload'], function () {
+            // var $ = layui.$;
+            var layer = layui.layer,
+                $ = layui.jquery,
+                form = layui.form,
+                element = layui.element,
+                upload = layui.upload;
                 // tab切换
                 //  $(function () {
                 //       initTab($('._tab-nav-d'),$(' ._tab-cont'),'_on')
                 //   });
 
-            $(function () {
+            // 图片上传
+            uploadImg('upload-img1', 'upload-image1');
+            uploadImg('upload-img2', 'upload-image2');
+            uploadImg('upload-img3', 'upload-image3');
+            uploadImg('upload-img4', 'upload-image4');
+            uploadImg('upload-img5', 'upload-image5');
+            uploadImg('upload-img6', 'upload-image6');
+            uploadImg('upload-img7', 'upload-image7');
+            uploadImg('upload-img8', 'upload-image8');
+            uploadImg('upload-img9', 'upload-image9');
 
-                $('._tab-navs-d a').click(function (ev) {
-                    $(this).addClass('on').siblings().removeClass('on')
-                        if ($(this).hasClass('_a0')) {
-                        $('.ywjs')[0].scrollIntoView({
-                            behavior: 'smooth', // smooth scroll
-                            block: 'start' // the upper border of the element will be aligned at the top of the visible part of the window of the scrollable area.
-                        })
-                    } else if ($(this).hasClass('_a1')) {
-                        let top = this.getBoundingClientRect().top
-                        $('.ywbz')[0].scrollIntoView({
-                            behavior: 'smooth', // smooth scroll
-                            // top: top
-                            block: 'start'
-                        })
+            // 样列放大展示 layui自带的
+            $('.upload-example').on('click', function(){
+                var src = $(this).find('img').attr('src');
+                layer.open({
+                    title: false,
+                    btn: false,
+                    area: ['auto', '96%'],
+                    content: '<img src="' + src + '" height="100%">'
+                });
+            });
+
+
+
+            // 图片上传
+            function uploadImg(el, id) {
+                var uploadInst = upload.render({
+                    elem: '#' + el,
+                    url: '',
+                    before: function(obj){
+                        obj.preview(function(index, file, result){
+                            $('#' + id).attr('src', result); //图片链接（base64）
+                        });
+                    },
+                    done: function(res){
+                        //如果上传失败
+                        if(res.code > 0){
+                            return layer.msg('上传失败');
+                        }
+                        //上传成功
                     }
-                })
-
-            })
-
+                });
+            }
 
 
 
-        });
+    });
 
 
         // 搜索框切换
@@ -690,11 +923,8 @@
         }
 
 
-
-
-
-        // 点击图片放大
-        $(document).ready(function() {
+        // 点击图片放大  imgbox插件
+       /* $(document).ready(function() {
             tup_mt();
         });
         function tup_mt(){
@@ -706,11 +936,9 @@
                 'allowMultiple' : false
             });
 
-        }
+        }*/
 
-
-
-// 怎么填弹窗
+        // 怎么填弹窗
         $('.shows').click(function(){
             if($(this).hasClass('_1')){
                 $('#how1').show();
@@ -727,203 +955,6 @@
 
     </script>
 
-<script type="text/javascript">
-    var search_key='';
-    if(search_key){
-        var captcha=new TencentCaptcha(document.getElementById('TencentCaptcha'),"2000100680",function(res){
-            callback(res);
-        });
-        captcha.show();
-    }
-    function notused(){
-        $.ajax({
-            type:"post",
-            url:"/tm/cancleuse",
-            data:{'id':''},
-            dataType:"json",
-            success:function(datas){
-            }
-        })
-        $("#cpon").hide();
-        $("#cpons").hide();
-    }
-/*    var clipboard = new Clipboard('#copyCoup');
-    clipboard.on('success', function(e) {
-        alert("复制成功");
-    });
-
-    clipboard.on('error', function(e) {
-        alert("复制失败，请手动复制");
-    });*/
-
-    //申请主体类型选择
-    var can_edit=false;
-    $("#apOne").find('li>a').click(function(){    //申请主体类型选择
-        if(can_edit==true) return;
-        var aptype=$(this).data('type');
-        $("#AId").val('');
-        // setinputVal();
-        setApData(aptype);
-    });
-
-    //切换时去掉红色警告
-    // function setinputVal() {
-    //     $("#ap_mgs input").removeClass('err');
-    // }
-
-
-    function alert_show(msg)
-    {
-        $("#sigle_msg").show();
-        $("#comm_msgs").html(msg);
-    }
-    function confirm_show(msg,id,func)
-    {
-        $("#duble_msg").show();
-        $("#comm_msg").html(msg);
-        $("#duble_submit").attr('onclick',func+'('+(id)+')')
-    }
-
-    //有后续操作
-    function alert_showyhx(msg,func)
-    {
-        $("#yhx_msg").show();
-        $("#comm_yhxs").html(msg);
-        $("#yhx_x").attr('href','javascript:'+func+'();')
-    }
-    function alert_showdrjk(msg,func,cc){
-        $("#drtz_msg").show();
-        $("#comm_drtz").html(msg);
-        $("#drtz").attr('href','https://my.ename.cn/cas/sso?sid=12&backurl='+cc)
-    }
-
-    function alert_showsmrz(msg){
-        $("#smrz_msg").show();
-        $("#comm_smrz").html(msg);
-    }
-    //zhengshusuoyao ->
-    function confirms_show(msg,vas)
-    {
-        $("#duble_msgs").show();
-        $("#comm_msgx").html(msg);
-        $("#mt_oky").attr('href',"javascript:mt_ok('"+vas+"');")
-    }
-    function mt_ok(vas)
-    {
-        $("#vals").val(vas);
-        $("#duble_msgs").hide();
-        timescer=1;
-        document.formUser.submit();
-    }
-    function mt_no()
-    {
-        $("#vals").val('');
-        $("#duble_msgs").hide();
-        timescer=1;
-        document.formUser.submit();
-    }
-    //
-    function cancle()
-    {
-        $("#yhx_msg").hide();
-        $("#duble_msg").hide();
-        $("#sigle_msg").hide();
-        $("#upfiles_mark").hide();
-        $("#duble_msgs").hide();
-        $("#duble_apx").hide();
-        $("#drtz_msg").hide();
-        $("#smrz_msg").hide();
-        $("#makelogo").hide();
-        $("#downproxy").hide();
-        $("#authBox_se,#sellBoxcr,#sellBoxpt").hide();
-        $("#logisticsBox,#delBox,#auditBox").hide();
-    }
-
-    function sell_mt_cancle()
-    {
-        window.location.reload();
-    }
-
-    $(document).ready(function(){
-        $("#duble_submit").click(function(){
-            $("#duble_msg").hide();
-        });
-
-        $('#UserName').bind({
-            focus:function(){
-                if (this.value == this.defaultValue){
-                    this.value = "";
-                }
-            },
-            blur:function(){
-                if (this.value == ""){
-                    this.value = this.defaultValue;
-                }
-            }
-        });
-
-    })
-
-    function jsreloads(){
-        var scriptx = document.createElement("script");
-        scriptx.src = "/js/common.js";
-        document.body.appendChild(scriptx);
-    }
-
-    function confirms_ocr_show(AName, ANameOs, IDAddress, IDAddressOs, IDNumber, Country, CodeNum)
-    {
-        $ts = 1;
-        var param = ['AName','ANameOs','Country','IDAddress','IDAddressOs','IDNumber','CodeNum'];
-        for (var i=0; i<param.length; i++) {
-            if ($("#" + param[i]).length>0 && $("#" + param[i]).val()!='') {
-                $ts = 0;
-            }
-        }
-        if ($ts == 1){
-            mt_ocr_ok(AName, ANameOs, IDAddress, IDAddressOs, IDNumber, Country, CodeNum);
-        }
-        else{
-            $("#ocr_msgs").show();
-            $("#mt_ocr_oky").attr('href',"javascript:mt_ocr_ok('"+AName+"','"+ANameOs+"','"+IDAddress+"','"+IDAddressOs+"','"+IDNumber+"','"+Country+"','"+CodeNum+"');");
-        }
-    }
-
-    function mt_ocr_ok(AName, ANameOs, IDAddress, IDAddressOs, IDNumber, Country, CodeNum)
-    {
-        if ($("#AName").length>0 && AName!='' && AName!='undefined') {
-            $("#AName").val(AName);
-        }
-        if ($("#ANameOs").length>0 && ANameOs!='' && ANameOs!='undefined') {
-            $("#ANameOs").val(ANameOs);
-        }
-
-        if ($("#Country").length>0 && Country!='' && Country!='undefined') {
-            countryinit = Country;//initSeleCty();
-            $("#Country option:contains('"+countryinit+"')").attr("selected", true).trigger("change");
-            $("#Country_val").val(countryinit);
-        }
-
-        if ($("#IDAddress").length>0 && IDAddress!='' && IDAddress!='undefined') {
-            $("#IDAddress").val(IDAddress);
-        }
-        if ($("#IDAddressOs").length>0 && IDAddressOs!='' && IDAddressOs!='undefined') {
-            $("#IDAddressOs").val(IDAddressOs);
-        }
-        if ($("#IDNumber").length>0 && IDNumber!='' && IDNumber!='undefined') {
-            $("#IDNumber").val(IDNumber);
-        }
-        if ($("#CodeNum").length>0 && CodeNum!='' && CodeNum!='undefined') {
-            $("#CodeNum").val(CodeNum);
-        }
-        $("#ocr_msgs").hide();
-    }
-
-    function mt_ocr_no()
-    {
-        $("#ocr_msgs").hide();
-    }
-
-</script>
 </body>
 
 </html>

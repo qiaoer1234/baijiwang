@@ -292,7 +292,7 @@ html, body { min-width: 1200px; background: #f5f5f5; }
 .aroud_btn_orange { font-size: 12px; text-align: center; display: inline-block; width: 50px; height: 20px; border: 1px solid #ff4800; color: #ff4800; border-radius: 18px; position: relative; margin: 0 auto; }
 .aroud_btn_orange:hover { cursor: pointer; }
 /*hq*/
-.btn { color: #fff; display: inline-block; line-height: 20px; padding: 7px 10px; margin: 0 5px; text-align: center; background-color: #f0c420; border-radius: 3px; font-size: 14px; border: none; cursor: pointer; position: relative; }
+.btn { color: #fff; display: inline-block; line-height: 20px; padding: 7px 10px; text-align: center; background-color: #f0c420; border-radius: 3px; font-size: 14px; border: none; cursor: pointer; position: relative; }
 /*hq*/
 .btn.bradius0 { border-radius: 0 !important; }
 .btn.btn_blue{border-color: #3889ec; background: #3889ec; color: #fff;}
@@ -604,7 +604,7 @@ textarea { resize: none;}
 .service_form .cont .table td { border: 0; font-size: 16px; padding: 15px 0; }
 .service_form .cont .table tr:hover { background: inherit; }
 .service_form .cont .table td input[type="text"],.inp-load { display: inline-block; width: 372px; padding: 8px; height: 22px; background: #f6f6f6; border: 1px solid #d1d1d1;font-size: 14px; }
-.service_form .cont .table .tright{width: 170px;padding-right: 30px;}
+.service_form .cont .table .tright{width: 155px;padding-right: 30px;}
 .service_form .cont .table .register{height: 48px;line-height: 48px;}
 .service_form .com_title { font-weight: 400; border-bottom: 1px solid #ececec; }
 .service_form .com_title .til { font-weight: 400; color: #0071e3; font-size: 18px; padding-bottom: 10px; border-bottom: 2px solid #0071e3; display: inline-block; }
@@ -694,7 +694,8 @@ textarea { resize: none;}
 /*底部按钮*/
 
 .service_form .cont .upload .title { margin: 10px 0; }
-.service_form .cont .upload .img_box { margin: 0 auto; height: 100px; width: 134px; overflow: hidden;}
+.service_form .cont .upload .img_box { margin: 0 auto; height:85px; width: 134px; overflow: hidden;}
+.service_form .cont .upload .img_box img{ width: 100%;height: 100%}
 .service_form .cont .upload a.img_box { display: inline-block; height: 72px;width: 72px;margin: 10px 0;}
 /*.service_form .cont .upload .img_box img { width: 100%; height:auto; }*/
 .service_form .cont .upload .btn { padding: 4px 14px; margin: 10px 0; position: relative; font-size: 12px; border-radius: 28px !important; outline: none; }

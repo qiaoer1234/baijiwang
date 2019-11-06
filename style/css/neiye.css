@@ -572,7 +572,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    display: none;
+    /*display: none;*/
 }
 .table_sbfl_r.on{
     display: block;
@@ -996,8 +996,8 @@
 .brand-info li {
     float: left;
     margin-bottom: 5px;
-    min-width: 180px;
-    margin-right:50px;
+    width: 33.33%;
+    /*margin-right:50px;*/
     overflow: hidden;
     white-space: nowrap;
     text-overflow:ellipsis;
@@ -1145,7 +1145,7 @@
 .brand-detail-table{
     margin-top: 20px;
     width: 100%;
-    background: url(../images/water.png);
+    /*background: url(../images/water.png);*/
     background-size: 410px;
     background-position: 100px -60px;
 }
@@ -1184,16 +1184,147 @@
     font-size: 16px;
 }
 
+/*支付弹窗*/
+.btn-next:hover,btn-next:active,.btn-next:focus{
+    color: #fff;
+}
 
-
-
-
-
-
-
-
-
-
-
+.zz{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    z-index: 9;
+}
+.mask_box{
+    width:400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: -200px;
+    z-index:99;
+    padding: 0px;
+    background-color: #fff;
+    display: none;
+}
+.mask_box .close {
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    z-index: 1;
+    color: #aaa;
+    font-style: normal;
+    font-weight: normal;
+    font-size:30px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 1;
+    text-shadow: none;
+}
+.mask_box .header {
+    padding: 9px 10px 12px;
+    font-size: 15px;
+    text-align: center;
+    background-color: #fff;
+}
+.mask_boxl .header .title {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: bold;
+    color: #333;
+}
+.mask_box .header .icon {
+    display: inline-block;
+    margin-right: 5px;
+    width: 30px;
+    height: 21px;
+    vertical-align: middle;
+    background-image: url(img/icon-sprite-sm.png);
+    background-position: -23px -23px;
+}
+.bodyer {
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.mask_box .wx-code-box {
+    margin: 0 auto;
+    padding: 10px;
+    width: 194px;
+    border: 1px solid #d8d8d8;
+}
+.mask_boxl .wx-code {
+    display: inline-block;
+    width: 100%;
+}
+.mask_box .wx-code img {
+    width: 100%;
+}
+.mask_box .price-box p {
+    margin-top: 24px;
+    font-size: 14px;
+    color: #888;
+}
+.mask_box .price-box span {
+    color: #ff6600;
+    font-size:16px;
+    line-height:48px;
+}
+.mask_box .price-box .f-price {
+    font-size: 24px;
+    vertical-align: top;
+    color:#ff6600;
+    font-weight: bold;
+}
+.policy-checkbox {
+    padding: 10px 0;
+    font-size: 12px;
+    color: #999;
+}
+.policy-checkbox .layui-form-checkbox[lay-skin=primary] {
+    margin-top: 2px !important;
+    padding-left: 30px !important;
+}
+.layui-form-checkbox[lay-skin=primary] {
+    height: auto!important;
+    line-height: normal!important;
+    min-width: 18px;
+    min-height: 18px;
+    border: none!important;
+    margin-right: 0;
+    padding-left: 28px;
+    padding-right: 0;
+    background: 0;
+}
+.policy-checkbox .layui-form-checkbox[lay-skin=primary] i {
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+}
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #f0c420!important;
+    background-color: #f0c420;
+    color: #fff;
+}
+.layui-form-checkbox[lay-skin=primary]:hover i {
+    border-color: #f0c420;
+    color: #fff;
+}
+.yhq_box{
+    width: 300px;
+    border-color: #f0c420!important;
+    display: none;
+}
 
 
