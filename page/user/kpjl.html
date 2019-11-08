@@ -1,0 +1,218 @@
+<h1 class="title-wrapper">开票记录</h1>
+
+<div class="right-fluid">
+    <form action="" class="layui-form cwgl-form">
+        <div class="layui-form-item bj-form-item mb8">
+            <div class="layui-inline">
+                <label class="layui-form-label f-wauto">申请编号</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="sqbh" autocomplete="off" class="layui-input" placeholder="请输入申请编号">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label layui-right">发生时间</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="fssj" class="layui-input" id="time" placeholder="年/月/日 - 年/月/日" autocomplete="off">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label layui-right">发票性质</label>
+                <div class="layui-input-inline">
+                    <select name="fbxz">
+                        <option value="">全部</option>
+                        <option value="1">企业</option>
+                        <option value="2">个人</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item bj-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label f-w48 layui-right">状态</label>
+                <div class="layui-input-inline">
+                    <select name="zt">
+                        <option value="">全部</option>
+                        <option value="1">待开</option>
+                        <option value="2">已开</option>
+                        <option value="3">驳回</option>
+                        <option value="4">已取消</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label layui-right">发票抬头</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="fptt" autocomplete="off" class="layui-input" placeholder="请输入发票抬头">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label layui-right"></label>
+                <button class="layui-btn" lay-submit="" lay-filter="search-btn">搜索</button>
+                <button type="reset" class="layui-btn layui-btn-primary">清空</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="layui-table" id="kpjllist" lay-filter="kpjllist"></table>
+</div>
+
+<!-- 订单状态 -->
+<script type="text/html" id="zttpl">
+    {{# if(d.zt == 1){ }}
+    <span style="color:#f1c629;">待开</span>
+    {{# }else if(d.zt == 2){ }}
+    <span style="color:#0f2a3d;">已开</span>
+    {{# }else if(d.zt == 3){ }}
+    <span style="color:#ff030a;">驳回</span>
+    {{# }else{ }}
+    <span style="color:#666;">已取消</span>
+    {{# } }}
+</script>
+
+<!-- 操作工具条按钮 -->
+<script type="text/html" id="tooltpl">
+    <a lay-event="look">查看</a>
+    <a lay-event="edit" style="color:#f1c629;">编辑</a>
+    <a lay-event="confirm" style="color:#26b8d4;">确认</a>
+    <a lay-event="cancel">取消</a>
+</script>
+
+<script>
+    layui.use(['layer', 'jquery', 'form', 'laydate', 'table'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form,
+            laydate = layui.laydate,
+            table = layui.table;
+
+        //日期范围
+        laydate.render({
+            elem: '#time',
+            range: true,
+            theme: '#26b8d4',
+            trigger: 'click'
+        });
+
+        // mock接口
+        var _http_ = "https://b1be0a37-aa66-4dd6-b23b-a05c9af3775a.mock.pstmn.io";  
+
+        // 渲染数据表格
+        table.render({
+            elem: '#kpjllist',
+            url: _http_ + '/get_kpjl_list?r=fq',
+            cellMinWidth: 92,
+            page: {
+                limit: 5,
+                limits: [5,10],
+                layout: ['count', 'prev', 'page', 'next', 'refresh', 'skip'],
+                theme: '#26b8d4'
+            },
+            skin: 'line',
+            even: true,
+            cols: [
+                [
+                    {
+                        field: 'sqbn',
+                        align: 'center',
+                        width: 160,
+                        title: '申请编号'
+                    },
+                    {
+                        field: 'sqsj',
+                        align: 'center',
+                        width: 100,
+                        title: '申请时间'
+                    },
+                    {
+                        field: 'price',
+                        align: 'center',
+                        width: 80,
+                        title: '金额'
+                    },
+                    {
+                        field: 'fpxz',
+                        align: 'center',
+                        width: 90,
+                        title: '发票性质'
+                    },
+                    {
+                        field: 'zt',
+                        align: 'center',
+                        title: '状态',
+                        width: 80,
+                        toolbar: '#zttpl',
+                    },
+                    {
+                        field: 'fkxx',
+                        align: 'center',
+                        title: '反馈信息'
+                    },
+                    {
+                        align: 'center',
+                        title: '操作',
+                        width: 190,
+                        toolbar: '#tooltpl',
+                    }
+                ]
+            ]
+        });
+
+        // table操作栏
+        table.on('tool(kpjllist)', function(obj) {
+            var data = obj.data;
+            var layEvent = obj.event;
+
+            if (layEvent === 'cancel') {
+                var index = layer.open({
+                    type: 1,
+                    title: false,
+                    skin: 'made-layer-style',
+                    shadeClose: true,
+                    area: '400px',
+                    btn: ['确定', '取消'],
+                    btnAlign: 'c',
+                    content: '<div class="bj-fluid"><h3>确认取消开票记录</h3><p>订单取消后，无法继续申请，确认取消？</p></div>',
+                    yes: function(index){
+                        
+                    }
+                    ,btn2: function(index){
+                        layer.close(index);
+                    }
+                });
+            } else if(layEvent === 'confirm') {
+                var index = layer.open({
+                    type: 1,
+                    title: false,
+                    skin: 'made-layer-style',
+                    shadeClose: true,
+                    area: '400px',
+                    btn: ['确定', '取消'],
+                    btnAlign: 'c',
+                    content: '<div class="bj-fluid"><h3>确认开票记录</h3><p>确认开票记录，确认删除？</p></div>',
+                    yes: function(index){
+                        
+                    }
+                    ,btn2: function(index){
+                        layer.close(index);
+                    }
+                });
+            }
+        })
+
+        // 搜索表单
+        form.on('submit(search-btn)', function(data) {
+            table.reload('kpjllist', {
+                where: data.field,
+                page: {
+                    curr: 1
+                }
+            });
+            return false;
+        });
+    });
+</script>

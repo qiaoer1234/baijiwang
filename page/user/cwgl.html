@@ -1,0 +1,142 @@
+<h1 class="title-wrapper">财务管理</h1>
+
+<div class="right-fluid">
+    <form action="" class="layui-form cwgl-form">
+        <div class="layui-form-item bj-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label f-wauto">订单号</label>
+                <div class="layui-input-inline f-w100">
+                    <input type="text" name="ddh" autocomplete="off" class="layui-input" placeholder="请输入订单号">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label f-wauto">发生时间</label>
+                <div class="layui-input-inline f-w170">
+                    <input type="text" name="fssj" class="layui-input" id="time" placeholder="年/月/日 - 年/月/日" autocomplete="off">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label f-wauto">支付渠道</label>
+                <div class="layui-input-inline f-w90">
+                    <select name="zfqd">
+                        <option value="">全部</option>
+                        <option value="01">支付宝</option>
+                        <option value="03">微信</option>
+                        <option value="03">银行卡</option>
+                        <option value="03">其他</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label f-wauto">状态</label>
+                <div class="layui-input-inline f-w90">
+                    <select name="zt">
+                        <option value="">全部</option>
+                        <option value="01">支付成功</option>
+                        <option value="03">退款成功</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <button class="layui-btn" lay-submit="" lay-filter="search-btn">搜索</button>
+                <button type="reset" class="layui-btn layui-btn-primary">清空</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="layui-table" id="cwgllist" lay-filter="cwgllist"></table>
+</div>
+
+<!-- 订单状态 -->
+<script type="text/html" id="zttpl">
+    {{# if(d.zt == 1){ }}
+    <span style="color:#26b8d4;">支付成功</span>
+    {{# }else{ }}
+    <span style="color:#ff030a;">退款成功</span>
+    {{# } }}
+</script>
+
+<script>
+    layui.use(['layer', 'jquery', 'form', 'laydate', 'table'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form,
+            laydate = layui.laydate,
+            table = layui.table;
+
+        //日期范围
+        laydate.render({
+            elem: '#time',
+            range: true,
+            theme: '#26b8d4',
+            trigger: 'click'
+        });
+
+        // mock接口
+        var _http_ = "https://b1be0a37-aa66-4dd6-b23b-a05c9af3775a.mock.pstmn.io";  
+
+        // 渲染数据表格
+        table.render({
+            elem: '#cwgllist',
+            url: _http_ + '/get_cwgl_list?r=q',
+            cellMinWidth: 92,
+            page: {
+                limit: 5,
+                limits: [5,10],
+                layout: ['count', 'prev', 'page', 'next', 'refresh', 'skip'],
+                theme: '#26b8d4'
+            },
+            skin: 'line',
+            even: true,
+            cols: [
+                [
+                    {
+                        field: 'ddh',
+                        align: 'center',
+                        width: 220,
+                        title: '订单号'
+                    },
+                    {
+                        field: 'fssj',
+                        align: 'center',
+                        width: 200,
+                        title: '发生时间'
+                    },
+                    {
+                        field: 'price',
+                        align: 'center',
+                        width: 120,
+                        title: '金额'
+                    },
+                    {
+                        field: 'zfqd',
+                        align: 'center',
+                        width: 140,
+                        title: '支付渠道'
+                    },
+                    {
+                        field: 'zt',
+                        align: 'center',
+                        title: '状态',
+                        toolbar: '#zttpl',
+                    }
+                ]
+            ]
+        });
+
+        // 搜索表单
+        form.on('submit(search-btn)', function(data) {
+            table.reload('cwgllist', {
+                where: data.field,
+                page: {
+                    curr: 1
+                }
+            });
+            return false;
+        });
+    });
+</script>
