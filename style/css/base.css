@@ -863,11 +863,23 @@ input:disabled {
     font-size: 14px;
 }
 .f-nav-wrapper .nav dl:first-child{
- margin-right: 110px;
+    margin-right: 100px;
 }
 .f-nav-wrapper .nav dl:first-child+dl{
-    margin-right: 127px;
+    margin-right: 80px;
+    width: 160px;
 }
+.f-nav-wrapper .nav dl:first-child+dl+dl{
+    width: 130px;
+}
+.f-nav-wrapper .nav dd a{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .f-nav-wrapper .nav dd  a,.f-nav-wrapper .nav dd{
     line-height: 35px;
     color: #A6ABB0;

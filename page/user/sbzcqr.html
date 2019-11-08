@@ -1,0 +1,321 @@
+<style>
+.f-w780{
+    width:780px!important;
+}
+.f-w90{
+    width:90px;
+}
+.ml-110{
+    margin-left: 110px;
+}
+.box-title{
+    font-size: 24px;
+    color: #0f2a3d;
+    font-weight: bold;
+    padding: 50px 0 10px 0;
+}
+.layui-form-item .layui-input-inline{
+    margin-right: 0;
+}
+
+.box-title-f {
+    padding: 26px 0 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    font-weight: bold;
+    color: #0f2a3d;
+}
+.box-title-p {
+    margin: 20px 0 30px 0;
+    font-size: 14px;
+    line-height: 24px;
+    color: #0f2a3d;
+}
+.upload_box li{
+    float: left;
+    padding: 15px 40px;
+    width: 200px;
+    height: 270px;
+    margin-right: 40px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #d1d1d1;
+    background: #fbfbfb;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.upload_box li .img_box {
+    display: inline-block;
+    height: 120px;
+    width: 120px;
+    margin-top: 26px;
+    overflow: hidden;
+    border: 1px solid #e9e9e9;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.upload_box li .img_box img {
+    width: 118px;
+    height: 118px;
+    margin: 0 10px 10px 0;
+}
+.upload_box li .btn {
+    padding: 8px 30px;
+    margin: 10px 0;
+    position: relative;
+    font-size: 12px;
+    border-radius: 28px !important;
+    outline: none;
+    color:#26b8d4;
+    border: 1px solid #26b8d4;
+    margin-bottom: 30px;
+    background: none!important;
+}
+    .cz_btn {
+        width: 180px;
+        height: 50px;
+        background-color: #ffffff;
+        border: solid 1px #eeeeee;
+        color: #999999;
+        font-size: 16px;
+        margin-top: 80px;
+        margin-right: 40px;
+    }
+
+    .tj_btn{
+        width: 180px;
+        height: 50px;
+        background-color: #26b8d4;
+        border: solid 1px #26b8d4;
+        color: #fff;
+        font-size: 16px;
+        margin-top: 80px;
+    }
+    .lh40{
+        line-height: 40px;
+    }
+    .layui-form-item {
+        margin-bottom: 0px;
+    }
+    .layui-table-cell{
+        color: #999;
+    }
+    .layui-table-cell img{
+        width: 80px;
+        height: 80px;
+        display: block;
+    }
+    .td-title {
+        text-align: center;
+    }
+.brand-detail-table td.td-content {
+    padding-left: 10px;
+    color: #999;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ </style>
+<b class="box-title tc block">商标注册确认函</b>
+
+<div class="right-fluid">
+
+    <form action="" class="layui-form">
+        <h1 class="box-title-f mb20">申请主体信息</h1>
+        <div class="layui-form-item">
+            <div class="layui-form-label layui-right">申请人:</div>
+            <div class="layui-input-inline f-w300"><p class="cl-gray9 lh40">张三</p></div>
+        </div>
+        <div class="layui-form-item ">
+            <div class="layui-form-label layui-right">申请人地址</div>
+            <div class="layui-input-inline f-w300"><p class="cl-gray9 lh40">北京市朝阳区某小区111号</p></div>
+        </div>
+        <div class="layui-form-item ">
+            <div class="layui-form-label layui-right">执照名称</div>
+            <div class="layui-input-inline f-w300"><p class="cl-gray9 lh40">北京某某某科技有限公司</p></div>
+        </div>
+
+
+        <h1 class="box-title-f mb20">商标信息</h1>
+        <table class="layui-table" id="orderlist" lay-filter="orderlist"></table>
+
+        <h1 class="box-title-f mb20">近似评估</h1>
+        <p class="box-title-p">商标与在先申请的“图形”近似，有被驳回风险，商标图形审查带主观意见且商标盲查期存在被驳回的风险，请谨慎考虑。商标若被驳回，商标局不予退款。
+        </p>
+        <table class="brand-detail-table">
+            <tbody>
+            <tr>
+                <td class="td-title">国际分类</td>
+                <td class="td-content">12</td>
+                <td class="td-title">法律状态</td>
+                <td class="td-content">已注册</td>
+                <td class="td-title">初审公告</td>
+                <td class="td-content">1441/2651</td>
+                <td class="td-content" rowspan="9">
+                    <div class="brand-img-box">
+                        <div class="brand-img2">
+                            <img src="../../style/images/logo_m.png" alt="logo">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title">注册号</td>
+                <td class="td-content">150450</td>
+                <td class="td-title">商标中文</td>
+                <td class="td-content">sdkhfwfh</td>
+                <td class="td-title">商标拼音</td>
+                <td class="td-content">sdkfhdkg</td>
+
+            </tr>
+            <tr>
+                <td class="td-title">商标英文</td>
+                <td class="td-content">B</td>
+                <td class="td-title">商标字头</td>
+                <td class="td-content">11</td>
+                <td class="td-title">商标数字</td>
+                <td class="td-content">4564</td>
+            </tr>
+            <tr>
+                <td class="td-title">申请日期</td>
+                <td class="td-content">2014-02-06</td>
+                <td class="td-title">初审日期</td>
+                <td class="td-content">2015-01-27</td>
+                <td class="td-title">注册日期</td>
+                <td class="td-content">2015-01-10</td>
+            </tr>
+            <tr>
+                <td class="td-title">商标类型</td>
+                <td class="td-content">普通</td>
+                <td class="td-title">注册公告</td>
+                <td class="td-content">1453/10287</td>
+                <td class="td-title">截止日期</td>
+                <td class="td-content"></td>
+            </tr>
+
+
+            <tr>
+                <td class="td-title">商标流程</td>
+                <td class="td-content">22</td>
+                <td class="td-title">是否可靠</td>
+                <td class="td-content">是</td>
+                <td class="td-title">预售价格</td>
+                <td class="td-content">546</td>
+            </tr>
+            <tr>
+                <td class="td-title">注册人</td>
+                <td class="td-content" colspan="4">广州市越秀区蓝棣骑车用品行（普通合伙）</td>
+                <td class="td-content">全类检索</td>
+            </tr>
+            <tr>
+                <td class="td-title">原注册人</td>
+                <td class="td-content"  colspan="5">B</td>
+            </tr>
+            <tr>
+                <td class="td-title">注册地址</td>
+                <td class="td-content" colspan="5">广东省广州市越秀区永福路35号之三南方永福国际汽车用品广场四层</td>
+            </tr>
+            <tr>
+                <td class="td-title">代理组织</td>
+                <td class="td-content" colspan="4">广州市申亿知识产权代理有限公司</td>
+                <td class="td-content">全类检索</td>
+                <td class="td-content" rowspan="2">
+                    <ul class="product-list">
+                        <li><a href="javascript:;">信息核实</a></li>
+                        <li><a href="javascript:;">电子公告</a></li>
+                        <li><a href="javascript:;">因素跟踪</a></li>
+                        <li><a href="javascript:;">商标流程</a></li>
+                        <li><a href="javascript:;">许可使用</a></li>
+                        <li><a href="javascript:;">跟踪监测</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="td-title">使用商品</td>
+                <td class="td-content" colspan="5">汽车保险杠，汽车两侧脚踏板，婴儿车，运载工具内装饰品，运载工具方向盘罩，儿童安全做（运载工具用），挡风玻璃刮水器，运载工具座椅套，运载工具用行李架，运载工具座椅头靠</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+        <h1 class="box-title-f mb20">申请主体信息</h1>
+        <div class="layui-form-item">
+            <div class="layui-form-label layui-right">确认人:</div>
+            <div class="layui-input-inline f-w300"><p class="cl-gray9 lh40">张三</p></div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-form-label layui-right">确认时间：</div>
+            <div class="layui-input-inline f-w300"><p class="cl-gray9 lh40">2019-10-21</p></div>
+        </div>
+        <div class="layui-form-item" style="margin-left: 90px">
+            <label class="cl-gray9" ><input type="radio" name="jzmm">我已仔细阅读上述<font style="color: #26b8d4">商标注册风险分析（即商标申请信息确认函）</font>，知晓查询结果中与他人享有在先权的商标构成近似被驳回的风险；知晓由于商标局数据录入滞后，在商标检索“盲期”内，所申请的商标与他人享有在先权的商标构成近似被驳回的风险；知晓所申请的商品/服务项目与其他商标存在商标局审查人员主观分析构成驳回的风险，以上风险百集网及其合作公司不承担任何责任。</label>
+        </div>
+        <div class="layui-form-item tc">
+            <div class="layui-input-block">
+                <button type="text" class="cz_btn">返回修改</button>
+                <button class="layui-btn tj_btn " lay-submit lay-filter="formDemo">确认提交</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    layui.use(['layer', 'jquery', 'form','table'], function () {
+        var layer = layui.layer,
+            $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+
+        // mock接口
+        // var _http_ = "https://b1be0a37-aa66-4dd6-b23b-a05c9af3775a.mock.pstmn.io";
+
+        // 渲染数据表格
+        table.render({
+            elem: '#orderlist',
+            url: '/style/js/api/sbzcqr.json?r=ff',
+            cellMinWidth: 92,
+            skin: 'line',
+            even: true,
+            cols: [
+                [
+                    {
+                        field: 'ddlx',
+                        align: 'center',
+                        width: 120,
+                        title: '商标图样'
+                    },
+                    {
+                        field: 'ddzt',
+                        align: 'center',
+                        width: 120,
+                        title: '商标名称'
+                    },
+                    {
+                        field: 'ddjg',
+                        align: 'center',
+                        width: 170,
+                        title: '商标说明'
+                    },
+                    {
+                        field: 'sbmc',
+                        align: 'center',
+                        width: 150,
+                        title: '类别'
+                    },
+                    {
+                        field: 'sblb',
+                        align: 'center',
+                        title: '商品项目'
+                    }
+                ]
+            ]
+        });
+
+
+
+    });
+</script>

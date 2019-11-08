@@ -835,3 +835,63 @@ input.get-yzm:disabled:hover{
     border: none;
     color: #fff;
 }
+/*商标注册确认函*/
+.brand-detail-table{
+    margin-top: 20px;
+    width: 100%;
+}
+.brand-detail-table td{
+    padding:5px 0;
+    padding-right: 0;
+    border: 1px solid #e7e7e7;
+}
+.brand-detail-table a{
+    /*text-decoration: underline;*/
+    color: #0f2a3d;
+}
+.td-title{
+    width:80px;
+    color: #0f2a3d;
+}
+.brand-detail-table td.td-content{
+    padding-right: 10px;
+    min-width: 120px;
+    color: #0f2a3d;
+}
+.brand-img2 {
+    display: inline-block;
+    width:230px;
+    height: auto;
+    vertical-align: middle;
+    text-align: center;
+    background-color: #fff;
+}
+.brand-img2 img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
+.product-list li {
+    width: 70px;
+    height: 30px;
+    margin-right: 6px;
+    margin-top: 6px;
+    float: left;
+    line-height: 30px;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 3px;
+    border: solid 1px #0f2a3d;
+    font-size: 12px;
+}
+.product-list li:nth-of-type(3n){
+    margin-right: 0;
+}
+.product-list li a{
+    display: block;
+}
+.product-list li:hover a{
+    background-color: #0f2a3d;
+    color: #fff!important;
+}

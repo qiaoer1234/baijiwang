@@ -963,7 +963,6 @@ for (var key in sorted)
     if (!sorted.hasOwnProperty(key)) continue;
     $("#listTotals").append('<li><a href="javascript:void(0);" data-classes="' + sorted[key] + '">' + key + '</a></li>');
 }
-
 function shows(id)
 {
     $("#"+id).show();
