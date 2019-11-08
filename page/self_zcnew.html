@@ -643,9 +643,9 @@
                                     <div class="l_confirm left">
                                         <div class="brand_search">
                                             <div class="clearfix">
-                                                <input type="text" class="ui-input" placeholder="请输入商品/服务关键字或编号" id="sortName" autocomplete="off">
+                                                <input type="text" class="ui-input" placeholder="请输入商品/服务关键字或编号"  id="sortName" autocomplete="off" />
                                                 <button type="button" class="ui-btn ui-btn-blue mr15 w_70 fn14" id="search">搜索</button>
-                                                <a class="reset cl-blue" href="javascript:;" onclick="resetTm();">重置</a>
+                                                <a class="reset" href="javascript:;" onclick="resetTm();">重置</a>
                                             </div>
                                             <div class="clearfix c_gray fn14">
                                                 <label class="left mr20">
@@ -658,133 +658,17 @@
                                                 </label>
                                             </div>
                                             <!-- 下拉 -->
-                                            <ul class="drop_list" style="display:none;" id="listTotals">
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="18,23,24,25,26,27,35">
-                                                        服装纺织
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="29,30,31,32,33,40,39">
-                                                        食品饮料
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="29,30,31,32,33,35,40,43">
-                                                        餐饮酒店
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="03,05,10,21,30,44">
-                                                        化妆美容
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="05,10,35,40,44">
-                                                        医药设备
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="02,03,05,06,08,09,16,34,35,40">
-                                                        日常用品
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="20,21,37,40">
-                                                        家具用具
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="09,16,35,38,41,42">
-                                                        IT互联网
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="01,02,04,07,11,16,17,22,40,42">
-                                                        化工能源
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="09,11">
-                                                        电子仪器
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="06,07,11,37">
-                                                        机械制造
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="02,06,14,17,19,37,40,42">
-                                                        建材五金
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:void(0);" data-classes="36,37,42,40,41,42,45">
-                                                        房产金融
-                                                    </a>
-                                                </li>
-                                            </ul>
+                                            <ul class="drop_list" style="display:none;" id="listTotals"></ul>
                                             <!-- 下拉 -->
                                         </div>
 
                                         <!-- 大类 -->
-                                        <ul class="tit_box posrel" id="sort_first">
-                                            <li>
-                                                <div class="tit fn16 c_gray j-tit" onclick="firststep('01')" id="01">01类 化学原料
-                                                    <div class="dis_inl posrel" id="deng-01"></div></div>
-                                            </li>
-                                            <li>
-                                                <div class="tit fn16 c_gray j-tit" onclick="firststep('02')" id="02">02类 颜料油漆
-                                                    <div class="dis_inl posrel" id="deng-02"></div></div></li>
-                                            <li>
-                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('03')" id="03">03类 化妆品
-                                                <div class="dis_inl posrel" id="deng-03"></div></div></li>
-                                            <li>
-                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('04')" id="04">04类 燃料油脂
-                                                <div class="dis_inl posrel" id="deng-04"></div></div>
-                                            </li>
-                                            <li>
-                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('05')" id="05">05类 医药
-                                                <div class="dis_inl posrel" id="deng-05"></div></div></li><li>
-                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('06')" id="06">06类 五金金属
-                                                <div class="dis_inl posrel" id="deng-06"></div></div></li><li>
-                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('07')" id="07">07类 机械设备
-                                                <div class="dis_inl posrel" id="deng-07"></div></div></li><li>
-                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('08')" id="08">08类 手工器械
-                                                <div class="dis_inl posrel" id="deng-08"></div></div></li><li>
-                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('09')" id="09">09类 电子电脑
-                                                <div class="dis_inl posrel" id="deng-09"></div></div></li><li>
-                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('10')" id="10">10类 医疗器械
-                                                <div class="dis_inl posrel" id="deng-10"></div></div></li><li>
-                                            <div class="tit fn16 c_gray j-tit" onclick="firststep('11')" id="11">11类 家用电器
-                                                <div class="dis_inl posrel" id="deng-11"></div></div></li>
-                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('12')" id="12">12类 运输工具
-                                                <div class="dis_inl posrel" id="deng-12"></div></div></li>
-                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('13')" id="13">13类 军火烟火
-                                                <div class="dis_inl posrel" id="deng-13"></div></div></li>
-                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('14')" id="14">14类 珠宝钟表
-                                                <div class="dis_inl posrel" id="deng-14"></div></div></li>
-                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('15')" id="15">15类 乐器
-                                                <div class="dis_inl posrel" id="deng-15"></div></div></li>
-                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('16')" id="16">16类 办公文具
-                                                <div class="dis_inl posrel" id="deng-16"></div></div></li>
-                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('17')" id="17">17类 橡胶制品
-                                                <div class="dis_inl posrel" id="deng-17"></div></div></li>
-                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('18')" id="18">18类 皮革箱包
-                                                <div class="dis_inl posrel" id="deng-18"></div></div></li>
-                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('19')" id="19">19类 建筑材料
-                                                <div class="dis_inl posrel" id="deng-19"></div></div></li>
-                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('20')" id="20">20类 家具
-                                                <div class="dis_inl posrel" id="deng-20"></div></div></li>
-                                            <li><div class="tit fn16 c_gray j-tit" onclick="firststep('21')" id="21">21类 厨房洁具
-                                                <div class="dis_inl posrel" id="deng-21"></div></div></li>
-                                        </ul>
+                                        <ul class="tit_box posrel" id="sort_first"></ul>
                                         <!-- 大类 -->
                                         <!-- 没有查询符合条件的结果 -->
                                         <div class="center mt50" style="display: none" id="search_msg">
                                             <p class="fn18 c_gray8"><img src="../style/images/blank.png" class="p-mid">没有查询符合条件的结果</p>
-                                            <p class="fn14 c_gray">换个关键字试试，或<a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzkzODA3MTU1MV8yODU5MjdfNDAwMDY5OTM5M18yXw" target="_blank">联系顾问</a></p>
+                                            <p class="fn14 c_gray">换个关键字试试，或<a href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&amp;key=XzkzODA3MTU1MV8yODU5MjdfNDAwMDY5OTM5M18yXw" target="_blank" style="color: #26b8d4">联系顾问</a></p>
                                         </div>
                                         <!-- 没有查询符合条件的结果 -->
 

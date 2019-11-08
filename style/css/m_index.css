@@ -265,6 +265,11 @@
     transition: all 0.3s ease-out;
     border-radius: 10px;
 }
+.register_list li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 
 .register_list li:first-child{
     margin-left: 0;
@@ -574,6 +579,8 @@ background:url("img/icon_1.png") no-repeat left 80px  center;
     height: 276px;
     width: 100%;
     z-index: 1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .ys_top .gw_btn{
     width: 115px;
@@ -886,11 +893,92 @@ background:url("img/icon_1.png") no-repeat left 80px  center;
     transition: all 0.3s ease-out;
 }
 .m_friend_box .li1 a{
-    background: url("img/parter_.png") no-repeat center;
+    background: url("img/01.png") no-repeat center;
     background-size:auto;
 }
 .m_friend_box .li1:hover a {
-    background: url("img/parter.png") no-repeat center;
+    background: url("img/1.png") no-repeat center;
     background-size:auto;
 }
+.m_friend_box .li2 a{
+    background: url("img/02.png") no-repeat center;
+    background-size:auto;
+}
+.m_friend_box .li2:hover a {
+    background: url("img/2.png") no-repeat center;
+    background-size:auto;
+}
+
+.m_friend_box .li3 a{
+    background: url("img/03.png") no-repeat center;
+    background-size:auto;
+}
+.m_friend_box .li3:hover a {
+    background: url("img/3.png") no-repeat center;
+    background-size:auto;
+}
+
+.m_friend_box .li4 a{
+    background: url("img/04.png") no-repeat center;
+    background-size:auto;
+}
+.m_friend_box .li4:hover a {
+    background: url("img/4.png") no-repeat center;
+    background-size:auto;
+}
+
+.m_friend_box .li5 a{
+    background: url("img/05.png") no-repeat center;
+    background-size:auto;
+}
+.m_friend_box .li5:hover a {
+    background: url("img/5.png") no-repeat center;
+    background-size:auto;
+}
+
+.m_friend_box .li6 a{
+    background: url("img/06.png") no-repeat center;
+    background-size:auto;
+}
+.m_friend_box .li6:hover a {
+    background: url("img/6.png") no-repeat center;
+    background-size:auto;
+}
+
+.m_friend_box .li7 a{
+    background: url("img/07.png") no-repeat center;
+    background-size:auto;
+}
+.m_friend_box .li7:hover a {
+    background: url("img/7.png") no-repeat center;
+    background-size:auto;
+}
+
+.m_friend_box .li8 a{
+    background: url("img/08.png") no-repeat center;
+    background-size:auto;
+}
+.m_friend_box .li8:hover a {
+    background: url("img/8.png") no-repeat center;
+    background-size:auto;
+}
+
+.m_friend_box .li9 a{
+    background: url("img/09.png") no-repeat center;
+    background-size:auto;
+}
+.m_friend_box .li9:hover a {
+    background: url("img/9.png") no-repeat center;
+    background-size:auto;
+}
+
+.m_friend_box .li10 a{
+    background: url("img/10.png") no-repeat center;
+    background-size:auto;
+}
+.m_friend_box .li10:hover a {
+    background: url("img/010.png") no-repeat center;
+    background-size:auto;
+}
+
 
