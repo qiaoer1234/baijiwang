@@ -41,10 +41,8 @@ $(function(){
         recommend[i] = ('0' + recommend[i]).slice(-2);
         $("#recomtype").append(' <li><a  href="javascript:void(0);"  onclick="recomSort(\''+recommend[i]+'\',this);"  data-sort="'+recommend[i]+'">'+recommend[i]+'类</a></li>');
     }
-
-    //智能生成图样
     $("#makelogosure").click(function(){
-        // $("#makelogo").hide();
+        $("#makelogo").hide();
         makeImg();
     })
 
@@ -90,7 +88,190 @@ $(function(){
 
 })
 
+function setApData(aptype)   //申请人数据处理
+{
 
+    $("#Aptitude").val(aptype);
+    if(aptype==3 || aptype==4){
+        $("#Country_val").val('');
+        $('#Country').val("").trigger("change");
+    }
+    $("#apOne li>a").removeClass('bd_blue').addClass('bd_gray');
+    $("#apOne li>a").each(function(){
+        if($(this).data('type')==aptype){
+            $(this).removeClass('bd_gray').addClass('bd_blue');
+        }
+    })
+    aptitude=aptype;
+    var imgurl=imgurl1=stp_title="";var name="";var func="";var titlemsg=titlemsg1="";
+    var placeholderhtm=titlecode={};var showName=[];
+    var fit="若不含省、市（县）请补足，以免不予受理";
+    $("#ap_person").hide();
+    $("#hap_mg").hide();
+    // $("#contact_").html("联系人及联系方式");
+    $("#Contacts").attr('placeholder','如：张三');
+    showName=["ANameOs","IDAddressOs","ContactsMd","PhoneMd","PostCodeMd","Country"];
+    $("#outContory").hide();
+    $("#inContory").show();
+    $("#ap_msg input").removeClass("err");
+    $("#ap_warm").html('<p class="fn12 mt5 clearfix"><i class="icon icon-i left" style="margin-top: 2px;"></i>请按照要求上传扫描件，jpg格式、小于5M</p>');
+    $("#downap").hide();
+    $("#person_").hide();
+    $("#outcon").show();
+    $(".registhide").show();
+    $("#au_mg").html("");
+    var ap_names= $("#AName").val();
+    var name_id="";
+    switch(Number(aptype))
+    {
+        case 1:   //企业
+            titlemsg="请上传营业执照<br>复印件盖章";
+            titlemsg1="";
+            stp_title="请上传清晰的身份证明图片，系统识别后请再次核对信息，若识别有误请修改";
+            placeholderhtm={'AName':"请与营业执照的企业名称保持一致",'IDAddress':"请填写营业执照地址","CodeNum":"请与营业执照社会代码号保持一致","PostCode":"请输入营业执照地址所属邮政编码"};
+            titlecode={"IDNumber_title":"社会代码","IDAddress_title":"证件地址"};
+            imgurl="../style/images/comlicense.jpg";
+            $("#stp_ap").addClass("h435");
+            $(".in_set").show();
+            $(".out_set").hide();
+            $("#warmf").html(fit);
+            $("#person_").show();
+            $("#outcon").hide();
+            name_id="AName";
+            break;
+        case -1:  //个体
+            //获取实名认证的信息
+            authentication();
+            titlemsg="请上传营业执照<br>复印件签字";
+            titlemsg1="请上传身份证<br>正反面复印件签字";
+            stp_title="请上传清晰的身份证明图片，系统识别后请再次核对信息，若识别有误请修改";
+            placeholderhtm={'AName':"请与身份证上的姓名保持一致",'IDAddress':"请填写身份证的地址","IDNumber":"证件号码只支持数字/英文","PostCode":"请输入身份证地址所属邮政编码","CodeNum":"请填写营业执照社会代码号（选填）"};
+            titlecode={"IDNumber_title":"身份证号","IDAddress_title":"证件地址"};
+            imgurl="../style/css/img/sliccense.jpg";
+            imgurl1="../style/images/identity.jpg";
+            $("#ap_person").show();
+            $("#ap_person div.upload3").find('a').removeClass('h_54');
+            $("#secondImage").attr('name',"secondImage");
+            $("#secondImage").attr('onchange',"checkFileEmpty('second','IDCardImg')");
+            $("#stp_ap").removeClass("h435");
+            $(".in_set").show();
+            $(".out_set").hide();
+            $("#warmf").html(fit);
+            $("#person_").show();
+            name_id="AName";
+            break;
+        case 3:  //海企
+            titlemsg="请上传当地商事<br>登记证明盖章";
+            titlemsg1="请上传中英文<br>证明盖章";
+            stp_title="请上传清晰的企业中英文证明，系统识别后请再次核对信息并完善信息。";
+            placeholderhtm={'AName':"请填写企业的英文名称","PhoneMd":"如：13866668888","ANameOs":"营业执照中文名称，必须为中文简体",'IDAddress':"请输入营业执照对应的英文地址","IDAddressOs":"营业执照中文地址，必须为中文简体"};
+            $("#IDNumber_title").html();
+            imgurl="../style/css/img/comlicenseout1.jpg";
+            imgurl1="../style/css/img/componout.jpg";
+            $("#outContory p").html("营业执照所属国籍");
+            $("#enlarge-second").addClass('h_54');
+            titlecode={"IDAddress_title":"证件地址"};
+            $("#inContory").hide();
+            $("#outcon").hide();
+            $("#outContory").show();
+            $("#hap_mg").show();
+            $("#ap_person").show();
+            $("#contact_").html("大陆联系方式");
+            $("#Contacts").attr('placeholder','请填写大陆联系人姓名');
+            $("#stp_ap").removeClass("h435");
+            $("#downap").show();
+            $(".in_set").hide();
+            $(".out_set").show();
+            $(".registhide").hide();
+            $("#warmf").html("");
+            name_id="AName";
+            if(ap_names=="" || ap_names==0){
+                ap_names= $("#ANameOs").val();
+                name_id="ANameOs";
+            }
+            break;
+        case 4: //个体海外
+            titlemsg="请上传境外自然人<br>身份证明签字";
+            titlemsg1="请上传中英文<br>证明签字";
+            stp_title="请上传清晰的企业中英文证明，系统识别后请再次核对信息并完善信息。";
+            placeholderhtm={'AName':"请填写申请人的英文名称或拼音","ANameOs":"申请人的中文名称，必须为中文简体",'IDAddress':"请填写护照对应的英文地址","IDAddressOs":"护照的中文地址，必须为中文简体","IDNumber":"请填写身份证明文件号码"};
+            imgurl="../style/css/img/sliccenseout.jpg";
+            imgurl1="../style/css/img/personout.jpg";
+            $("#outContory p").html("护照所属国籍");
+            titlecode={"IDNumber_title":"证件号码","IDAddress_title":"护照地址"};
+            apmsg='<p class="fn12 mt5 clearfix"><i class="icon icon-i left" style="margin-top: 2px;"></i>以下四种自然人证明任选一种复印件签字上传即可，jpg格式、小于5M</p>'
+                +'<p class="fn12 lh20">1、境外自然人护照复印件</p>'
+                +'<p class="fn12 lh20">2、公安部门颁发的、有效期(一年以上)内的“外国人永久居留证”</p>'
+                +'<p class="fn12 lh20">3、公安部门颁发的、有效期(一年以上)内的“外国人居留许可”</p>'
+                +'<p class="fn12 lh20">4、公安部门颁发的、有效期(一年以上)内的“外国人居留证”</p>';
+            $("#ap_warm").html(apmsg);
+            $("#outContory").show();
+            $("#inContory").hide();
+            $("#hap_mg").show();
+            $("#ap_person").show();
+            $("#stp_ap").removeClass("h435");
+            $("#downap").show();
+            $(".in_set").hide();
+            $(".out_set").show();
+            $(".registhide").hide();
+            $("#warmf").html("");
+            name_id="AName";
+            if(ap_names=="" || ap_names==0){
+                ap_names= $("#ANameOs").val();
+                name_id="ANameOs";
+            }
+            break;
+    }
+
+
+    for(var key1 in placeholderhtm){
+        $("#"+key1).attr('placeholder',placeholderhtm[key1]);
+    }
+    for(var key2 in titlecode){
+        $("#"+key2).html(titlecode[key2]);
+    }
+    for(var i=0;i<showName.length;i++){
+        if(aptype==1 || aptype==-1){
+            $("#"+showName[i]).addClass('hide');
+        }else{
+            $("#"+showName[i]).removeClass('hide');
+        }
+    }
+    $("#example3-1").attr('href',imgurl);
+    $("#example3-2").attr('href',imgurl1);
+    $("#exp1").attr('src',imgurl);
+    $("#exp2").attr('src',imgurl1);
+    $("#titlemsg").html(titlemsg);
+    $("#titlemsg1").html(titlemsg1);
+    $("#stp_title").html(stp_title);
+    setregist();
+    // checkLoginWarm();
+}
+
+
+function authentication()
+{
+    var isset=$("#auth_msg").val();
+    if(enameid!='' && enameid!=0 && isset=='')  //已登录
+    {
+        $.ajax({
+            type:"GET",
+            url:"/tm/getauth",
+            data:{},
+            dataType:"json",
+            success:function(data){
+                if(data.status == 200 && data.data!=''){
+                    var htm=data.data.Name+","+data.data.IdCard+","+data.data.Address;
+                    var msg='<div class="mod-blue mt10"><p class="tit">直接使用实名认证信息（<span class="name" title="'+data.data.Name+'">'+data.data.Name+'</span>）<p><label><input type="radio" onclick="checkauth(1)" name="auth" class="mr5">是</label><label  class="ml20"><input type="radio" onclick="checkauth(2)" name="auth" checked class="mr5">否</label></p></div>';
+                    $("#au_mg").html(msg);
+                    $("#auth_msg").html(htm);
+                }
+            },
+            error:function(data){
+            }
+        })
+    }
+}
 
 function switchstatus()
 {
@@ -103,7 +284,20 @@ function switchstatus()
         event.stopPropagation();
     })
 }
-
+// 填写前请先登录
+function checkLoginWarm()
+{
+    if(enameid=='' || enameid==0){
+        var registmsg=["Contacts","Phone","Email","AName","IDAddress","IDNumber","PostCode","PostCodeMd","IDAddressMd","ContactsMd","PhoneMd","ANameOs","IDAddressOs"];
+        for(var i=0;i<registmsg.length;i++)
+        {
+            $("#"+registmsg[i]).val("请先登录");
+            $("#"+registmsg[i]).attr("readonly",true);
+            $("#"+registmsg[i]).attr("style","cursor:pointer");
+            $("#"+registmsg[i]).attr("onclick","location='/tm/regtm?IsProxy="+isproxy+guides+"&login=true'");
+        }
+    }
+}
 
 function setSort()
 {
@@ -167,6 +361,19 @@ function checkhas(sort,color)
 	}*/
 }
 
+//   智能推荐
+function mt_indus_swicth(obj)
+{
+    var num=$(obj).val();
+    $(".instru1,.instru2").hide();
+    $(".instru1").removeClass("on");
+    $(".instru2").removeClass("on");
+    $(".major_"+num+":first").addClass("on");
+    $(".minor_"+num+":first").addClass("on");
+    $(".major_"+num).show();
+    $(".minor_"+num).show();
+    buttnchange();
+}
 
 function mt_major_all(type)
 {
@@ -388,6 +595,74 @@ function trim(str){
     return str.replace(/(^\s*)|(\s*$)/g, "");//str.replace(/(^\s*)|(\s*$)/g, "");
 }
 
+function load_history(history_id,color)   //加载历史注册记录
+{
+    if(enameid==0) return;
+    if($("#deng-"+history_id+" ."+color+"_span").html()){
+        $("#deng-"+history_id+" ."+color+"_span").show();
+        return;
+    }
+    var apname=$("#AName").val();//,"ApName":apname
+    apname=trim(apname);
+    var titles="";var deng="";
+    if(color=="red" && apname==""){
+        titles="该ID之前";
+        deng="deng";
+    }else if(color=="red" && apname!=""){
+        titles="该主体之前";
+        deng="deng";
+    }else if(color=="yellow" && apname!=""){
+        titles="该ID下其他主体之前";
+        deng="dp2";
+    }else {
+        titles="该主体之前";
+        deng="deng";
+    }
+    var placeholder=$("#AName").attr('placeholder');
+    if(apname==placeholder) apname='';
+    $.ajax({
+        type:"post",
+        url:"/tm/history",
+        data:{'TmSort':Number(history_id),"ApName":apname,"color":color},
+        datatype:'json',
+        success:function(son){
+            var son = eval("(" + son + ")"); var sorthtm="<div id=\'old_sort_"+color+history_id+"\'>"+titles+"在<span class='c_red'>"+history_id+"</span>类申请过商标，点击名称即可复制群组：";
+            var sorArr=[]; var typ="";
+            if(son.status==200 && son.data[0].TmSortInfo !='' && son.data!='null'){
+                //onmouseover="showhistory(this);" onmouseout="hidehistory(this)"
+                //<img class="j-deng cur_poi" src="/images/'+deng+'.gif">  onmouseout="hidehistory(\''+history_id+'\',\''+color+'\')" <div onmouseover="showhistory(this);" onmouseout="hidehistory(this)"><img class="j-deng cur_poi" src="/images/deng.gif">
+                var old_history='<span class="'+color+'_span tip_box zhong">'+titles+'在'+history_id+'类申请过商标，';
+                for(var i=0;i<son.data.length;i++){
+                    var old_sort='';
+                    for(var j=0;j<son.data[i]['TmSortInfo'].length;j++){
+                        old_sort+=son.data[i]['TmSortInfo'][j]+'vbs';
+                    }
+                    if(i<=2){
+                        old_history+='<a href="javascript:load_goods_history(\''+old_sort+'\',this);" >'+son.data[i]['TmName']+'</a>， ';
+                    }
+                    sorArr.push('<a href="javascript:load_goods_history(\''+old_sort+'\',this);" >'+son.data[i]['TmName']+'</a> ');
+                }
+                if(sorArr.length>0){
+                    old_history+='点击名称即可复制群组，<a href="javascript:showallsort(\''+history_id+'\',\''+color+'\');">查看全部</a></span>';
+                    if(!$("#deng-"+history_id+" ."+color+"_span").html()){
+                        $("#deng-"+history_id+" img."+color+"_deng").after(old_history);
+                    }
+
+                    $("#deng-"+history_id+" ."+color+"_span").show();
+                    switchstatus();
+                    sorthtm=sorthtm+sorArr.join("，")+"</div>";
+                    if($("#old_sort_"+history_id).html()){
+                        $("#old_sort_"+history_id).remove();
+                    }
+                    $("#deng_sort").append(sorthtm);
+                }
+            }else{
+                $("#deng-"+history_id).html("");
+                //  $("#deng-"+history_id).hide();
+            }
+        }
+    })
+}
 
 function showhistory(obj)
 {
@@ -401,6 +676,38 @@ function hidehistory(obj)
 {
     $(obj).find('span.zhong').hide();
 //	$("#deng-"+sort).find('span').hide();
+}
+
+function load_goods_history(goods_,obj)  //历史选中的类
+{
+    var params=null,secod=null; var sortArr=[];
+    if(obj===undefined){
+        if(goods_.substr(-6)=='&nbsp;') goods_=goods_.substr(0,goods_.length-6)
+        var goods=goods_.split('&nbsp;');
+    }else{
+        if(goods_.substr(-3)=='vbs') goods_=goods_.substr(0,goods_.length-3)
+        var goods=goods_.split('vbs');
+    }
+    for(var i=0;i<goods.length;i++){
+        params=goods[i].split(',');
+        params[0]=Number(params[0])>9?params[0]:'0'+Number(params[0]);
+        sortArr.push(params[0]);
+        secod=params[2].split('vs');
+        params[2]=secod[0];
+        params.push(null);
+        params.push(true);
+        if(params.length==6 && !addgoods_1.apply(null,params)) return;
+    }
+    $("#"+params[0]).find('div.p-mid').show();
+    if(params!=null){
+        $("#"+params[0]).removeClass('c_gray').addClass('c_orange');
+        showsecond(params[0]);
+        updategoods(params[0]);
+    }
+    if(obj!==undefined){
+        $(obj).removeAttr('href');
+    }
+    //return true;
 }
 
 
@@ -533,6 +840,7 @@ function addgoods(one, two, three, desc, noupdate) {  //添加商品项
     $(items).append('<a class="ui-btnItem4" href="javascript:void(0);" title="' +three+ desc + '" onclick="deletegoods(\'' + tag + '\', this)" id="tm-id-' + tag2 + '" data-content="' + one + "`" + two + "`" + three + "`" + desc + '">' +three+ desc + '<input type="hidden"  name="Tm[]"  value="'+one+','+two+','+three+'vs'+descs+','+descs+'"   /><i class="close">x</i></a>');
     if (noupdate!==false) updategoods();
 }
+
 function updategoods(id) {  //更新商品项单状态
     var fee = 0,     //官费
         ordersfee = 0,    //总费用
@@ -548,26 +856,26 @@ function updategoods(id) {  //更新商品项单状态
         $(this).removeClass("c_orange").addClass("c_gray");
     });
     $("#class_info>div[data-id]").each(function () {
-        var count = $(this).find("a[data-content]").length, one = Number($(this).data("id")), ifee=0;
+        var count = $(this).find("a[data-content]").length, one = $(this).data("id"), ifee=0;
         if (count == 0) {
             this.parentNode.removeChild(this);
             return;
         }
         var coseOne=$(".list_sec").attr('ims');
-        ones=Number(one)>9? one: '0'+one;
+        ones=Number(one)>9?one:'0'+one;
         if(coseOne==ones){
             $("#" + ones).removeClass('c_gray').addClass('c_orange');
         }
         ifee = base;
-        getid("ab" + ones).innerHTML = count;
-        var danbao='';
-        if(isproxy==2){ danbao='，担保费<em style="color:red;">'+dpri+'</em>元';}
-        if (count >= 10) {
-            ifee += (count - 10) * add;
-            getid("qiehuan" + ones).innerHTML = '10项以上每项加收<em style="color:red;">' + add + '</em>元'+danbao;
-        } else {
-            getid("qiehuan" + ones).innerHTML = '还可以再选择<em style="color:red;">' + (10 - count) + '</em>项,10项以内<em style="color:red;">' + base + '</em>元'+danbao;
-        }
+        // getid("ab" + ones).innerHTML = count;
+        // var danbao='';
+        // if(isproxy==2){ danbao='，担保费<em style="color:red;">'+dpri+'</em>元';}
+        // if (count >= 10) {
+        //     ifee += (count - 10) * add;
+        //     getid("qiehuan" + ones).innerHTML = '10项以上每项加收<em style="color:red;">' + add + '</em>元'+danbao;
+        // } else {
+        //     getid("qiehuan" + ones).innerHTML = '还可以再选择<em style="color:red;">' + (10 - count) + '</em>项,10项以内<em style="color:red;">' + base + '</em>元'+danbao;
+        // }
         ordersfee+=ifee;
         fee += ifee;
 
@@ -579,9 +887,6 @@ function updategoods(id) {  //更新商品项单状态
             gongzheng+=notarizaprice;
         }
     });
-
-
-
 
     if(ordersfee==0){
         $("#class_info").html('<img class="mt50 ml40" src="../style/images/sb_blank.png">');
@@ -727,6 +1032,61 @@ $("input[name='Color']").click(function(){
     }
 })
 
+function upfiletm(num,name,obj)   //上传图样
+{
+    if(enameid==0) return;
+    if(obj.value){
+        var id="tm"+num+"Image";
+        $.ajaxFileUpload({
+            url : '/tm/upload',
+            async : false,
+            secureuri : false,
+            fileElementId : id,
+            dataType : "json",
+            success:function(data) {
+                if(data.status==200 && data.msg=='OK'){
+                    $("#"+name+"_test").val(data.data.img);
+                    $('#tm'+num+'ImageText').attr('src',data.data.path+'/tm'+data.data.img);
+                    $("."+num).attr('id','example2-'+num);
+                    $('#example2-'+num).attr('href',data.data.path+'/tm'+data.data.img);
+                    if(num=='second')  old_one_img=data.data.img
+                    if(num=='three') old_two_img=data.data.img
+                    tup_mt();
+                }else{
+                    alert_show(data.msg);
+                    $('#tm'+num+'ImageText').attr('src','/img/empty.png');
+                    return false;
+                }
+            },
+            error:function(data,status,e){
+                data= data.responseText;
+                if(!data) return;
+                var position = data.indexOf('<')-1;
+                if(position>0) {
+                    if(data.substr(0,1)=="("){
+                        data = data.substring(1,position+1);
+                    }else{
+                        data = data.substring(0,position+1);
+                    }
+                }
+                data=eval("("+data+")");
+                if(data.status==200 && data.msg=='OK'){
+                    $("#"+name+"_test").val(data.data.img);
+                    $('#tm'+num+'ImageText').attr('src',data.data.path+'/tm'+data.data.img);
+                    $("."+num).attr('id','example2-'+num);
+                    $('#example2-'+num).attr('href',data.data.path+'/tm'+data.data.img);
+                    if(num=='second')  old_one_img=data.data.img
+                    if(num=='three') old_two_img=data.data.img
+                    tup_mt();
+                }else{
+                    alert_show(data.msg);
+                    $('#tm'+num+'ImageText').attr('src','/img/empty.png');
+                    return false;
+                }
+            }
+        });
+    }
+}
 
 //切换时显示或隐藏公证
 function setregist()
@@ -1247,52 +1607,3 @@ function resetTm()   //重置
 
     exports('self_zc', {});
 });*/
-
-
-/*function addImgs()   //显示智能提示
-{
-    if(enameid=='' || enameid==0) return false;
-    $("#makelogo_msg").html("智能生成图样字体为“黑体”。如果您有设计要求，请点击图标样式上传按钮上传定稿图样。");
-    $("#makelogo").show();
-}*/
-
-
-
-function makeImg()   //智能生成图样
-{
-    var name=$("#TmName").val();
-    if(name=='' || name==0){
-        layer.alert('请填写商标名称', {icon: 7});
-        return false;
-    }
-    $.ajax({
-        type:'post',
-        url:'/tm/addimgs',
-        data:{'name':name},
-        datatype:'json',
-        success:function(son){
-            var sons = eval("(" + son + ")");
-            if(sons.status==200)
-            {
-                $("#upload-image8").attr('src',sons.data.path+sons.data.img);
-                $("#TmPattern_test").val(sons.data.img);
-                $(".second").attr('id','example2-second');
-                $('#example2-second').attr('href',sons.data.path+sons.data.img);
-                // tup_mt();
-            }else{
-                if(sons.msg){
-                    layer.alert(sons.msg);
-                }else{
-                    layer.alert('自动生成失败，请上传', {icon: 2});
-                }
-            }
-        },
-        error:function(son){
-            layer.alert('自动生成失败，请上传', {icon: 2});
-        }
-    })
-}
-
-
-
-

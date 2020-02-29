@@ -85,7 +85,7 @@
                     <div class="policy-checkbox">
                         <input type="checkbox" name="youhui" title="是否使用优惠券" lay-skin="primary"  lay-filter="youhui">
                     </div>
-                    <input type="text" name="title" required lay-verify="required" placeholder="请输入优惠券码" autocomplete="off" class="layui-input yhq_box">
+                    <input type="text" name="title" required lay-verify="required" placeholder="请输入优惠券码" autocomplete="off" class="layui-input yhq_box" id="yhq_box">
                 </form>
 
             </div>
@@ -191,6 +191,8 @@
                     console.log(data.elem.checked); //是否被选中，true或者false
                     if (data.elem.checked) {
                         $(".yhq_box").css("display", "block");
+                        $('#yhq_box').val('');
+                        // $("#yhq_box")[0].reset();
                     } else {
                         $(".yhq_box").css("display", "none");
                         return false;

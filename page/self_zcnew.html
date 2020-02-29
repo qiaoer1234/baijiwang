@@ -462,7 +462,7 @@
                                     <td class="tleft pb0">
                                         <div class="clearfix">
                                             <div class="left">
-                                                <input class="inp-load c_gray4"  id="TmName" placeholder="如：请描述商标要素，并使用“+”作为隔开区分">
+                                                <input class="inp-load c_gray4"   type="text"  value="" id="TmName"   name="TmName" placeholder="如：请描述商标要素，并使用“+”作为隔开区分">
                                             </div>
                                             <div class="form_tip fn12 left">
                                                 <i class="icon icon-q left"></i>
@@ -572,10 +572,10 @@
                                         <div class="clearfix">
                                             <div class="upload upload2 left">
                                                 <p class="title c_gray4">请上传商标图样</p>
-                                                <div class="pic img_box first w_120"><img src="/style/images/empty3.png" id="upload-image8"></div>
-                                                <a href="javascript:;" class="btn w_60">智能生成</a>
-                                                <button type="button" id="upload-img8" class="btn btn_orange">上传图样</button>
-                                                <input type="hidden" name="upload-img8" id="upload-img8" value="">
+                                                <div class="pic img_box first w_120 second"><img src="/style/images/empty3.png" id="upload-image8"></div>
+                                                <a href="javascript:;" class="btn w_60" id="makelogosure" >智能生成</a>
+                                                <button type="button" name="upload-img8"  id="upload-img8"class="btn btn_orange">上传图样</button>
+                                                <input type="hidden" name="upload-img8" id="TmPattern_test" value="">
                                             </div>
                                             <div class="ml15 fn12 left">
                                                 <i class="icon icon-q left"></i>
@@ -808,9 +808,9 @@
 
 
         // 点击图片放大  imgbox插件
-       /* $(document).ready(function() {
+     /*   $(document).ready(function() {
             tup_mt();
-        });
+        });*/
         function tup_mt(){
             $("#example3-1,#example3-2,#enlarge-second,#enlarge-first,#example2-1,#example2-2,#example2-first,#example2-second,#example2-three").imgbox({
                 'speedIn'       : 0,
@@ -820,7 +820,7 @@
                 'allowMultiple' : false
             });
 
-        }*/
+        }
 
         // 怎么填弹窗
         $('.shows').click(function(){
